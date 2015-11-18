@@ -6,27 +6,25 @@ using System.Web.Mvc;
 
 namespace RCTPL_WebProjects.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public ActionResult Index()
         {
-            Session["LoggedUserId"] = "test";
-            Session["LName"] = "Admin";
             return View();
         }
 
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
-
             return View();
         }
+
+        
     }
 }

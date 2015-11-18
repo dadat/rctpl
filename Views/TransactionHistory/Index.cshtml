@@ -1,0 +1,136 @@
+﻿@model IEnumerable<RCTPL_WebProjects.Models.TBL_WEBUSERS>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USERNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PASSWORD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.E_PASSWORD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SHA_PASSWORD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MIDDLENAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FIRSTNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LASTNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CONTACT_NUMBER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATE_REGISTERED)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VERIFICATION_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VERIFICATION_STATUS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATE_VERIFIED)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ACTIVE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REGION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAILING_ADDRESS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CITY)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USERNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PASSWORD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.E_PASSWORD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SHA_PASSWORD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMAIL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MIDDLENAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FIRSTNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LASTNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CONTACT_NUMBER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATE_REGISTERED)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VERIFICATION_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VERIFICATION_STATUS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DATE_VERIFIED)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ACTIVE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REGION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAILING_ADDRESS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CITY)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.USER_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.USER_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.USER_ID })
+        </td>
+    </tr>
+}
+
+</table>

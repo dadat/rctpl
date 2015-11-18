@@ -16,9 +16,13 @@ namespace RCTPL_WebProjects
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "WEBUSERS", action = "Index", id = UrlParameter.Optional }
             );
 
+            routes.MapRoute(
+                "CompleteRegistration",
+                "{controller}/{action}/{_uname}/{_str}",
+            new { controller = "WEBUSERS", action = "CompleteRegistration", _uname="", _str="" });
         }
     }
 }

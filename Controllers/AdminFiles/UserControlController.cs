@@ -13,7 +13,7 @@ namespace RCTPL_WebProjects.Controllers.AdminFiles
 {
     public class UserControlController : Controller
     {
-        private RCTPLEntities3 db = new RCTPLEntities3();
+        private RCTPLEntities db = new RCTPLEntities();
 
         // GET: UserControl
         public async Task<ActionResult> Index()

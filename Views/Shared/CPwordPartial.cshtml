@@ -1,0 +1,59 @@
+﻿<!-- Change Password Modal-->
+
+    <div class="modal fade" id="CPwordModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width:360px">
+            <div class="modal-content">
+@*<div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title">Modal Info</h4>
+    </div>*@
+                
+
+                <div class="login-box">
+                    <div class="login-logo bg-green-gradient">
+                        <b>Change Password</b>
+                    </div><!-- /.login-logo -->
+                    <div class="login-box-body">
+                        <p class="login-box-msg">Edit your Password here.</p>
+                        
+                        <form action="/WEBUSERS/ChangePasswd" method="post">
+
+                            @Html.AntiForgeryToken()
+
+                            <input type="hidden" value="@Session["UName"].ToString()" name="_uname" id="_uname" />
+                            <div class="form-group has-feedback">
+                                <input type="password" class="form-control" placeholder="Password" id="_currPass" name="_currPass">
+                                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <input type="password" class="form-control" placeholder="New Password" id="newPass" name="newPass">
+                                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                            </div>
+                            <div>
+                                <div class="form-group has-feedback">
+                                    <input type="password" class="form-control" placeholder="Confirm New Password" id="password" name="CNewpassword">
+                                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-xs-12">
+                                    <button type="submit" class="btn btn-primary btn-block btn-flat">Save New Password</button>
+                                </div><!-- /.col -->
+                            </div>
+                        </form>
+
+
+
+
+                    </div><!-- /.login-box-body -->
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+

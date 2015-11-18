@@ -17,51 +17,34 @@ namespace RCTPL_WebProjects.Models
         public long PAIP_ID { get; set; }
         public string PAPIN { get; set; }
         public string PALNAME { get; set; }
-        public string PAFNAME { get; set; }
-        public string PAMNAME { get; set; }
         public string PAADDRESS { get; set; }
         public string MV_TYPE { get; set; }
-        public string VEHICLE_CALSS { get; set; }
+        public string VEHICLE_CLASS { get; set; }
         public string PLATE_NO { get; set; }
         public string SERIAL_NO { get; set; }
         public string MOTOR_NO { get; set; }
         public string SEATING_CAPACITY { get; set; }
-        public Nullable<System.DateTime> MODEL_YR { get; set; }
+        public string MODEL_YR { get; set; }
         public string COVERAGE_YR { get; set; }
         public string MAKE { get; set; }
         public string SERIES { get; set; }
         public string SERVICE_TYPE { get; set; }
         public string COLOR { get; set; }
         public string UN_WEIGHT { get; set; }
-        public string LTFRB_NO { get; set; }
-        public Nullable<System.DateTime> FRNCHISE_DATE { get; set; }
-        public string ROUTE_FROM { get; set; }
-        public string ROUTE_TO { get; set; }
-        public string VIA { get; set; }
         public string ASSURED_TIN { get; set; }
         public Nullable<System.DateTime> INSURED_FROM { get; set; }
         public Nullable<System.DateTime> INSURED_TO { get; set; }
         public string REMARKS { get; set; }
         public string TAX_TYPE { get; set; }
-        public string CITY_CODE { get; set; }
         public string PLACE_ISSUED { get; set; }
         public string MV_FILENO { get; set; }
-        public string TAX_PREMIUM { get; set; }
-        public Nullable<System.DateTime> paregister { get; set; }
-        public string pabhospcd { get; set; }
-        public string CTPL_CODE { get; set; }
+        public Nullable<System.DateTime> PAREGISTER { get; set; }
+        public string COMP_ID { get; set; }
         public string BLT_FILENO { get; set; }
-        public string BYCOMP { get; set; }
-        public string PUB_VEHICLE { get; set; }
         public string BUS_PROF { get; set; }
-        public Nullable<System.DateTime> INSURED_FROM_PPAI { get; set; }
-        public Nullable<System.DateTime> INSURED_TO_PPAI { get; set; }
         public Nullable<decimal> NO_DAYS { get; set; }
         public string PRO_RATA { get; set; }
         public string UPLOADED_CODE { get; set; }
         public Nullable<System.DateTime> UPLOADED_DATE { get; set; }
-        public string LTFRB_DCODE { get; set; }
-        public Nullable<System.DateTime> LTFRB_DDATE { get; set; }
-        public Nullable<int> STATUS { get; set; }
     }
 }

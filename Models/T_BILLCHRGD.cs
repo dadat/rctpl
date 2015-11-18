@@ -30,10 +30,7 @@ namespace RCTPL_WebProjects.Models
         public string COLORNUM { get; set; }
         public string BCDSINO { get; set; }
         public Nullable<decimal> BCDTPPBAL { get; set; }
-        public Nullable<decimal> TAX_AMT { get; set; }
-        public string PRNT { get; set; }
         public Nullable<decimal> DOC_STAMP { get; set; }
-        public Nullable<decimal> PREM_TAX { get; set; }
         public Nullable<decimal> E_VAT { get; set; }
         public Nullable<decimal> LGT { get; set; }
         public Nullable<decimal> SUM_INSIRED { get; set; }
@@ -42,9 +39,9 @@ namespace RCTPL_WebProjects.Models
         public Nullable<decimal> BASIC_PREMIUM { get; set; }
         public string DOC_OR { get; set; }
         public string COI { get; set; }
-        public string COC { get; set; }
         public Nullable<decimal> COMMISSION { get; set; }
         public string AUTHEN_CODE { get; set; }
+        public Nullable<decimal> TAX_AMT { get; set; }
         public string WITH_COM { get; set; }
         public Nullable<decimal> W_TAX { get; set; }
         public Nullable<decimal> W_TAX_NET { get; set; }
@@ -59,11 +56,13 @@ namespace RCTPL_WebProjects.Models
         public string LTFRB_DCODE { get; set; }
         public Nullable<System.DateTime> LTFRB_DDATE { get; set; }
         public string VEHICLE_NUMBER { get; set; }
-        public string CAN_POLICY { get; set; }
         public Nullable<decimal> REFUND { get; set; }
         public Nullable<decimal> OTH_CHRGES { get; set; }
         public Nullable<decimal> TAXES { get; set; }
+        public string CAN_POLICY { get; set; }
         public Nullable<System.DateTime> DATE_CANCEL { get; set; }
         public string can_user { get; set; }
+        public string PRNT { get; set; }
+        public string REF_NUM { get; set; }
     }
 }

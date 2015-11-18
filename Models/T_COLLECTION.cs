@@ -25,7 +25,9 @@ namespace RCTPL_WebProjects.Models
         public string COLORNUM { get; set; }
         public string COLSTATOR { get; set; }
         public string COLREFNO { get; set; }
-        public string COLCRDCHKNO { get; set; }
+        public string BANK_NAME { get; set; }
+        public string CARD_HOLDER { get; set; }
+        public string CARD_NO { get; set; }
         public string COLREMARK { get; set; }
         public string COLPAYOR { get; set; }
         public string WITH_TAX { get; set; }

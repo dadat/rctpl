@@ -7,52 +7,35 @@
     <Property Name="PAIP_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PAPIN" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="PALNAME" Type="varchar" MaxLength="150" />
-    <Property Name="PAFNAME" Type="varchar" MaxLength="150" />
-    <Property Name="PAMNAME" Type="varchar" MaxLength="50" />
     <Property Name="PAADDRESS" Type="varchar" MaxLength="150" />
     <Property Name="MV_TYPE" Type="varchar" MaxLength="20" />
-    <Property Name="VEHICLE_CALSS" Type="varchar" MaxLength="20" />
-    <Property Name="PLATE_NO" Type="char" MaxLength="20" />
-    <Property Name="SERIAL_NO" Type="char" MaxLength="40" />
-    <Property Name="MOTOR_NO" Type="char" MaxLength="40" />
+    <Property Name="VEHICLE_CLASS" Type="varchar" MaxLength="20" />
+    <Property Name="PLATE_NO" Type="varchar" MaxLength="10" />
+    <Property Name="SERIAL_NO" Type="varchar" MaxLength="40" />
+    <Property Name="MOTOR_NO" Type="varchar" MaxLength="40" />
     <Property Name="SEATING_CAPACITY" Type="varchar" MaxLength="20" />
-    <Property Name="MODEL_YR" Type="datetime" />
+    <Property Name="MODEL_YR" Type="varchar" MaxLength="20" />
     <Property Name="COVERAGE_YR" Type="varchar" MaxLength="5" />
-    <Property Name="MAKE" Type="char" MaxLength="25" />
+    <Property Name="MAKE" Type="varchar" MaxLength="25" />
     <Property Name="SERIES" Type="varchar" MaxLength="20" />
     <Property Name="SERVICE_TYPE" Type="varchar" MaxLength="20" />
     <Property Name="COLOR" Type="varchar" MaxLength="20" />
-    <Property Name="UN_WEIGHT" Type="char" MaxLength="20" />
-    <Property Name="LTFRB_NO" Type="char" MaxLength="10" />
-    <Property Name="FRNCHISE_DATE" Type="datetime" />
-    <Property Name="ROUTE_FROM" Type="char" MaxLength="60" />
-    <Property Name="ROUTE_TO" Type="char" MaxLength="60" />
-    <Property Name="VIA" Type="varchar" MaxLength="20" />
-    <Property Name="ASSURED_TIN" Type="char" MaxLength="20" />
+    <Property Name="UN_WEIGHT" Type="varchar" MaxLength="50" />
+    <Property Name="ASSURED_TIN" Type="varchar" MaxLength="50" />
     <Property Name="INSURED_FROM" Type="datetime" />
     <Property Name="INSURED_TO" Type="datetime" />
     <Property Name="REMARKS" Type="varchar" MaxLength="50" />
-    <Property Name="TAX_TYPE" Type="char" MaxLength="10" />
-    <Property Name="CITY_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="TAX_TYPE" Type="varchar" MaxLength="50" />
     <Property Name="PLACE_ISSUED" Type="varchar" MaxLength="20" />
-    <Property Name="MV_FILENO" Type="char" MaxLength="15" />
-    <Property Name="TAX_PREMIUM" Type="char" MaxLength="18" />
-    <Property Name="paregister" Type="datetime" />
-    <Property Name="pabhospcd" Type="varchar" MaxLength="12" />
-    <Property Name="CTPL_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="MV_FILENO" Type="varchar" MaxLength="50" />
+    <Property Name="PAREGISTER" Type="datetime" />
+    <Property Name="COMP_ID" Type="varchar" MaxLength="12" />
     <Property Name="BLT_FILENO" Type="varchar" MaxLength="20" />
-    <Property Name="BYCOMP" Type="char" MaxLength="1" />
-    <Property Name="PUB_VEHICLE" Type="char" MaxLength="1" />
     <Property Name="BUS_PROF" Type="varchar" MaxLength="20" />
-    <Property Name="INSURED_FROM_PPAI" Type="datetime" />
-    <Property Name="INSURED_TO_PPAI" Type="datetime" />
     <Property Name="NO_DAYS" Type="decimal" Precision="18" Scale="0" />
     <Property Name="PRO_RATA" Type="char" MaxLength="1" />
     <Property Name="UPLOADED_CODE" Type="varchar" MaxLength="50" />
     <Property Name="UPLOADED_DATE" Type="datetime" />
-    <Property Name="LTFRB_DCODE" Type="varchar" MaxLength="50" />
-    <Property Name="LTFRB_DDATE" Type="datetime" />
-    <Property Name="STATUS" Type="int" />
   </EntityType>
   <EntityType Name="T_BILLCHRGD">
     <Key>
@@ -74,10 +57,7 @@
     <Property Name="COLORNUM" Type="varchar" MaxLength="15" />
     <Property Name="BCDSINO" Type="varchar" MaxLength="12" />
     <Property Name="BCDTPPBAL" Type="decimal" Precision="15" Scale="5" />
-    <Property Name="TAX_AMT" Type="decimal" Precision="15" Scale="5" />
-    <Property Name="PRNT" Type="char" MaxLength="1" />
     <Property Name="DOC_STAMP" Type="decimal" Precision="15" Scale="5" />
-    <Property Name="PREM_TAX" Type="decimal" Precision="15" Scale="5" />
     <Property Name="E_VAT" Type="decimal" Precision="15" Scale="5" />
     <Property Name="LGT" Type="decimal" Precision="15" Scale="5" />
     <Property Name="SUM_INSIRED" Type="decimal" Precision="15" Scale="5" />
@@ -86,9 +66,9 @@
     <Property Name="BASIC_PREMIUM" Type="decimal" Precision="15" Scale="5" />
     <Property Name="DOC_OR" Type="varchar" MaxLength="15" />
     <Property Name="COI" Type="varchar" MaxLength="20" />
-    <Property Name="COC" Type="varchar" MaxLength="20" />
     <Property Name="COMMISSION" Type="decimal" Precision="15" Scale="5" />
     <Property Name="AUTHEN_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="TAX_AMT" Type="decimal" Precision="15" Scale="5" />
     <Property Name="WITH_COM" Type="char" MaxLength="1" />
     <Property Name="W_TAX" Type="decimal" Precision="15" Scale="5" />
     <Property Name="W_TAX_NET" Type="decimal" Precision="15" Scale="5" />
@@ -103,12 +83,14 @@
     <Property Name="LTFRB_DCODE" Type="varchar" MaxLength="50" />
     <Property Name="LTFRB_DDATE" Type="datetime" />
     <Property Name="VEHICLE_NUMBER" Type="varchar" MaxLength="20" />
-    <Property Name="CAN_POLICY" Type="char" MaxLength="1" />
     <Property Name="REFUND" Type="decimal" Precision="15" Scale="5" />
     <Property Name="OTH_CHRGES" Type="decimal" Precision="15" Scale="5" />
     <Property Name="TAXES" Type="decimal" Precision="15" Scale="5" />
+    <Property Name="CAN_POLICY" Type="char" MaxLength="1" />
     <Property Name="DATE_CANCEL" Type="datetime" />
     <Property Name="can_user" Type="varchar" MaxLength="50" />
+    <Property Name="PRNT" Type="char" MaxLength="1" />
+    <Property Name="REF_NUM" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="T_BILLCHRGH">
     <Key>
@@ -139,7 +121,9 @@
     <Property Name="COLORNUM" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="COLSTATOR" Type="char" MaxLength="1" Nullable="false" />
     <Property Name="COLREFNO" Type="varchar" MaxLength="12" Nullable="false" />
-    <Property Name="COLCRDCHKNO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="BANK_NAME" Type="varchar" MaxLength="10" />
+    <Property Name="CARD_HOLDER" Type="varchar" MaxLength="50" />
+    <Property Name="CARD_NO" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="COLREMARK" Type="varchar" MaxLength="50" />
     <Property Name="COLPAYOR" Type="varchar" MaxLength="150" Nullable="false" />
     <Property Name="WITH_TAX" Type="char" MaxLength="1" />
@@ -156,16 +140,12 @@
     <Property Name="SINO" Type="varchar" MaxLength="12" Nullable="false" />
     <Property Name="SIDATE" Type="datetime" Nullable="false" />
     <Property Name="SIUSER" Type="varchar" MaxLength="8" Nullable="false" />
-    <Property Name="SIAGE" Type="tinyint" />
     <Property Name="SICANCEL" Type="char" MaxLength="1" />
     <Property Name="SIREASON" Type="varchar" MaxLength="40" />
     <Property Name="SIDTECANCEL" Type="datetime" />
     <Property Name="CANUSER" Type="varchar" MaxLength="8" />
     <Property Name="AMOUNT" Type="decimal" Precision="8" Scale="2" />
-    <Property Name="DOCPRINT" Type="char" MaxLength="1" />
-    <Property Name="DUMPED" Type="char" MaxLength="1" />
     <Property Name="COI" Type="varchar" MaxLength="20" />
-    <Property Name="COC" Type="varchar" MaxLength="20" />
     <Property Name="UPLOADED_CODE" Type="varchar" MaxLength="50" />
     <Property Name="UPLOADED_DATE" Type="datetime" />
   </EntityType>
@@ -185,21 +165,6 @@
     <Property Name="TRKUSRID" Type="varchar" MaxLength="8" />
     <Property Name="UPLOADED_CODE" Type="varchar" MaxLength="50" />
     <Property Name="UPLOADED_DATE" Type="datetime" />
-  </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'RCTPL.dbo.TBL_PAYMENTS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="TBL_PAYMENTS">
-    <Key>
-      <PropertyRef Name="PAYMENT_ID" />
-    </Key>
-    <Property Name="PAYMENT_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="USERNAME" Type="varchar" MaxLength="50" />
-    <Property Name="C_NAME" Type="varchar" MaxLength="50" />
-    <Property Name="PLATE" Type="varchar" MaxLength="50" />
-    <Property Name="CHASIS" Type="varchar" MaxLength="50" />
-    <Property Name="ENGINE" Type="varchar" MaxLength="50" />
-    <Property Name="VEHICLE" Type="varchar" MaxLength="50" />
-    <Property Name="TOTAL_AMOUNT" Type="decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="TBL_SYSTEMUSERS">
     <Key>
@@ -243,25 +208,6 @@ warning 6002: The table/view 'RCTPL.dbo.TBL_PAYMENTS' does not have a primary ke
     <Property Name="MAILING_ADDRESS" Type="varchar" MaxLength="400" />
     <Property Name="CITY" Type="varchar" MaxLength="100" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'RCTPL.dbo.TBLSEARCH' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-  <EntityType Name="TBLSEARCH">
-    <Key>
-      <PropertyRef Name="SEARCH_ID" />
-    </Key>
-    <Property Name="SEARCH_ID" Type="bigint" Nullable="false" />
-    <Property Name="PLATE_NO" Type="varchar" MaxLength="10" />
-    <Property Name="MODEL" Type="int" />
-    <Property Name="MAKE" Type="varchar" MaxLength="100" />
-    <Property Name="MVFILE_NO" Type="varchar" MaxLength="17" />
-    <Property Name="ENGINE" Type="varchar" MaxLength="40" />
-    <Property Name="CHASIS_NO" Type="varchar" MaxLength="40" />
-    <Property Name="COLOR" Type="varchar" MaxLength="40" />
-    <Property Name="TYPE_SERVICE" Type="varchar" MaxLength="30" />
-    <Property Name="SERIES" Type="varchar" MaxLength="30" />
-    <Property Name="STATUS" Type="int" />
-    <Property Name="PAPIN" Type="varchar" MaxLength="50" />
-  </EntityType>
   <EntityContainer Name="RCTPLModelStoreContainer">
     <EntitySet Name="M_PAIP" EntityType="Self.M_PAIP" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="T_BILLCHRGD" EntityType="Self.T_BILLCHRGD" Schema="dbo" store:Type="Tables" />
@@ -271,33 +217,5 @@ warning 6002: The table/view 'RCTPL.dbo.TBLSEARCH' does not have a primary key d
     <EntitySet Name="T_TRACKING" EntityType="Self.T_TRACKING" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_SYSTEMUSERS" EntityType="Self.TBL_SYSTEMUSERS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_WEBUSERS" EntityType="Self.TBL_WEBUSERS" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TBL_PAYMENTS" EntityType="Self.TBL_PAYMENTS" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [TBL_PAYMENTS].[PAYMENT_ID] AS [PAYMENT_ID], 
-    [TBL_PAYMENTS].[USERNAME] AS [USERNAME], 
-    [TBL_PAYMENTS].[C_NAME] AS [C_NAME], 
-    [TBL_PAYMENTS].[PLATE] AS [PLATE], 
-    [TBL_PAYMENTS].[CHASIS] AS [CHASIS], 
-    [TBL_PAYMENTS].[ENGINE] AS [ENGINE], 
-    [TBL_PAYMENTS].[VEHICLE] AS [VEHICLE], 
-    [TBL_PAYMENTS].[TOTAL_AMOUNT] AS [TOTAL_AMOUNT]
-    FROM [dbo].[TBL_PAYMENTS] AS [TBL_PAYMENTS]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="TBLSEARCH" EntityType="Self.TBLSEARCH" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [TBLSEARCH].[SEARCH_ID] AS [SEARCH_ID], 
-    [TBLSEARCH].[PLATE_NO] AS [PLATE_NO], 
-    [TBLSEARCH].[MODEL] AS [MODEL], 
-    [TBLSEARCH].[MAKE] AS [MAKE], 
-    [TBLSEARCH].[MVFILE_NO] AS [MVFILE_NO], 
-    [TBLSEARCH].[ENGINE] AS [ENGINE], 
-    [TBLSEARCH].[CHASIS_NO] AS [CHASIS_NO], 
-    [TBLSEARCH].[COLOR] AS [COLOR], 
-    [TBLSEARCH].[TYPE_SERVICE] AS [TYPE_SERVICE], 
-    [TBLSEARCH].[SERIES] AS [SERIES], 
-    [TBLSEARCH].[STATUS] AS [STATUS], 
-    [TBLSEARCH].[PAPIN] AS [PAPIN]
-    FROM [dbo].[TBLSEARCH] AS [TBLSEARCH]</DefiningQuery>
-    </EntitySet>
   </EntityContainer>
 </Schema>

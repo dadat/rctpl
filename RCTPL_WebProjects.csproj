@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="clsYtiruceS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>resources\clsYtiruceS.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -165,65 +169,74 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminBaseController.cs" />
     <Compile Include="Controllers\AdminFiles\AdminController.cs" />
     <Compile Include="Controllers\AdminFiles\MaintenanceController.cs" />
     <Compile Include="Controllers\AdminFiles\SystemUserControlController.cs" />
+    <Compile Include="Controllers\AdminFiles\TransactionHistoryController.cs" />
     <Compile Include="Controllers\AdminFiles\UserControlController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Richmer\DashboardController.cs" />
+    <Compile Include="Controllers\Richmer\MyAdminLoginController.cs" />
+    <Compile Include="Controllers\Yhogz\WEBUSERSController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\M_PAIP.cs">
-      <DependentUpon>RCTPLModel.tt</DependentUpon>
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\RCTPLModel.Context.cs">
+    <Compile Include="Models\RCTPLModels.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RCTPLModel.Context.tt</DependentUpon>
+      <DependentUpon>RCTPLModels.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\RCTPLModel.cs">
+    <Compile Include="Models\RCTPLModels.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RCTPLModel.tt</DependentUpon>
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\RCTPLModel.Designer.cs">
+    <Compile Include="Models\RCTPLModels.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RCTPLModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TBLSEARCH.cs">
-      <DependentUpon>RCTPLModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TBL_PAYMENTS.cs">
-      <DependentUpon>RCTPLModel.tt</DependentUpon>
+      <DependentUpon>RCTPLModels.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\TBL_SYSTEMUSERS.cs">
-      <DependentUpon>RCTPLModel.tt</DependentUpon>
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_VEHICLES.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TBL_WEBUSERS.cs">
-      <DependentUpon>RCTPLModel.tt</DependentUpon>
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\T_BILLCHRGD.cs">
-      <DependentUpon>RCTPLModel.tt</DependentUpon>
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\T_BILLCHRGH.cs">
-      <DependentUpon>RCTPLModel.tt</DependentUpon>
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\T_COLLECTION.cs">
-      <DependentUpon>RCTPLModel.tt</DependentUpon>
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\T_SINO.cs">
-      <DependentUpon>RCTPLModel.tt</DependentUpon>
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\T_TRACKING.cs">
-      <DependentUpon>RCTPLModel.tt</DependentUpon>
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\WebUserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ContentRD\bg_images\232344-cyan-hd.jpg" />
+    <Content Include="ContentRD\bg_images\blurry-blue-green-backgrounds-powerpoint.jpg" />
+    <Content Include="ContentRD\bg_images\circuit-board.jpg" />
+    <Content Include="ContentRD\bg_images\green-background-hd-picture.jpg" />
+    <Content Include="ContentRD\bg_images\public-domain-images-archive-high-quality-resolution-free-download-splitshire-0001-1000x666.jpg" />
     <Content Include="ContentRD\bootstrap\css\adminCustom.css" />
     <Content Include="ContentRD\bootstrap\css\bootstrap.css" />
     <Content Include="ContentRD\bootstrap\css\bootstrap.min.css" />
@@ -1067,6 +1080,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="resources\car-03.jpg" />
+    <Content Include="resources\car-06.jpg" />
+    <Content Include="resources\car-8.jpg" />
+    <Content Include="resources\clsYtiruceS.dll" />
+    <Content Include="resources\superBugatti.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ContentRD\bootstrap\css\bootstrap.css.map" />
@@ -1178,22 +1196,22 @@
     <Content Include="ContentRD\plugins\datatables\extensions\TableTools\Readme.md" />
     <Content Include="ContentRD\plugins\input-mask\phone-codes\phone-be.json" />
     <Content Include="ContentRD\plugins\input-mask\phone-codes\phone-codes.json" />
-    <EntityDeploy Include="Models\RCTPLModel.edmx">
+    <EntityDeploy Include="Models\RCTPLModels.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>RCTPLModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>RCTPLModels.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\RCTPLModel.Context.tt">
+    <Content Include="Models\RCTPLModels.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RCTPLModel.edmx</DependentUpon>
-      <LastGenOutput>RCTPLModel.Context.cs</LastGenOutput>
+      <DependentUpon>RCTPLModels.edmx</DependentUpon>
+      <LastGenOutput>RCTPLModels.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\RCTPLModel.edmx.diagram">
-      <DependentUpon>RCTPLModel.edmx</DependentUpon>
+    <Content Include="Models\RCTPLModels.edmx.diagram">
+      <DependentUpon>RCTPLModels.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\RCTPLModel.tt">
+    <Content Include="Models\RCTPLModels.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RCTPLModel.edmx</DependentUpon>
-      <LastGenOutput>RCTPLModel.cs</LastGenOutput>
+      <DependentUpon>RCTPLModels.edmx</DependentUpon>
+      <LastGenOutput>RCTPLModels.cs</LastGenOutput>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -1252,6 +1270,23 @@
     <Content Include="Views\SystemUserControl\Edit.cshtml" />
     <Content Include="Views\SystemUserControl\Index.cshtml" />
     <Content Include="Views\SystemUserControl\MyAction.cshtml" />
+    <Content Include="Views\Shared\CPwordPartial.cshtml" />
+    <Content Include="Views\Shared\LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_landingLayout.cshtml" />
+    <Content Include="Views\WEBUSERS\ChangePasswd.cshtml" />
+    <Content Include="Views\WEBUSERS\CompletingRegistration.cshtml" />
+    <Content Include="Views\WEBUSERS\Create.cshtml" />
+    <Content Include="Views\WEBUSERS\Delete.cshtml" />
+    <Content Include="Views\WEBUSERS\Details.cshtml" />
+    <Content Include="Views\WEBUSERS\Edit.cshtml" />
+    <Content Include="Views\WEBUSERS\Index.cshtml" />
+    <Content Include="Views\MyAdminLogin\Login.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\TransactionHistory\Create.cshtml" />
+    <Content Include="Views\TransactionHistory\Delete.cshtml" />
+    <Content Include="Views\TransactionHistory\Details.cshtml" />
+    <Content Include="Views\TransactionHistory\Edit.cshtml" />
+    <Content Include="Views\TransactionHistory\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace RCTPL_WebProjects.Controllers
 {
-    public class AdminController : Controller
+    public class AdminController : AdminBaseController
     {
         // GET: Admin
         public ActionResult Index()

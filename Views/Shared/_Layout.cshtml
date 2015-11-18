@@ -58,9 +58,9 @@
                 <!-- Logo -->
                 <a href="index2.html" class="logo">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><b></b>RDMS</span>
+                    <span class="logo-mini"><b></b>RCTPL</span>
                     <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><b>RDMS</b> Inc.</span>
+                    <span class="logo-lg"><b>Malayan</b> Insurance</span>
                 </a>
                 <!-- Header Navbar: style can be found in header.less -->
                 <nav class="navbar navbar-static-top" role="navigation">
@@ -282,22 +282,30 @@
                                     <!-- Menu Body -->
                                     <li class="user-body">
                                         <div class="col-xs-4 text-center">
-                                            <a href="#">Followers</a>
+                                            @*<a href="#">Change Password</a>*@
+                                            @*<a href="javascript:document.getElementById('changePwd').submit();">Change Password</a>*@
+                                            @*<a href="@Url.Action("ChangePasswd", "WEBUSERS")" class="elements"><span>Change Password</span></a>*@
+                                            <a data-toggle="modal" data-target="#CPwordModal">Change Password</a>
                                         </div>
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Sales</a>
-                                        </div>
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Friends</a>
-                                        </div>
-                                    </li>
+
+                                        @*<form class="form" action="/WEBUSERS/ChangePasswd" method="post" id="changePwd">
+
+                                        </form>*@
+
+                                            <div class="col-xs-4 text-center">
+                                                <a href="#">Sales</a>
+                                            </div>
+                                            <div class="col-xs-4 text-center">
+                                                <a href="#">Friends</a>
+                                            </div>
+</li>
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
                                         <div class="pull-left">
                                             <a href="#" class="btn btn-default btn-flat">Profile</a>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="/Users/Logout/" class="btn btn-default btn-flat">Sign out</a>
+                                            <a href="/WEBUSERS/Logout/" class="btn btn-default btn-flat">Sign out</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -349,37 +357,9 @@
                                 <i class="fa fa-dashboard"></i> <span>Admin</span>
                             </a>
                         </li>
-                        <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Transaction History</span></a></li>
-                        <li class="treeview">
-                            <a href="/Reports/Create">
-                                <i class="fa fa-files-o"></i>
-                                <span>Reports</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="/Report/"><i class="fa fa-circle-o"></i>User Reports</a></li>
-                                <li><a href="/Report/Create"><i class="fa fa-circle-o"></i>Issue Policy Reports</a></li>
-
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="/Activity/">
-                                <i class="fa fa-th"></i> <span>End User Control</span>
-                            </a>
-                        </li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-pie-chart"></i>
-                                <span>System User Control</span>
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-                                <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-                                <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-                                <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="/COC/"><i class="fa fa-book"></i> <span>Avail Policy</span></a></li>
+                        <li><a href="/TransactionHistory/"><i class="fa fa-book"></i> <span>Transaction History</span></a></li>
+                     
 
                       
                         <li class="header">LABELS</li>
@@ -397,8 +377,11 @@
             <div class="content-wrapper">
                 <section class="content">
                     @RenderBody()
+                    @Html.Partial("CPwordPartial")
                 </section><!-- /.content -->
             </div><!-- /.content-wrapper -->
+
+
 
 
 
@@ -583,6 +566,8 @@
     {
 
         @RenderBody()
+        @Html.Partial("LoginPartial");
+
     }
 
     <!-- jQuery 2.1.4 -->
@@ -643,6 +628,17 @@
 
     <script type="text/javascript" src="~/assets/js/scripts.js"></script>
     <script type="text/javascript" src="~/assets/plugins/styleswitcher/styleswitcher.js">        /** REMOVE ON PRODUCTION **/</script>
+
+    <script>
+        $(function () {
+            $("#employeeLink").on("click", function (e) {
+                e.preventDefault(); // cancel the link itself
+                $.post(this.href, function (data) {
+                    $("#someContainer").html(data);
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
