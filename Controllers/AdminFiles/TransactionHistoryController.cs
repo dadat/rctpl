@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using RCTPL_WebProjects.Models;
@@ -14,137 +10,38 @@ namespace RCTPL_WebProjects.Controllers.AdminFiles
     public class TransactionHistoryController : Controller
     {
         private RCTPLEntities db = new RCTPLEntities();
-
         // GET: TransactionHistory
-        //public async Task<ActionResult> Index()
-        //{
-        //    return View(await db.TBL_WEBUSERS.ToListAsync());
-        //}
-        private HttpContextBase Context { get; set; }
         public ActionResult Index()
         {
-            try
-            {
-                var value = HttpContext.Session["UName"];
-                if (Session["UName"] == null)
-                {
-                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-                }
-                TBL_WEBUSERS tBL_WEBUSERS = db.TBL_WEBUSERS.SingleOrDefault(u => u.USERNAME == value);
-                if (tBL_WEBUSERS == null)
-                {
-                    return HttpNotFound();
-                }
-                return View(tBL_WEBUSERS);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            var user = Session["UName"].ToString();
+            //date paid placeholder
+            var today = DateTime.Today;
+            TransactionHistoryModels tHistModel = new TransactionHistoryModels();
+
+            List<TransactionHistoryModels> listTransHist = (from tweb in db.TBL_WEBUSERS
+                                       join tchargeh in db.T_BILLCHRGH on tweb.USERNAME equals tchargeh.USRID
+                                       join tcharged in db.T_BILLCHRGD on tchargeh.BCHCHRGNO equals tcharged.BCHCHRGNO
+                                       join tmpaip in db.M_PAIP on tchargeh.PAPIN equals tmpaip.PAPIN
+                                       where tweb.USERNAME.Contains(user)
+                                       orderby tchargeh.BCHDTE
+                                       select new TransactionHistoryModels
+                                       {
+                                           //needs transactionReference
+                                           REF_NUM = tcharged.REF_NUM,
+                                           PLATE_NO = tmpaip.PLATE_NO,
+                                           LASTNAME = tweb.LASTNAME,
+                                           FIRSTNAME = tweb.FIRSTNAME,
+                                           FULLNAME = tweb.LASTNAME + ", " + tweb.FIRSTNAME,
+                                           BCHDTE = tchargeh.BCHDTE,
+                                           MAKE = tmpaip.MAKE,
+                                           BCDPATCOVER = tcharged.BCDPATCOVER,
+                                           COLORNUM = tcharged.COLORNUM,
+                                           DATEPAID = today
+                                           //needs tcharged.datepaid
+                                       }
+                                       ).ToList();
+            return View(listTransHist);
         }
 
-        // GET: TransactionHistory/Details/5
-        public async Task<ActionResult> Details(long? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            TBL_WEBUSERS tBL_WEBUSERS = await db.TBL_WEBUSERS.FindAsync(id);
-            if (tBL_WEBUSERS == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tBL_WEBUSERS);
-        }
-
-        // GET: TransactionHistory/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: TransactionHistory/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "USER_ID,USER_CODE,USERNAME,PASSWORD,E_PASSWORD,SHA_PASSWORD,EMAIL,MIDDLENAME,FIRSTNAME,LASTNAME,CONTACT_NUMBER,DATE_REGISTERED,VERIFICATION_CODE,VERIFICATION_STATUS,DATE_VERIFIED,ACTIVE,REGION,MAILING_ADDRESS,CITY")] TBL_WEBUSERS tBL_WEBUSERS)
-        {
-            if (ModelState.IsValid)
-            {
-                db.TBL_WEBUSERS.Add(tBL_WEBUSERS);
-                await db.SaveChangesAsync();
-                return RedirectToAction("Index");
-            }
-
-            return View(tBL_WEBUSERS);
-        }
-
-        // GET: TransactionHistory/Edit/5
-        public async Task<ActionResult> Edit(long? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            TBL_WEBUSERS tBL_WEBUSERS = await db.TBL_WEBUSERS.FindAsync(id);
-            if (tBL_WEBUSERS == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tBL_WEBUSERS);
-        }
-
-        // POST: TransactionHistory/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "USER_ID,USER_CODE,USERNAME,PASSWORD,E_PASSWORD,SHA_PASSWORD,EMAIL,MIDDLENAME,FIRSTNAME,LASTNAME,CONTACT_NUMBER,DATE_REGISTERED,VERIFICATION_CODE,VERIFICATION_STATUS,DATE_VERIFIED,ACTIVE,REGION,MAILING_ADDRESS,CITY")] TBL_WEBUSERS tBL_WEBUSERS)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(tBL_WEBUSERS).State = EntityState.Modified;
-                await db.SaveChangesAsync();
-                return RedirectToAction("Index");
-            }
-            return View(tBL_WEBUSERS);
-        }
-
-        // GET: TransactionHistory/Delete/5
-        public async Task<ActionResult> Delete(long? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            TBL_WEBUSERS tBL_WEBUSERS = await db.TBL_WEBUSERS.FindAsync(id);
-            if (tBL_WEBUSERS == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tBL_WEBUSERS);
-        }
-
-        // POST: TransactionHistory/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(long id)
-        {
-            TBL_WEBUSERS tBL_WEBUSERS = await db.TBL_WEBUSERS.FindAsync(id);
-            db.TBL_WEBUSERS.Remove(tBL_WEBUSERS);
-            await db.SaveChangesAsync();
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
     }
 }

@@ -212,6 +212,7 @@
     <Compile Include="Models\TBL_WEBUSERS.cs">
       <DependentUpon>RCTPLModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TransactionHistoryModels.cs" />
     <Compile Include="Models\T_BILLCHRGD.cs">
       <DependentUpon>RCTPLModels.tt</DependentUpon>
     </Compile>
@@ -1282,10 +1283,6 @@
     <Content Include="Views\WEBUSERS\Index.cshtml" />
     <Content Include="Views\MyAdminLogin\Login.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
-    <Content Include="Views\TransactionHistory\Create.cshtml" />
-    <Content Include="Views\TransactionHistory\Delete.cshtml" />
-    <Content Include="Views\TransactionHistory\Details.cshtml" />
-    <Content Include="Views\TransactionHistory\Edit.cshtml" />
     <Content Include="Views\TransactionHistory\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
