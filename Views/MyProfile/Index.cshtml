@@ -1,0 +1,196 @@
+﻿@model RCTPL_WebProjects.Models.TBL_WEBUSERS
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="//cdn.muicss.com/mui-0.2.1/css/mui.min.css" rel="stylesheet" type="text/css" />
+<script src="//cdn.muicss.com/mui-0.2.1/js/mui.min.js"></script>
+<h2>User Profile</h2>
+<hr />
+@*<div>
+    <h4>Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+                @Html.DisplayNameFor(model => model.USER_CODE)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.USER_CODE)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.USERNAME)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.USERNAME)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PASSWORD)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PASSWORD)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E_PASSWORD)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E_PASSWORD)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SHA_PASSWORD)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SHA_PASSWORD)
+            </dd>
+
+        <dt>
+                @Html.DisplayNameFor(model => model.EMAIL)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EMAIL)
+            </dd>
+
+        <dt>
+                @Html.DisplayNameFor(model => model.DATE_REGISTERED)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DATE_REGISTERED)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.VERIFICATION_CODE)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.VERIFICATION_CODE)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.VERIFICATION_STATUS)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.VERIFICATION_STATUS)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DATE_VERIFIED)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DATE_VERIFIED)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ACTIVE)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ACTIVE)
+            </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MIDDLENAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MIDDLENAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FIRSTNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FIRSTNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LASTNAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LASTNAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CONTACT_NUMBER)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CONTACT_NUMBER)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REGION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REGION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MAILING_ADDRESS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MAILING_ADDRESS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CITY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CITY)
+        </dd>
+
+    </dl>
+</div>*@
+
+<div class="box box-primary">
+    <div class="box-header with-border">
+        <h3 class="box-title">Details</h3>
+    </div><!-- /.box-header -->
+    <div class="box-body">
+
+        <strong>Name</strong>
+        <p>
+            @Html.DisplayFor(model => model.LASTNAME), @Html.DisplayFor(model => model.FIRSTNAME) @Html.DisplayFor(model => model.MIDDLENAME)
+        </p>
+        <hr />
+
+        <strong><i class="fa fa-book margin-r-5"></i> Contact Number</strong>
+        <p class="text-muted">
+            @Html.DisplayFor(model => model.CONTACT_NUMBER)
+        </p>
+        <hr>
+        <strong><i class="fa fa-map-marker margin-r-5"></i> Mailing Address</strong>
+        <p class="text-muted">@Html.DisplayFor(model => model.MAILING_ADDRESS)</p>
+        <hr>
+        <strong><i class="fa fa-pencil margin-r-5"></i> City</strong>
+        <p>
+            @Html.DisplayFor(model => model.CITY)
+        </p>
+        <hr>
+        <strong><i class="fa fa-file-text-o margin-r-5"></i> Region</strong>
+        <p>@Html.DisplayFor(model => model.REGION)</p>
+    </div><!-- /.box-body -->
+</div><!-- /.box -->
+
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.USER_ID }, new { @class = "mui-btn mui-btn--raised mui-btn--primary" })
+    @*@Html.ActionLink("Back to List", "Index")*@
+</p>

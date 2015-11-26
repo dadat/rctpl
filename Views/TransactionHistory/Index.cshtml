@@ -24,7 +24,7 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td></td>
+                <td>@Html.DisplayFor(modelItem => item.REF_NUM)</td>
                 <td>@Html.DisplayFor(modelItem => item.PLATE_NO)</td>
                 <td>@Html.DisplayFor(modelItem => item.FULLNAME)</td>
                 <td>@Html.DisplayFor(modelItem => item.BCHDTE)</td>
@@ -33,8 +33,8 @@
                 <td>@Html.DisplayFor(modelItem => item.COLORNUM)</td>
                 <td>@Html.DisplayFor(modelItem => item.DATEPAID)</td>
                 <td>
-                    @Html.ActionLink("Pay", "PayNow", new { id = item.REF_NUM }, new { @class = "mui-btn mui-btn--raised mui-btn--danger" })
-                    @Html.ActionLink("Print", "Print", new { id = item.REF_NUM }, new { @class = "mui-btn mui-btn--raised mui-btn--primary" })
+                    @Html.ActionLink("Pay", "PayNow", new { REF_NUM = item.REF_NUM }, new { @class = "mui-btn mui-btn--raised mui-btn--danger" })
+                    @Html.ActionLink("Print", "Payments", "COC", new { REF_NUM = item.REF_NUM }, new { @class = "mui-btn mui-btn--raised mui-btn--primary" })
                 </td>
             </tr>
 

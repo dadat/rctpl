@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AdminBaseController.cs" />
     <Compile Include="Controllers\AdminFiles\AdminController.cs" />
     <Compile Include="Controllers\AdminFiles\MaintenanceController.cs" />
+    <Compile Include="Controllers\AdminFiles\MyProfileController.cs" />
     <Compile Include="Controllers\AdminFiles\SystemUserControlController.cs" />
     <Compile Include="Controllers\AdminFiles\TransactionHistoryController.cs" />
     <Compile Include="Controllers\AdminFiles\UserControlController.cs" />
@@ -1284,6 +1285,11 @@
     <Content Include="Views\MyAdminLogin\Login.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\TransactionHistory\Index.cshtml" />
+    <Content Include="Views\MyProfile\Create.cshtml" />
+    <Content Include="Views\MyProfile\Delete.cshtml" />
+    <Content Include="Views\MyProfile\Details.cshtml" />
+    <Content Include="Views\MyProfile\Edit.cshtml" />
+    <Content Include="Views\MyProfile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

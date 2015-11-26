@@ -27,7 +27,7 @@ namespace RCTPL_WebProjects.Controllers.AdminFiles
                                        select new TransactionHistoryModels
                                        {
                                            //needs transactionReference
-                                           REF_NUM = tcharged.REF_NUM,
+                                           REF_NUM = tcharged.BCHCHRGNO,
                                            PLATE_NO = tmpaip.PLATE_NO,
                                            LASTNAME = tweb.LASTNAME,
                                            FIRSTNAME = tweb.FIRSTNAME,
