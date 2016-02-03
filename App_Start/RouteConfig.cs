@@ -18,7 +18,7 @@ namespace RCTPL_WebProjects
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "WEBUSERS", action = "Index", id = UrlParameter.Optional }
             );
-
+            //Comment for checkin
             routes.MapRoute(
                 "CompleteRegistration",
                 "{controller}/{action}/{_uname}/{_str}",

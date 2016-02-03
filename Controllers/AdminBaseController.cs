@@ -18,7 +18,7 @@ namespace RCTPL_WebProjects.Controllers
                     filterContext.Result = new JsonResult { Data = "LogOut", JsonRequestBehavior = JsonRequestBehavior.AllowGet };
                 }
                 else
-                    filterContext.Result = RedirectToAction("Index", "MyAdminLogin");
+                    filterContext.Result = RedirectToAction("Index", "WEBUSERS");
             }
             else
             {

@@ -1,0 +1,140 @@
+﻿@model RCTPL_WebProjects.Models.Rich.COCModel
+
+
+<!DOCTYPE html>
+<html>
+
+
+<body class="hold-transition skin-blue sidebar-mini">
+   
+      
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Invoice
+                    <small>@Html.DisplayFor(model => model.invoicenum)</small>
+                </h1>
+              
+             
+            </section>
+
+
+            <div class="pad margin no-print">
+                <div class="callout callout-info" style="margin-bottom: 0!important;">
+                    <h4><i class="fa fa-info"></i> Note:</h4>
+                    This page has been enhanced for printing. Click the print button at the bottom of the invoice to test.
+                </div>
+            </div>
+            <!-- Main content -->
+            <section class="invoice">
+                <!-- title row -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h2 class="page-header">
+                            <i class="fa fa-globe"></i> RCTPL
+                            <small class="pull-right"></small>
+                        </h2>
+                    </div><!-- /.col -->
+                </div>
+                <!-- info row -->
+                <div class="row invoice-info">
+                    <div class="col-sm-12 invoice-col">                                    
+                        <div class="box box-solid">
+                            <div class="box-header with-border">
+                                <h4 class="box-title">Client's <strong>Info</strong></h4>
+                                <div class="box-tools">
+                                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                </div>
+                            </div>
+                            <div class="box-body no-padding">
+                            <div class="col-md-4">
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><i></i>Name : @Html.DisplayFor(model => model.name)</li>
+                                    <li><i></i>Plate No. : @Html.DisplayFor(model => model.plateNo)</li>
+                                    <li><i></i>Chasis No. : @Html.DisplayFor(model => model.chasis)</li>
+                                </ul>
+                            </div>
+                                <div class="col-md-4">
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><i></i>Vehicle : @Html.DisplayFor(model => model.name)</li>
+                                        <li><i></i>Year Coverage: @Html.DisplayFor(model => model.YearCoverage)</li>
+                                        <li><i></i>SUM Insured: @Html.DisplayFor(model => model.SUM_INSIRED)</li>
+                                    </ul>
+                                </div>
+                             
+                            </div><!-- /.box-body -->
+                        </div>
+                      
+                    </div><!-- /.col -->
+               
+                </div><!-- /.row -->
+                <!-- Table row -->    
+                <div class="row">
+                    <!-- accepted payments column -->
+                    <div class="col-xs-6">
+                        <p class="lead">Payment Methods:</p>
+                        <img src="~/ContentRD/dist/img/credit/visa.png" />
+                        <img src="~/ContentRD/dist/img/credit/mastercard.png" alt="Mastercard">
+                        <img src="~/ContentRD/dist/img/credit/american-express.png" alt="American Express">
+                        <img src="~/ContentRD/dist/img/credit/paypal2.png" alt="Paypal">
+                       
+                        <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
+                          Temporarily all payments will be transact at the nearest local insurance site.<br />
+                          For Local Site Payment, Please Print Preference slip, <br />
+                          It will be needed for verification to the local site.
+                        </p>
+                    </div><!-- /.col -->
+                    <div class="col-xs-6">
+                        <p class="lead">Payments Details</p>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <th style="width:50%">Basic Premium:</th>
+                                    <td>@Html.DisplayFor(model => model.BASIC_PREMIUM)</td>
+                                </tr>
+                                <tr>
+                                    <th>Doc Stamp</th>
+                                    <td>@Html.DisplayFor(model => model.DOC_STAMP)</td>
+                                </tr>
+                                <tr>
+                                    <th>LGT</th>
+                                    <td>@Html.DisplayFor(model => model.LGT)</td>
+                                </tr>
+                                <tr>
+                                    <th>VAT</th>
+                                    <td>@Html.DisplayFor(model => model.E_VAT)</td>
+                                </tr>
+                                <tr>
+                                    <th>Comp Fee</th>
+                                    <td>@Html.DisplayFor(model => model.COMP_FEE)</td>
+                                </tr>
+                                <tr>
+                                    <th>Cert Fee</th>
+                                    <td>@Html.DisplayFor(model => model.CERT_FEE)</td>
+                                </tr>
+                                <tr>
+                                    <th>Total Amount</th>
+                                    <td><strong>@Html.DisplayFor(model => model.TOTAL_AMOUNT)</strong></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+                <!-- this row will not appear when printing -->
+                <div class="row no-print">
+                    <div class="col-xs-12">                     
+
+                        @*<button class="btn btn-default"><i class="fa fa-print"></i> Print</button>*@    
+                     @*   <a href="/COC/PrintCOC/" class="btn btn-default"><i class="fa fa-print"></i> Print</a>*@    
+                       @* @Html.ActionLink("Print", "PrintCOC", "COC", new { model=>model. }, new { @class = "mui-btn mui-btn--raised mui-btn--primary", @target = "_blank" })*@   
+                        
+                        <a class="mui-btn mui-btn--raised mui-btn--primary btn btn-default" href="/COC/PrintCOC?REF_NUM=@Html.DisplayFor(model => model.bchrgno)" target="_blank"><i class="fa fa-print"></i> Print</a>
+                        @*<button class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Submit Payment</button>*@
+                        <button class="btn btn-success pull-right" style="margin-right: 5px;"><i class="fa fa-download"></i> Online Payment</button>
+                    </div>
+                </div>
+            </section><!-- /.content -->
+            <div class="clearfix"></div>
+   
+</body>
+</html>

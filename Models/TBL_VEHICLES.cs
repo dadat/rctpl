@@ -16,6 +16,7 @@ namespace RCTPL_WebProjects.Models
     {
         public string PKCD { get; set; }
         public string PACKAGE_DESC { get; set; }
+        public Nullable<int> YEAR_COVERAGE { get; set; }
         public string SERVICE_CODE { get; set; }
         public string SERVICE_TYPE { get; set; }
         public Nullable<decimal> SUM_INSURED { get; set; }
@@ -29,5 +30,11 @@ namespace RCTPL_WebProjects.Models
         public string VEHICLE_CODE { get; set; }
         public string VEHICLE_NUMBER { get; set; }
         public long VEHICLE_ID { get; set; }
+        public string BRANCH_CODE { get; set; }
+        public Nullable<decimal> AUTHEN_FEE { get; set; }
+        public Nullable<decimal> CTPL { get; set; }
+        public Nullable<decimal> PL { get; set; }
+        public Nullable<decimal> BAYAD_CENTER { get; set; }
+        public Nullable<decimal> LGT_RATE { get; set; }
     }
 }

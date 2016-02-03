@@ -1,122 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="RCTPLModelStoreContainer" CdmEntityContainer="RCTPLEntities3">
-    <EntitySetMapping Name="T_BILLCHRGD">
-      <EntityTypeMapping TypeName="RCTPLModel.T_BILLCHRGD">
-        <MappingFragment StoreEntitySet="T_BILLCHRGD">
-          <ScalarProperty Name="REF_NUM" ColumnName="REF_NUM" />
-          <ScalarProperty Name="BILLD_ID" ColumnName="BILLD_ID" />
-          <ScalarProperty Name="BCHCHRGNO" ColumnName="BCHCHRGNO" />
-          <ScalarProperty Name="BCDSERIES" ColumnName="BCDSERIES" />
-          <ScalarProperty Name="BCDITMCD" ColumnName="BCDITMCD" />
-          <ScalarProperty Name="BCDESC" ColumnName="BCDESC" />
-          <ScalarProperty Name="BCDQTY" ColumnName="BCDQTY" />
-          <ScalarProperty Name="BCDSP" ColumnName="BCDSP" />
-          <ScalarProperty Name="BCDPATCOVER" ColumnName="BCDPATCOVER" />
-          <ScalarProperty Name="BCDPATBAL" ColumnName="BCDPATBAL" />
-          <ScalarProperty Name="BCDTPPCOVER" ColumnName="BCDTPPCOVER" />
-          <ScalarProperty Name="DISCCD" ColumnName="DISCCD" />
-          <ScalarProperty Name="TPCD" ColumnName="TPCD" />
-          <ScalarProperty Name="BCDTPPTAG" ColumnName="BCDTPPTAG" />
-          <ScalarProperty Name="COLORNUM" ColumnName="COLORNUM" />
-          <ScalarProperty Name="BCDSINO" ColumnName="BCDSINO" />
-          <ScalarProperty Name="BCDTPPBAL" ColumnName="BCDTPPBAL" />
-          <ScalarProperty Name="TAX_AMT" ColumnName="TAX_AMT" />
-          <ScalarProperty Name="PRNT" ColumnName="PRNT" />
-          <ScalarProperty Name="DOC_STAMP" ColumnName="DOC_STAMP" />
-          <ScalarProperty Name="E_VAT" ColumnName="E_VAT" />
-          <ScalarProperty Name="LGT" ColumnName="LGT" />
-          <ScalarProperty Name="SUM_INSIRED" ColumnName="SUM_INSIRED" />
-          <ScalarProperty Name="COMP_FEE" ColumnName="COMP_FEE" />
-          <ScalarProperty Name="CERT_FEE" ColumnName="CERT_FEE" />
-          <ScalarProperty Name="BASIC_PREMIUM" ColumnName="BASIC_PREMIUM" />
-          <ScalarProperty Name="DOC_OR" ColumnName="DOC_OR" />
-          <ScalarProperty Name="COI" ColumnName="COI" />
-          <ScalarProperty Name="COMMISSION" ColumnName="COMMISSION" />
-          <ScalarProperty Name="AUTHEN_CODE" ColumnName="AUTHEN_CODE" />
-          <ScalarProperty Name="WITH_COM" ColumnName="WITH_COM" />
-          <ScalarProperty Name="W_TAX" ColumnName="W_TAX" />
-          <ScalarProperty Name="W_TAX_NET" ColumnName="W_TAX_NET" />
-          <ScalarProperty Name="NO_DAYS" ColumnName="NO_DAYS" />
-          <ScalarProperty Name="PRO_RATA" ColumnName="PRO_RATA" />
-          <ScalarProperty Name="REG_TYPE" ColumnName="REG_TYPE" />
-          <ScalarProperty Name="TRANS_TYPE" ColumnName="TRANS_TYPE" />
-          <ScalarProperty Name="REGION" ColumnName="REGION" />
-          <ScalarProperty Name="ENDO_NO" ColumnName="ENDO_NO" />
-          <ScalarProperty Name="UPLOADED_CODE" ColumnName="UPLOADED_CODE" />
-          <ScalarProperty Name="UPLOADED_DATE" ColumnName="UPLOADED_DATE" />
-          <ScalarProperty Name="LTFRB_DCODE" ColumnName="LTFRB_DCODE" />
-          <ScalarProperty Name="LTFRB_DDATE" ColumnName="LTFRB_DDATE" />
-          <ScalarProperty Name="VEHICLE_NUMBER" ColumnName="VEHICLE_NUMBER" />
-          <ScalarProperty Name="CAN_POLICY" ColumnName="CAN_POLICY" />
-          <ScalarProperty Name="REFUND" ColumnName="REFUND" />
-          <ScalarProperty Name="OTH_CHRGES" ColumnName="OTH_CHRGES" />
-          <ScalarProperty Name="TAXES" ColumnName="TAXES" />
-          <ScalarProperty Name="DATE_CANCEL" ColumnName="DATE_CANCEL" />
-          <ScalarProperty Name="can_user" ColumnName="can_user" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="T_BILLCHRGH">
-      <EntityTypeMapping TypeName="RCTPLModel.T_BILLCHRGH">
-        <MappingFragment StoreEntitySet="T_BILLCHRGH">
-          <ScalarProperty Name="BILLH_ID" ColumnName="BILLH_ID" />
-          <ScalarProperty Name="BCHCHRGNO" ColumnName="BCHCHRGNO" />
-          <ScalarProperty Name="PAPIN" ColumnName="PAPIN" />
-          <ScalarProperty Name="TRKID" ColumnName="TRKID" />
-          <ScalarProperty Name="BCHDTE" ColumnName="BCHDTE" />
-          <ScalarProperty Name="USRID" ColumnName="USRID" />
-          <ScalarProperty Name="PKCD" ColumnName="PKCD" />
-          <ScalarProperty Name="UPLOADED_CODE" ColumnName="UPLOADED_CODE" />
-          <ScalarProperty Name="UPLOADED_DATE" ColumnName="UPLOADED_DATE" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="T_COLLECTION">
-      <EntityTypeMapping TypeName="RCTPLModel.T_COLLECTION">
-        <MappingFragment StoreEntitySet="T_COLLECTION">
-          <ScalarProperty Name="CARD_NO" ColumnName="CARD_NO" />
-          <ScalarProperty Name="CARD_HOLDER" ColumnName="CARD_HOLDER" />
-          <ScalarProperty Name="BANK_NAME" ColumnName="BANK_NAME" />
-          <ScalarProperty Name="COLL_ID" ColumnName="COLL_ID" />
-          <ScalarProperty Name="COLNO" ColumnName="COLNO" />
-          <ScalarProperty Name="USRID" ColumnName="USRID" />
-          <ScalarProperty Name="COLORDTE" ColumnName="COLORDTE" />
-          <ScalarProperty Name="COLAMT" ColumnName="COLAMT" />
-          <ScalarProperty Name="CLIENTCD" ColumnName="CLIENTCD" />
-          <ScalarProperty Name="COLPYMTYP" ColumnName="COLPYMTYP" />
-          <ScalarProperty Name="COLPARTICULAR" ColumnName="COLPARTICULAR" />
-          <ScalarProperty Name="COLORNUM" ColumnName="COLORNUM" />
-          <ScalarProperty Name="COLSTATOR" ColumnName="COLSTATOR" />
-          <ScalarProperty Name="COLREFNO" ColumnName="COLREFNO" />
-          <ScalarProperty Name="COLREMARK" ColumnName="COLREMARK" />
-          <ScalarProperty Name="COLPAYOR" ColumnName="COLPAYOR" />
-          <ScalarProperty Name="WITH_TAX" ColumnName="WITH_TAX" />
-          <ScalarProperty Name="TAX_AMT" ColumnName="TAX_AMT" />
-          <ScalarProperty Name="UPLOADED_CODE" ColumnName="UPLOADED_CODE" />
-          <ScalarProperty Name="UPLOADED_DATE" ColumnName="UPLOADED_DATE" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="T_SINO">
-      <EntityTypeMapping TypeName="RCTPLModel.T_SINO">
-        <MappingFragment StoreEntitySet="T_SINO">
-          <ScalarProperty Name="SINO_ID" ColumnName="SINO_ID" />
-          <ScalarProperty Name="TRKID" ColumnName="TRKID" />
-          <ScalarProperty Name="SINO" ColumnName="SINO" />
-          <ScalarProperty Name="SIDATE" ColumnName="SIDATE" />
-          <ScalarProperty Name="SIUSER" ColumnName="SIUSER" />
-          <ScalarProperty Name="SICANCEL" ColumnName="SICANCEL" />
-          <ScalarProperty Name="SIREASON" ColumnName="SIREASON" />
-          <ScalarProperty Name="SIDTECANCEL" ColumnName="SIDTECANCEL" />
-          <ScalarProperty Name="CANUSER" ColumnName="CANUSER" />
-          <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
-          <ScalarProperty Name="COI" ColumnName="COI" />
-          <ScalarProperty Name="UPLOADED_CODE" ColumnName="UPLOADED_CODE" />
-          <ScalarProperty Name="UPLOADED_DATE" ColumnName="UPLOADED_DATE" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
+  <EntityContainerMapping StorageEntityContainer="RCTPLModelStoreContainer" CdmEntityContainer="RCTPLEntities">
     <EntitySetMapping Name="T_TRACKING">
       <EntityTypeMapping TypeName="RCTPLModel.T_TRACKING">
         <MappingFragment StoreEntitySet="T_TRACKING">
@@ -157,6 +41,8 @@
     <EntitySetMapping Name="TBL_WEBUSERS">
       <EntityTypeMapping TypeName="RCTPLModel.TBL_WEBUSERS">
         <MappingFragment StoreEntitySet="TBL_WEBUSERS">
+          <ScalarProperty Name="COMP" ColumnName="COMP" />
+          <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
           <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
           <ScalarProperty Name="USER_CODE" ColumnName="USER_CODE" />
           <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
@@ -179,11 +65,67 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="M_COMPANY">
+      <EntityTypeMapping TypeName="RCTPLModel.M_COMPANY">
+        <MappingFragment StoreEntitySet="M_COMPANY">
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="STADDR" ColumnName="STADDR" />
+          <ScalarProperty Name="TELNO1" ColumnName="TELNO1" />
+          <ScalarProperty Name="FAXNO" ColumnName="FAXNO" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="CONTACT_no" ColumnName="CONTACT_no" />
+          <ScalarProperty Name="LOGO" ColumnName="LOGO" />
+          <ScalarProperty Name="VAT" ColumnName="VAT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_VEHICLES">
+      <EntityTypeMapping TypeName="RCTPLModel.TBL_VEHICLES">
+        <MappingFragment StoreEntitySet="TBL_VEHICLES">
+          <ScalarProperty Name="LGT_RATE" ColumnName="LGT_RATE" />
+          <ScalarProperty Name="BAYAD_CENTER" ColumnName="BAYAD_CENTER" />
+          <ScalarProperty Name="PL" ColumnName="PL" />
+          <ScalarProperty Name="CTPL" ColumnName="CTPL" />
+          <ScalarProperty Name="AUTHEN_FEE" ColumnName="AUTHEN_FEE" />
+          <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+          <ScalarProperty Name="VEHICLE_ID" ColumnName="VEHICLE_ID" />
+          <ScalarProperty Name="VEHICLE_NUMBER" ColumnName="VEHICLE_NUMBER" />
+          <ScalarProperty Name="VEHICLE_CODE" ColumnName="VEHICLE_CODE" />
+          <ScalarProperty Name="TOTAL_AMOUNT" ColumnName="TOTAL_AMOUNT" />
+          <ScalarProperty Name="CERT_FEE" ColumnName="CERT_FEE" />
+          <ScalarProperty Name="COMP_FEE" ColumnName="COMP_FEE" />
+          <ScalarProperty Name="VAT" ColumnName="VAT" />
+          <ScalarProperty Name="LGT" ColumnName="LGT" />
+          <ScalarProperty Name="DOC_STAMP" ColumnName="DOC_STAMP" />
+          <ScalarProperty Name="BASIC_PREMIUM" ColumnName="BASIC_PREMIUM" />
+          <ScalarProperty Name="SUM_INSURED" ColumnName="SUM_INSURED" />
+          <ScalarProperty Name="SERVICE_TYPE" ColumnName="SERVICE_TYPE" />
+          <ScalarProperty Name="SERVICE_CODE" ColumnName="SERVICE_CODE" />
+          <ScalarProperty Name="YEAR_COVERAGE" ColumnName="YEAR_COVERAGE" />
+          <ScalarProperty Name="PACKAGE_DESC" ColumnName="PACKAGE_DESC" />
+          <ScalarProperty Name="PKCD" ColumnName="PKCD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="M_PAIP">
       <EntityTypeMapping TypeName="RCTPLModel.M_PAIP">
         <MappingFragment StoreEntitySet="M_PAIP">
+          <ScalarProperty Name="RISK_CODE" ColumnName="RISK_CODE" />
+          <ScalarProperty Name="BY_COMPNAME" ColumnName="BY_COMPNAME" />
+          <ScalarProperty Name="COMPANY_NAME" ColumnName="COMPANY_NAME" />
+          <ScalarProperty Name="MIDDLE_NAME" ColumnName="MIDDLE_NAME" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
           <ScalarProperty Name="UPLOADED_DATE" ColumnName="UPLOADED_DATE" />
           <ScalarProperty Name="UPLOADED_CODE" ColumnName="UPLOADED_CODE" />
+          <ScalarProperty Name="TYPE_BODY" ColumnName="TYPE_BODY" />
+          <ScalarProperty Name="VEHICLE_TYPE" ColumnName="VEHICLE_TYPE" />
+          <ScalarProperty Name="NON_LTO" ColumnName="NON_LTO" />
+          <ScalarProperty Name="BRANCH" ColumnName="BRANCH" />
+          <ScalarProperty Name="FUEL" ColumnName="FUEL" />
+          <ScalarProperty Name="FLEET" ColumnName="FLEET" />
           <ScalarProperty Name="PRO_RATA" ColumnName="PRO_RATA" />
           <ScalarProperty Name="NO_DAYS" ColumnName="NO_DAYS" />
           <ScalarProperty Name="BUS_PROF" ColumnName="BUS_PROF" />
@@ -214,6 +156,144 @@
           <ScalarProperty Name="PALNAME" ColumnName="PALNAME" />
           <ScalarProperty Name="PAPIN" ColumnName="PAPIN" />
           <ScalarProperty Name="PAIP_ID" ColumnName="PAIP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_BILLCHRGD">
+      <EntityTypeMapping TypeName="RCTPLModel.T_BILLCHRGD">
+        <MappingFragment StoreEntitySet="T_BILLCHRGD">
+          <ScalarProperty Name="W_TAX_SHARE" ColumnName="W_TAX_SHARE" />
+          <ScalarProperty Name="CHARGES_OR" ColumnName="CHARGES_OR" />
+          <ScalarProperty Name="INCEPTION_TO" ColumnName="INCEPTION_TO" />
+          <ScalarProperty Name="INCEPTION_FROM" ColumnName="INCEPTION_FROM" />
+          <ScalarProperty Name="LGT_RATE" ColumnName="LGT_RATE" />
+          <ScalarProperty Name="RISK_CODE" ColumnName="RISK_CODE" />
+          <ScalarProperty Name="BAYAD_CENTER" ColumnName="BAYAD_CENTER" />
+          <ScalarProperty Name="COC_SERIES" ColumnName="COC_SERIES" />
+          <ScalarProperty Name="MUNICIPALITY" ColumnName="MUNICIPALITY" />
+          <ScalarProperty Name="AUTHEN_FEE" ColumnName="AUTHEN_FEE" />
+          <ScalarProperty Name="PL" ColumnName="PL" />
+          <ScalarProperty Name="CTPL" ColumnName="CTPL" />
+          <ScalarProperty Name="QR_IMAGE" ColumnName="QR_IMAGE" />
+          <ScalarProperty Name="TPP_SHARE" ColumnName="TPP_SHARE" />
+          <ScalarProperty Name="COMP_SHARE" ColumnName="COMP_SHARE" />
+          <ScalarProperty Name="VEHICLE_CODE" ColumnName="VEHICLE_CODE" />
+          <ScalarProperty Name="DATEPAID" ColumnName="DATEPAID" />
+          <ScalarProperty Name="REF_NUM" ColumnName="REF_NUM" />
+          <ScalarProperty Name="DATE_PRINTED" ColumnName="DATE_PRINTED" />
+          <ScalarProperty Name="PRNT" ColumnName="PRNT" />
+          <ScalarProperty Name="can_user" ColumnName="can_user" />
+          <ScalarProperty Name="DATE_CANCEL" ColumnName="DATE_CANCEL" />
+          <ScalarProperty Name="CAN_POLICY" ColumnName="CAN_POLICY" />
+          <ScalarProperty Name="TAXES" ColumnName="TAXES" />
+          <ScalarProperty Name="OTH_CHRGES" ColumnName="OTH_CHRGES" />
+          <ScalarProperty Name="REFUND" ColumnName="REFUND" />
+          <ScalarProperty Name="VEHICLE_NUMBER" ColumnName="VEHICLE_NUMBER" />
+          <ScalarProperty Name="LTFRB_DDATE" ColumnName="LTFRB_DDATE" />
+          <ScalarProperty Name="LTFRB_DCODE" ColumnName="LTFRB_DCODE" />
+          <ScalarProperty Name="UPLOADED_DATE" ColumnName="UPLOADED_DATE" />
+          <ScalarProperty Name="UPLOADED_CODE" ColumnName="UPLOADED_CODE" />
+          <ScalarProperty Name="ENDO_NO" ColumnName="ENDO_NO" />
+          <ScalarProperty Name="REGION" ColumnName="REGION" />
+          <ScalarProperty Name="TRANS_TYPE" ColumnName="TRANS_TYPE" />
+          <ScalarProperty Name="REG_TYPE" ColumnName="REG_TYPE" />
+          <ScalarProperty Name="PRO_RATA" ColumnName="PRO_RATA" />
+          <ScalarProperty Name="NO_DAYS" ColumnName="NO_DAYS" />
+          <ScalarProperty Name="W_TAX_NET" ColumnName="W_TAX_NET" />
+          <ScalarProperty Name="W_TAX" ColumnName="W_TAX" />
+          <ScalarProperty Name="WITH_COM" ColumnName="WITH_COM" />
+          <ScalarProperty Name="TAX_AMT" ColumnName="TAX_AMT" />
+          <ScalarProperty Name="AUTHEN_CODE" ColumnName="AUTHEN_CODE" />
+          <ScalarProperty Name="COMMISSION" ColumnName="COMMISSION" />
+          <ScalarProperty Name="COI" ColumnName="COI" />
+          <ScalarProperty Name="DOC_OR" ColumnName="DOC_OR" />
+          <ScalarProperty Name="BASIC_PREMIUM" ColumnName="BASIC_PREMIUM" />
+          <ScalarProperty Name="CERT_FEE" ColumnName="CERT_FEE" />
+          <ScalarProperty Name="COMP_FEE" ColumnName="COMP_FEE" />
+          <ScalarProperty Name="SUM_INSIRED" ColumnName="SUM_INSIRED" />
+          <ScalarProperty Name="LGT" ColumnName="LGT" />
+          <ScalarProperty Name="E_VAT" ColumnName="E_VAT" />
+          <ScalarProperty Name="DOC_STAMP" ColumnName="DOC_STAMP" />
+          <ScalarProperty Name="BCDTPPBAL" ColumnName="BCDTPPBAL" />
+          <ScalarProperty Name="BCDSINO" ColumnName="BCDSINO" />
+          <ScalarProperty Name="COLORNUM" ColumnName="COLORNUM" />
+          <ScalarProperty Name="BCDTPPTAG" ColumnName="BCDTPPTAG" />
+          <ScalarProperty Name="TPCD" ColumnName="TPCD" />
+          <ScalarProperty Name="DISCCD" ColumnName="DISCCD" />
+          <ScalarProperty Name="BCDTPPCOVER" ColumnName="BCDTPPCOVER" />
+          <ScalarProperty Name="BCDPATBAL" ColumnName="BCDPATBAL" />
+          <ScalarProperty Name="BCDPATCOVER" ColumnName="BCDPATCOVER" />
+          <ScalarProperty Name="BCDSP" ColumnName="BCDSP" />
+          <ScalarProperty Name="BCDQTY" ColumnName="BCDQTY" />
+          <ScalarProperty Name="BCDESC" ColumnName="BCDESC" />
+          <ScalarProperty Name="BCDITMCD" ColumnName="BCDITMCD" />
+          <ScalarProperty Name="BCDSERIES" ColumnName="BCDSERIES" />
+          <ScalarProperty Name="BCHCHRGNO" ColumnName="BCHCHRGNO" />
+          <ScalarProperty Name="BILLD_ID" ColumnName="BILLD_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_COLLECTION">
+      <EntityTypeMapping TypeName="RCTPLModel.T_COLLECTION">
+        <MappingFragment StoreEntitySet="T_COLLECTION">
+          <ScalarProperty Name="BRANCH_NAME" ColumnName="BRANCH_NAME" />
+          <ScalarProperty Name="CHECK_NO" ColumnName="CHECK_NO" />
+          <ScalarProperty Name="CHECK_DATE" ColumnName="CHECK_DATE" />
+          <ScalarProperty Name="DEPOSITED" ColumnName="DEPOSITED" />
+          <ScalarProperty Name="DCR_NO" ColumnName="DCR_NO" />
+          <ScalarProperty Name="UPLOADED_DATE" ColumnName="UPLOADED_DATE" />
+          <ScalarProperty Name="UPLOADED_CODE" ColumnName="UPLOADED_CODE" />
+          <ScalarProperty Name="TAX_AMT" ColumnName="TAX_AMT" />
+          <ScalarProperty Name="WITH_TAX" ColumnName="WITH_TAX" />
+          <ScalarProperty Name="COLPAYOR" ColumnName="COLPAYOR" />
+          <ScalarProperty Name="COLREMARK" ColumnName="COLREMARK" />
+          <ScalarProperty Name="CARD_NO" ColumnName="CARD_NO" />
+          <ScalarProperty Name="CARD_HOLDER" ColumnName="CARD_HOLDER" />
+          <ScalarProperty Name="BANK_NAME" ColumnName="BANK_NAME" />
+          <ScalarProperty Name="COLREFNO" ColumnName="COLREFNO" />
+          <ScalarProperty Name="COLSTATOR" ColumnName="COLSTATOR" />
+          <ScalarProperty Name="COLORNUM" ColumnName="COLORNUM" />
+          <ScalarProperty Name="COLPARTICULAR" ColumnName="COLPARTICULAR" />
+          <ScalarProperty Name="COLPYMTYP" ColumnName="COLPYMTYP" />
+          <ScalarProperty Name="CLIENTCD" ColumnName="CLIENTCD" />
+          <ScalarProperty Name="COLAMT" ColumnName="COLAMT" />
+          <ScalarProperty Name="COLORDTE" ColumnName="COLORDTE" />
+          <ScalarProperty Name="USRID" ColumnName="USRID" />
+          <ScalarProperty Name="COLNO" ColumnName="COLNO" />
+          <ScalarProperty Name="COLL_ID" ColumnName="COLL_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_BILLCHRGH">
+      <EntityTypeMapping TypeName="RCTPLModel.T_BILLCHRGH">
+        <MappingFragment StoreEntitySet="T_BILLCHRGH">
+          <ScalarProperty Name="UPLOADED_DATE" ColumnName="UPLOADED_DATE" />
+          <ScalarProperty Name="UPLOADED_CODE" ColumnName="UPLOADED_CODE" />
+          <ScalarProperty Name="PKCD" ColumnName="PKCD" />
+          <ScalarProperty Name="USRID" ColumnName="USRID" />
+          <ScalarProperty Name="BCHDTE" ColumnName="BCHDTE" />
+          <ScalarProperty Name="TRKID" ColumnName="TRKID" />
+          <ScalarProperty Name="PAPIN" ColumnName="PAPIN" />
+          <ScalarProperty Name="BCHCHRGNO" ColumnName="BCHCHRGNO" />
+          <ScalarProperty Name="BILLH_ID" ColumnName="BILLH_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_SINO">
+      <EntityTypeMapping TypeName="RCTPLModel.T_SINO">
+        <MappingFragment StoreEntitySet="T_SINO">
+          <ScalarProperty Name="UPLOADED_DATE" ColumnName="UPLOADED_DATE" />
+          <ScalarProperty Name="UPLOADED_CODE" ColumnName="UPLOADED_CODE" />
+          <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+          <ScalarProperty Name="CANUSER" ColumnName="CANUSER" />
+          <ScalarProperty Name="SIDTECANCEL" ColumnName="SIDTECANCEL" />
+          <ScalarProperty Name="SIREASON" ColumnName="SIREASON" />
+          <ScalarProperty Name="SICANCEL" ColumnName="SICANCEL" />
+          <ScalarProperty Name="SIUSER" ColumnName="SIUSER" />
+          <ScalarProperty Name="SIDATE" ColumnName="SIDATE" />
+          <ScalarProperty Name="SINO" ColumnName="SINO" />
+          <ScalarProperty Name="TRKID" ColumnName="TRKID" />
+          <ScalarProperty Name="SINO_ID" ColumnName="SINO_ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

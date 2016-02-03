@@ -13,10 +13,10 @@ namespace RCTPL_WebProjects.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class RCTPLEntities3 : DbContext
+    public partial class RCTPLEntities : DbContext
     {
-        public RCTPLEntities3()
-            : base("name=RCTPLEntities3")
+        public RCTPLEntities()
+            : base("name=RCTPLEntities")
         {
         }
     
@@ -25,15 +25,15 @@ namespace RCTPL_WebProjects.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<M_PAIP> M_PAIP { get; set; }
-        public virtual DbSet<T_BILLCHRGD> T_BILLCHRGD { get; set; }
-        public virtual DbSet<T_BILLCHRGH> T_BILLCHRGH { get; set; }
-        public virtual DbSet<T_COLLECTION> T_COLLECTION { get; set; }
-        public virtual DbSet<T_SINO> T_SINO { get; set; }
         public virtual DbSet<T_TRACKING> T_TRACKING { get; set; }
         public virtual DbSet<TBL_SYSTEMUSERS> TBL_SYSTEMUSERS { get; set; }
         public virtual DbSet<TBL_WEBUSERS> TBL_WEBUSERS { get; set; }
-        public virtual DbSet<TBL_PAYMENTS> TBL_PAYMENTS { get; set; }
-        public virtual DbSet<TBLSEARCH> TBLSEARCHes { get; set; }
+        public virtual DbSet<M_COMPANY> M_COMPANY { get; set; }
+        public virtual DbSet<TBL_VEHICLES> TBL_VEHICLES { get; set; }
+        public virtual DbSet<M_PAIP> M_PAIP { get; set; }
+        public virtual DbSet<T_BILLCHRGD> T_BILLCHRGD { get; set; }
+        public virtual DbSet<T_COLLECTION> T_COLLECTION { get; set; }
+        public virtual DbSet<T_BILLCHRGH> T_BILLCHRGH { get; set; }
+        public virtual DbSet<T_SINO> T_SINO { get; set; }
     }
 }

@@ -33,5 +33,7 @@ namespace RCTPL_WebProjects.Models
         public string REGION { get; set; }
         public string MAILING_ADDRESS { get; set; }
         public string CITY { get; set; }
+        public string BRANCH_CODE { get; set; }
+        public string COMP { get; set; }
     }
 }

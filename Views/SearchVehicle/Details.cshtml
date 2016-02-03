@@ -1,0 +1,202 @@
+﻿@model RCTPL_WebProjects.Models.VehicleDB.VehicleDetail
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>VehicleDetail</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CUSTOMER_ID)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CUSTOMER_ID)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.model)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.model)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.make)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.make)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.plateno)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.plateno)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.fileno)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.fileno)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.engineno)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.engineno)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.chassisno)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.chassisno)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.color)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.color)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.denom)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.denom)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.pd)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.pd)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.cylinder)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.cylinder)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.fuel)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.fuel)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.series)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.series)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.type)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.type)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.grosswt)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.grosswt)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.netwt)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.netwt)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.shipwt)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.shipwt)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.capwt)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.capwt)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.vclass)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.vclass)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.trdate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.trdate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.lto)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.lto)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.status)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.status)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.icCode }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

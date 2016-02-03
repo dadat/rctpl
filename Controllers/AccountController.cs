@@ -149,7 +149,7 @@ namespace RCTPL_WebProjects.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
+        public async Task<ActionResult> ForgotPassword(ForgotPasswdViewModel model)
         {
             if (ModelState.IsValid)
             {

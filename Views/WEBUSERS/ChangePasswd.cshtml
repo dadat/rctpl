@@ -1,15 +1,15 @@
-﻿@model RCTPL_WebProjects.Models.StrViewModel
+﻿
 @{
     ViewBag.Title = "ChangePasswd";
 }
 
 
-@if (@Model.isError == false)
+@if (@ViewBag.isError == false)
 { 
 
     <div class="callout callout-info">
-        <h2>@Model.title</h2>
-        <p><h3>@Model.message</h3></p>
+        <h2>@ViewBag.title</h2>
+        <p><h3>@ViewBag.message</h3></p>
     </div>
 
 }
@@ -17,8 +17,8 @@ else
 {
 
     <div class="callout callout-danger">
-        <h2>@Model.title</h2>
-        <p><h3>@Model.message</h3></p>
+        <h2>@ViewBag.title</h2>
+        <p><h3>@ViewBag.message</h3></p>
     </div>
 
 }

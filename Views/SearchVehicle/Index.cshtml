@@ -1,0 +1,167 @@
+﻿@model IEnumerable<RCTPL_WebProjects.Models.VehicleDB.VehicleDetail>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CUSTOMER_ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.make)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.plateno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fileno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.engineno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.chassisno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.denom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cylinder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fuel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.series)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.grosswt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.netwt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.shipwt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.capwt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vclass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.trdate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CUSTOMER_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.make)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.plateno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fileno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.engineno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.chassisno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.denom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cylinder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fuel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.series)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.grosswt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.netwt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.shipwt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.capwt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vclass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.trdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.icCode }) |
+                @Html.ActionLink("Details", "Details", new { id=item.icCode }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.icCode })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VehicleQSModelStoreContainer" CdmEntityContainer="VehicleQSEntities">
+    <EntitySetMapping Name="OwnerDetails">
+      <EntityTypeMapping TypeName="VehicleQSModel.OwnerDetail">
+        <MappingFragment StoreEntitySet="OwnerDetail">
+          <ScalarProperty Name="ioCode" ColumnName="ioCode" />
+          <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+          <ScalarProperty Name="OWNER_NAME" ColumnName="OWNER_NAME" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleDetails">
+      <EntityTypeMapping TypeName="VehicleQSModel.VehicleDetail">
+        <MappingFragment StoreEntitySet="VehicleDetail">
+          <ScalarProperty Name="icCode" ColumnName="icCode" />
+          <ScalarProperty Name="CUSTOMER_ID" ColumnName="CUSTOMER_ID" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="make" ColumnName="make" />
+          <ScalarProperty Name="plateno" ColumnName="plateno" />
+          <ScalarProperty Name="fileno" ColumnName="fileno" />
+          <ScalarProperty Name="engineno" ColumnName="engineno" />
+          <ScalarProperty Name="chassisno" ColumnName="chassisno" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="denom" ColumnName="denom" />
+          <ScalarProperty Name="pd" ColumnName="pd" />
+          <ScalarProperty Name="cylinder" ColumnName="cylinder" />
+          <ScalarProperty Name="fuel" ColumnName="fuel" />
+          <ScalarProperty Name="series" ColumnName="series" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="grosswt" ColumnName="grosswt" />
+          <ScalarProperty Name="netwt" ColumnName="netwt" />
+          <ScalarProperty Name="shipwt" ColumnName="shipwt" />
+          <ScalarProperty Name="capwt" ColumnName="capwt" />
+          <ScalarProperty Name="vclass" ColumnName="vclass" />
+          <ScalarProperty Name="trdate" ColumnName="trdate" />
+          <ScalarProperty Name="lto" ColumnName="lto" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

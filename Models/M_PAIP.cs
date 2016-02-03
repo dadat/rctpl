@@ -44,7 +44,18 @@ namespace RCTPL_WebProjects.Models
         public string BUS_PROF { get; set; }
         public Nullable<decimal> NO_DAYS { get; set; }
         public string PRO_RATA { get; set; }
+        public Nullable<decimal> FLEET { get; set; }
+        public string FUEL { get; set; }
+        public string BRANCH { get; set; }
+        public string NON_LTO { get; set; }
+        public string VEHICLE_TYPE { get; set; }
+        public string TYPE_BODY { get; set; }
         public string UPLOADED_CODE { get; set; }
         public Nullable<System.DateTime> UPLOADED_DATE { get; set; }
+        public string FIRST_NAME { get; set; }
+        public string MIDDLE_NAME { get; set; }
+        public string COMPANY_NAME { get; set; }
+        public string BY_COMPNAME { get; set; }
+        public string RISK_CODE { get; set; }
     }
 }

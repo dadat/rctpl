@@ -4,70 +4,80 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="RCTPLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="RCTPLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="M_COMPANY">
+          <Key>
+            <PropertyRef Name="COMP_ID" />
+          </Key>
+          <Property Name="COMP_ID" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="50" />
+          <Property Name="STADDR" Type="varchar" MaxLength="85" />
+          <Property Name="TELNO1" Type="varchar" MaxLength="20" />
+          <Property Name="FAXNO" Type="varchar" MaxLength="20" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="35" />
+          <Property Name="ZIP" Type="varchar" MaxLength="4" />
+          <Property Name="ACTIVE" Type="char" MaxLength="1" />
+          <Property Name="CONTACT_no" Type="varchar" MaxLength="35" />
+          <Property Name="LOGO" Type="image" />
+          <Property Name="VAT" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="M_PAIP">
           <Key>
-            <PropertyRef Name="PAPIN" />
+            <PropertyRef Name="PAIP_ID" />
           </Key>
           <Property Name="PAIP_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PAPIN" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="PALNAME" Type="varchar" MaxLength="150" />
-          <Property Name="PAFNAME" Type="varchar" MaxLength="150" />
-          <Property Name="PAMNAME" Type="varchar" MaxLength="50" />
+          <Property Name="FIRST_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="MIDDLE_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="PALNAME" Type="varchar" MaxLength="50" />
+          <Property Name="COMPANY_NAME" Type="varchar" MaxLength="150" />
+          <Property Name="BY_COMPNAME" Type="char" MaxLength="1" />
           <Property Name="PAADDRESS" Type="varchar" MaxLength="150" />
           <Property Name="MV_TYPE" Type="varchar" MaxLength="20" />
-          <Property Name="VEHICLE_CALSS" Type="varchar" MaxLength="20" />
-          <Property Name="PLATE_NO" Type="char" MaxLength="20" />
-          <Property Name="SERIAL_NO" Type="char" MaxLength="40" />
-          <Property Name="MOTOR_NO" Type="char" MaxLength="40" />
+          <Property Name="VEHICLE_CLASS" Type="varchar" MaxLength="20" />
+          <Property Name="PLATE_NO" Type="varchar" MaxLength="10" />
+          <Property Name="SERIAL_NO" Type="varchar" MaxLength="40" />
+          <Property Name="MOTOR_NO" Type="varchar" MaxLength="40" />
           <Property Name="SEATING_CAPACITY" Type="varchar" MaxLength="20" />
-          <Property Name="MODEL_YR" Type="datetime" />
+          <Property Name="MODEL_YR" Type="varchar" MaxLength="20" />
           <Property Name="COVERAGE_YR" Type="varchar" MaxLength="5" />
-          <Property Name="MAKE" Type="char" MaxLength="25" />
+          <Property Name="MAKE" Type="varchar" MaxLength="25" />
           <Property Name="SERIES" Type="varchar" MaxLength="20" />
           <Property Name="SERVICE_TYPE" Type="varchar" MaxLength="20" />
           <Property Name="COLOR" Type="varchar" MaxLength="20" />
-          <Property Name="UN_WEIGHT" Type="char" MaxLength="20" />
-          <Property Name="LTFRB_NO" Type="char" MaxLength="10" />
-          <Property Name="FRNCHISE_DATE" Type="datetime" />
-          <Property Name="ROUTE_FROM" Type="char" MaxLength="60" />
-          <Property Name="ROUTE_TO" Type="char" MaxLength="60" />
-          <Property Name="VIA" Type="varchar" MaxLength="20" />
-          <Property Name="ASSURED_TIN" Type="char" MaxLength="20" />
+          <Property Name="UN_WEIGHT" Type="varchar" MaxLength="50" />
+          <Property Name="ASSURED_TIN" Type="varchar" MaxLength="50" />
           <Property Name="INSURED_FROM" Type="datetime" />
           <Property Name="INSURED_TO" Type="datetime" />
           <Property Name="REMARKS" Type="varchar" MaxLength="50" />
-          <Property Name="TAX_TYPE" Type="char" MaxLength="10" />
-          <Property Name="CITY_CODE" Type="varchar" MaxLength="20" />
+          <Property Name="TAX_TYPE" Type="varchar" MaxLength="50" />
           <Property Name="PLACE_ISSUED" Type="varchar" MaxLength="20" />
-          <Property Name="MV_FILENO" Type="char" MaxLength="15" />
-          <Property Name="TAX_PREMIUM" Type="char" MaxLength="18" />
-          <Property Name="paregister" Type="datetime" />
-          <Property Name="pabhospcd" Type="varchar" MaxLength="12" />
-          <Property Name="CTPL_CODE" Type="varchar" MaxLength="20" />
+          <Property Name="MV_FILENO" Type="varchar" MaxLength="50" />
+          <Property Name="PAREGISTER" Type="datetime" />
+          <Property Name="COMP_ID" Type="varchar" MaxLength="12" />
           <Property Name="BLT_FILENO" Type="varchar" MaxLength="20" />
-          <Property Name="BYCOMP" Type="char" MaxLength="1" />
-          <Property Name="PUB_VEHICLE" Type="char" MaxLength="1" />
           <Property Name="BUS_PROF" Type="varchar" MaxLength="20" />
-          <Property Name="INSURED_FROM_PPAI" Type="datetime" />
-          <Property Name="INSURED_TO_PPAI" Type="datetime" />
           <Property Name="NO_DAYS" Type="decimal" Precision="18" Scale="0" />
           <Property Name="PRO_RATA" Type="char" MaxLength="1" />
+          <Property Name="FLEET" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="FUEL" Type="varchar" MaxLength="30" />
+          <Property Name="BRANCH" Type="varchar" MaxLength="10" />
+          <Property Name="NON_LTO" Type="char" MaxLength="1" />
+          <Property Name="VEHICLE_TYPE" Type="varchar" MaxLength="20" />
+          <Property Name="TYPE_BODY" Type="varchar" MaxLength="50" />
           <Property Name="UPLOADED_CODE" Type="varchar" MaxLength="50" />
           <Property Name="UPLOADED_DATE" Type="datetime" />
-          <Property Name="LTFRB_DCODE" Type="varchar" MaxLength="50" />
-          <Property Name="LTFRB_DDATE" Type="datetime" />
-          <Property Name="STATUS" Type="int" />
+          <Property Name="RISK_CODE" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="T_BILLCHRGD">
           <Key>
             <PropertyRef Name="BILLD_ID" />
           </Key>
           <Property Name="BILLD_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="BCHCHRGNO" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="BCHCHRGNO" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="BCDSERIES" Type="int" Nullable="false" />
           <Property Name="BCDITMCD" Type="varchar" MaxLength="12" Nullable="false" />
-          <Property Name="BCDESC" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="BCDESC" Type="varchar" MaxLength="125" Nullable="false" />
           <Property Name="BCDQTY" Type="int" Nullable="false" />
           <Property Name="BCDSP" Type="decimal" Precision="15" Scale="5" Nullable="false" />
           <Property Name="BCDPATCOVER" Type="decimal" Precision="15" Scale="5" />
@@ -79,10 +89,7 @@
           <Property Name="COLORNUM" Type="varchar" MaxLength="15" />
           <Property Name="BCDSINO" Type="varchar" MaxLength="12" />
           <Property Name="BCDTPPBAL" Type="decimal" Precision="15" Scale="5" />
-          <Property Name="TAX_AMT" Type="decimal" Precision="15" Scale="5" />
-          <Property Name="PRNT" Type="char" MaxLength="1" />
           <Property Name="DOC_STAMP" Type="decimal" Precision="15" Scale="5" />
-          <Property Name="PREM_TAX" Type="decimal" Precision="15" Scale="5" />
           <Property Name="E_VAT" Type="decimal" Precision="15" Scale="5" />
           <Property Name="LGT" Type="decimal" Precision="15" Scale="5" />
           <Property Name="SUM_INSIRED" Type="decimal" Precision="15" Scale="5" />
@@ -91,9 +98,9 @@
           <Property Name="BASIC_PREMIUM" Type="decimal" Precision="15" Scale="5" />
           <Property Name="DOC_OR" Type="varchar" MaxLength="15" />
           <Property Name="COI" Type="varchar" MaxLength="20" />
-          <Property Name="COC" Type="varchar" MaxLength="20" />
           <Property Name="COMMISSION" Type="decimal" Precision="15" Scale="5" />
           <Property Name="AUTHEN_CODE" Type="varchar" MaxLength="20" />
+          <Property Name="TAX_AMT" Type="decimal" Precision="15" Scale="5" />
           <Property Name="WITH_COM" Type="char" MaxLength="1" />
           <Property Name="W_TAX" Type="decimal" Precision="15" Scale="5" />
           <Property Name="W_TAX_NET" Type="decimal" Precision="15" Scale="5" />
@@ -108,34 +115,54 @@
           <Property Name="LTFRB_DCODE" Type="varchar" MaxLength="50" />
           <Property Name="LTFRB_DDATE" Type="datetime" />
           <Property Name="VEHICLE_NUMBER" Type="varchar" MaxLength="20" />
-          <Property Name="CAN_POLICY" Type="char" MaxLength="1" />
           <Property Name="REFUND" Type="decimal" Precision="15" Scale="5" />
           <Property Name="OTH_CHRGES" Type="decimal" Precision="15" Scale="5" />
           <Property Name="TAXES" Type="decimal" Precision="15" Scale="5" />
+          <Property Name="CAN_POLICY" Type="char" MaxLength="1" />
           <Property Name="DATE_CANCEL" Type="datetime" />
           <Property Name="can_user" Type="varchar" MaxLength="50" />
+          <Property Name="PRNT" Type="varchar" MaxLength="50" />
+          <Property Name="DATE_PRINTED" Type="datetime" />
+          <Property Name="REF_NUM" Type="varchar" MaxLength="50" />
+          <Property Name="DATEPAID" Type="datetime" />
+          <Property Name="VEHICLE_CODE" Type="varchar" MaxLength="50" />
+          <Property Name="COMP_SHARE" Type="decimal" Precision="15" Scale="5" />
+          <Property Name="TPP_SHARE" Type="decimal" Precision="15" Scale="5" />
+          <Property Name="QR_IMAGE" Type="image" />
+          <Property Name="CTPL" Type="decimal" Precision="15" Scale="5" />
+          <Property Name="PL" Type="decimal" Precision="15" Scale="5" />
+          <Property Name="AUTHEN_FEE" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="MUNICIPALITY" Type="varchar" MaxLength="10" />
+          <Property Name="COC_SERIES" Type="varchar" MaxLength="10" />
+          <Property Name="BAYAD_CENTER" Type="decimal" Precision="15" Scale="5" />
+          <Property Name="RISK_CODE" Type="varchar" MaxLength="10" />
+          <Property Name="LGT_RATE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="INCEPTION_FROM" Type="datetime" />
+          <Property Name="INCEPTION_TO" Type="datetime" />
+          <Property Name="CHARGES_OR" Type="varchar" MaxLength="20" />
+          <Property Name="W_TAX_SHARE" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="T_BILLCHRGH">
           <Key>
-            <PropertyRef Name="BCHCHRGNO" />
+            <PropertyRef Name="BILLH_ID" />
           </Key>
           <Property Name="BILLH_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="BCHCHRGNO" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="BCHCHRGNO" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="PAPIN" Type="varchar" MaxLength="15" />
           <Property Name="TRKID" Type="varchar" MaxLength="12" />
           <Property Name="BCHDTE" Type="datetime" />
-          <Property Name="USRID" Type="varchar" MaxLength="8" />
+          <Property Name="USRID" Type="varchar" MaxLength="50" />
           <Property Name="PKCD" Type="varchar" MaxLength="6" />
           <Property Name="UPLOADED_CODE" Type="varchar" MaxLength="50" />
           <Property Name="UPLOADED_DATE" Type="datetime" />
         </EntityType>
         <EntityType Name="T_COLLECTION">
           <Key>
-            <PropertyRef Name="COLNO" />
+            <PropertyRef Name="COLL_ID" />
           </Key>
           <Property Name="COLL_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="COLNO" Type="varchar" MaxLength="12" Nullable="false" />
-          <Property Name="USRID" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="USRID" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="COLORDTE" Type="datetime" Nullable="false" />
           <Property Name="COLAMT" Type="decimal" Precision="15" Scale="5" />
           <Property Name="CLIENTCD" Type="varchar" MaxLength="20" Nullable="false" />
@@ -144,33 +171,35 @@
           <Property Name="COLORNUM" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="COLSTATOR" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="COLREFNO" Type="varchar" MaxLength="12" Nullable="false" />
-          <Property Name="COLCRDCHKNO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="BANK_NAME" Type="varchar" MaxLength="10" />
+          <Property Name="CARD_HOLDER" Type="varchar" MaxLength="50" />
+          <Property Name="CARD_NO" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="COLREMARK" Type="varchar" MaxLength="50" />
           <Property Name="COLPAYOR" Type="varchar" MaxLength="150" Nullable="false" />
           <Property Name="WITH_TAX" Type="char" MaxLength="1" />
           <Property Name="TAX_AMT" Type="decimal" Precision="15" Scale="5" />
           <Property Name="UPLOADED_CODE" Type="varchar" MaxLength="50" />
           <Property Name="UPLOADED_DATE" Type="datetime" />
+          <Property Name="DCR_NO" Type="varchar" MaxLength="20" />
+          <Property Name="DEPOSITED" Type="char" MaxLength="1" />
+          <Property Name="CHECK_DATE" Type="datetime" />
+          <Property Name="CHECK_NO" Type="varchar" MaxLength="20" />
+          <Property Name="BRANCH_NAME" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="T_SINO">
           <Key>
-            <PropertyRef Name="TRKID" />
+            <PropertyRef Name="SINO_ID" />
           </Key>
           <Property Name="SINO_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TRKID" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="TRKID" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="SINO" Type="varchar" MaxLength="12" Nullable="false" />
           <Property Name="SIDATE" Type="datetime" Nullable="false" />
-          <Property Name="SIUSER" Type="varchar" MaxLength="8" Nullable="false" />
-          <Property Name="SIAGE" Type="tinyint" />
+          <Property Name="SIUSER" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="SICANCEL" Type="char" MaxLength="1" />
           <Property Name="SIREASON" Type="varchar" MaxLength="40" />
           <Property Name="SIDTECANCEL" Type="datetime" />
           <Property Name="CANUSER" Type="varchar" MaxLength="8" />
           <Property Name="AMOUNT" Type="decimal" Precision="8" Scale="2" />
-          <Property Name="DOCPRINT" Type="char" MaxLength="1" />
-          <Property Name="DUMPED" Type="char" MaxLength="1" />
-          <Property Name="COI" Type="varchar" MaxLength="20" />
-          <Property Name="COC" Type="varchar" MaxLength="20" />
           <Property Name="UPLOADED_CODE" Type="varchar" MaxLength="50" />
           <Property Name="UPLOADED_DATE" Type="datetime" />
         </EntityType>
@@ -179,7 +208,7 @@
             <PropertyRef Name="TRACKING_ID" />
           </Key>
           <Property Name="TRACKING_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TRKID" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="TRKID" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="PAPIN" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="TRKDTEADMT" Type="datetime" />
           <Property Name="PCID" Type="varchar" MaxLength="10" />
@@ -190,21 +219,6 @@
           <Property Name="TRKUSRID" Type="varchar" MaxLength="8" />
           <Property Name="UPLOADED_CODE" Type="varchar" MaxLength="50" />
           <Property Name="UPLOADED_DATE" Type="datetime" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'RCTPL.dbo.TBL_PAYMENTS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="TBL_PAYMENTS">
-          <Key>
-            <PropertyRef Name="PAYMENT_ID" />
-          </Key>
-          <Property Name="PAYMENT_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="USERNAME" Type="varchar" MaxLength="50" />
-          <Property Name="C_NAME" Type="varchar" MaxLength="50" />
-          <Property Name="PLATE" Type="varchar" MaxLength="50" />
-          <Property Name="CHASIS" Type="varchar" MaxLength="50" />
-          <Property Name="ENGINE" Type="varchar" MaxLength="50" />
-          <Property Name="VEHICLE" Type="varchar" MaxLength="50" />
-          <Property Name="TOTAL_AMOUNT" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="TBL_SYSTEMUSERS">
           <Key>
@@ -223,6 +237,33 @@ warning 6002: The table/view 'RCTPL.dbo.TBL_PAYMENTS' does not have a primary ke
           <Property Name="REGISTERED_BY" Type="varchar" MaxLength="50" />
           <Property Name="ACTIVE" Type="bit" />
           <Property Name="USER_TYPE" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TBL_VEHICLES">
+          <Key>
+            <PropertyRef Name="VEHICLE_ID" />
+          </Key>
+          <Property Name="PKCD" Type="varchar" MaxLength="50" />
+          <Property Name="PACKAGE_DESC" Type="varchar" MaxLength="150" />
+          <Property Name="YEAR_COVERAGE" Type="int" />
+          <Property Name="SERVICE_CODE" Type="varchar" MaxLength="20" />
+          <Property Name="SERVICE_TYPE" Type="varchar" MaxLength="150" />
+          <Property Name="SUM_INSURED" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="BASIC_PREMIUM" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DOC_STAMP" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="LGT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="VAT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="COMP_FEE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CERT_FEE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TOTAL_AMOUNT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="VEHICLE_CODE" Type="varchar" MaxLength="50" />
+          <Property Name="VEHICLE_NUMBER" Type="varchar" MaxLength="50" />
+          <Property Name="VEHICLE_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BRANCH_CODE" Type="varchar" MaxLength="10" />
+          <Property Name="AUTHEN_FEE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CTPL" Type="decimal" Precision="15" Scale="5" />
+          <Property Name="PL" Type="decimal" Precision="15" Scale="5" />
+          <Property Name="BAYAD_CENTER" Type="decimal" Precision="15" Scale="5" />
+          <Property Name="LGT_RATE" Type="decimal" Precision="18" Scale="3" />
         </EntityType>
         <EntityType Name="TBL_WEBUSERS">
           <Key>
@@ -247,27 +288,11 @@ warning 6002: The table/view 'RCTPL.dbo.TBL_PAYMENTS' does not have a primary ke
           <Property Name="REGION" Type="varchar" MaxLength="50" />
           <Property Name="MAILING_ADDRESS" Type="varchar" MaxLength="400" />
           <Property Name="CITY" Type="varchar" MaxLength="100" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'RCTPL.dbo.TBLSEARCH' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="TBLSEARCH">
-          <Key>
-            <PropertyRef Name="SEARCH_ID" />
-          </Key>
-          <Property Name="SEARCH_ID" Type="bigint" Nullable="false" />
-          <Property Name="PLATE_NO" Type="varchar" MaxLength="10" />
-          <Property Name="MODEL" Type="int" />
-          <Property Name="MAKE" Type="varchar" MaxLength="100" />
-          <Property Name="MVFILE_NO" Type="varchar" MaxLength="17" />
-          <Property Name="ENGINE" Type="varchar" MaxLength="40" />
-          <Property Name="CHASIS_NO" Type="varchar" MaxLength="40" />
-          <Property Name="COLOR" Type="varchar" MaxLength="40" />
-          <Property Name="TYPE_SERVICE" Type="varchar" MaxLength="30" />
-          <Property Name="SERIES" Type="varchar" MaxLength="30" />
-          <Property Name="STATUS" Type="int" />
-          <Property Name="PAPIN" Type="varchar" MaxLength="50" />
+          <Property Name="BRANCH_CODE" Type="varchar" MaxLength="50" />
+          <Property Name="COMP" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="RCTPLModelStoreContainer">
+          <EntitySet Name="M_COMPANY" EntityType="Self.M_COMPANY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="M_PAIP" EntityType="Self.M_PAIP" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_BILLCHRGD" EntityType="Self.T_BILLCHRGD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_BILLCHRGH" EntityType="Self.T_BILLCHRGH" Schema="dbo" store:Type="Tables" />
@@ -275,216 +300,19 @@ warning 6002: The table/view 'RCTPL.dbo.TBLSEARCH' does not have a primary key d
           <EntitySet Name="T_SINO" EntityType="Self.T_SINO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_TRACKING" EntityType="Self.T_TRACKING" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_SYSTEMUSERS" EntityType="Self.TBL_SYSTEMUSERS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_VEHICLES" EntityType="Self.TBL_VEHICLES" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_WEBUSERS" EntityType="Self.TBL_WEBUSERS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TBL_PAYMENTS" EntityType="Self.TBL_PAYMENTS" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [TBL_PAYMENTS].[PAYMENT_ID] AS [PAYMENT_ID], 
-    [TBL_PAYMENTS].[USERNAME] AS [USERNAME], 
-    [TBL_PAYMENTS].[C_NAME] AS [C_NAME], 
-    [TBL_PAYMENTS].[PLATE] AS [PLATE], 
-    [TBL_PAYMENTS].[CHASIS] AS [CHASIS], 
-    [TBL_PAYMENTS].[ENGINE] AS [ENGINE], 
-    [TBL_PAYMENTS].[VEHICLE] AS [VEHICLE], 
-    [TBL_PAYMENTS].[TOTAL_AMOUNT] AS [TOTAL_AMOUNT]
-    FROM [dbo].[TBL_PAYMENTS] AS [TBL_PAYMENTS]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="TBLSEARCH" EntityType="Self.TBLSEARCH" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [TBLSEARCH].[SEARCH_ID] AS [SEARCH_ID], 
-    [TBLSEARCH].[PLATE_NO] AS [PLATE_NO], 
-    [TBLSEARCH].[MODEL] AS [MODEL], 
-    [TBLSEARCH].[MAKE] AS [MAKE], 
-    [TBLSEARCH].[MVFILE_NO] AS [MVFILE_NO], 
-    [TBLSEARCH].[ENGINE] AS [ENGINE], 
-    [TBLSEARCH].[CHASIS_NO] AS [CHASIS_NO], 
-    [TBLSEARCH].[COLOR] AS [COLOR], 
-    [TBLSEARCH].[TYPE_SERVICE] AS [TYPE_SERVICE], 
-    [TBLSEARCH].[SERIES] AS [SERIES], 
-    [TBLSEARCH].[STATUS] AS [STATUS], 
-    [TBLSEARCH].[PAPIN] AS [PAPIN]
-    FROM [dbo].[TBLSEARCH] AS [TBLSEARCH]</DefiningQuery>
-          </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RCTPLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="M_PAIP">
-          <Key>
-            <PropertyRef Name="PAPIN" />
-          </Key>
-          <Property Name="PAIP_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PAPIN" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PALNAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="PAFNAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="PAMNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="PAADDRESS" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="MV_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="VEHICLE_CALSS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="PLATE_NO" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-          <Property Name="SERIAL_NO" Type="String" MaxLength="40" FixedLength="true" Unicode="false" />
-          <Property Name="MOTOR_NO" Type="String" MaxLength="40" FixedLength="true" Unicode="false" />
-          <Property Name="SEATING_CAPACITY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="MODEL_YR" Type="DateTime" Precision="3" />
-          <Property Name="COVERAGE_YR" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="MAKE" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
-          <Property Name="SERIES" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="SERVICE_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="COLOR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="UN_WEIGHT" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-          <Property Name="LTFRB_NO" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="FRNCHISE_DATE" Type="DateTime" Precision="3" />
-          <Property Name="ROUTE_FROM" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
-          <Property Name="ROUTE_TO" Type="String" MaxLength="60" FixedLength="true" Unicode="false" />
-          <Property Name="VIA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="ASSURED_TIN" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-          <Property Name="INSURED_FROM" Type="DateTime" Precision="3" />
-          <Property Name="INSURED_TO" Type="DateTime" Precision="3" />
-          <Property Name="REMARKS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TAX_TYPE" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="CITY_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="PLACE_ISSUED" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="MV_FILENO" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
-          <Property Name="TAX_PREMIUM" Type="String" MaxLength="18" FixedLength="true" Unicode="false" />
-          <Property Name="paregister" Type="DateTime" Precision="3" />
-          <Property Name="pabhospcd" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-          <Property Name="CTPL_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="BLT_FILENO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="BYCOMP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="PUB_VEHICLE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="BUS_PROF" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="INSURED_FROM_PPAI" Type="DateTime" Precision="3" />
-          <Property Name="INSURED_TO_PPAI" Type="DateTime" Precision="3" />
-          <Property Name="NO_DAYS" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="PRO_RATA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="UPLOADED_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UPLOADED_DATE" Type="DateTime" Precision="3" />
-          <Property Name="LTFRB_DCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="LTFRB_DDATE" Type="DateTime" Precision="3" />
-          <Property Name="STATUS" Type="Int32" />
-        </EntityType>
-        <EntityType Name="T_BILLCHRGD">
-          <Key>
-            <PropertyRef Name="BILLD_ID" />
-          </Key>
-          <Property Name="BILLD_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BCHCHRGNO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="BCDSERIES" Type="Int32" Nullable="false" />
-          <Property Name="BCDITMCD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="BCDESC" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="BCDQTY" Type="Int32" Nullable="false" />
-          <Property Name="BCDSP" Type="Decimal" Precision="15" Scale="5" Nullable="false" />
-          <Property Name="BCDPATCOVER" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="BCDPATBAL" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="BCDTPPCOVER" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="DISCCD" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="TPCD" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
-          <Property Name="BCDTPPTAG" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="COLORNUM" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="BCDSINO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-          <Property Name="BCDTPPBAL" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="TAX_AMT" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="PRNT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="DOC_STAMP" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="PREM_TAX" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="E_VAT" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="LGT" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="SUM_INSIRED" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="COMP_FEE" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="CERT_FEE" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="BASIC_PREMIUM" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="DOC_OR" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="COI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="COC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="COMMISSION" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="AUTHEN_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="WITH_COM" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="W_TAX" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="W_TAX_NET" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="NO_DAYS" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="PRO_RATA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="REG_TYPE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="TRANS_TYPE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="REGION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="ENDO_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="UPLOADED_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UPLOADED_DATE" Type="DateTime" Precision="3" />
-          <Property Name="LTFRB_DCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="LTFRB_DDATE" Type="DateTime" Precision="3" />
-          <Property Name="VEHICLE_NUMBER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="CAN_POLICY" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="REFUND" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="OTH_CHRGES" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="TAXES" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="DATE_CANCEL" Type="DateTime" Precision="3" />
-          <Property Name="can_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="T_BILLCHRGH">
-          <Key>
-            <PropertyRef Name="BCHCHRGNO" />
-          </Key>
-          <Property Name="BILLH_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BCHCHRGNO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PAPIN" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="TRKID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-          <Property Name="BCHDTE" Type="DateTime" Precision="3" />
-          <Property Name="USRID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
-          <Property Name="PKCD" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
-          <Property Name="UPLOADED_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UPLOADED_DATE" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="T_COLLECTION">
-          <Key>
-            <PropertyRef Name="COLNO" />
-          </Key>
-          <Property Name="COLL_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="COLNO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="USRID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COLORDTE" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="COLAMT" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="CLIENTCD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COLPYMTYP" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="COLPARTICULAR" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COLORNUM" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COLSTATOR" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="COLREFNO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COLCRDCHKNO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="COLREMARK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="COLPAYOR" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="WITH_TAX" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="TAX_AMT" Type="Decimal" Precision="15" Scale="5" />
-          <Property Name="UPLOADED_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UPLOADED_DATE" Type="DateTime" Precision="3" />
-        </EntityType>
-        <EntityType Name="T_SINO">
-          <Key>
-            <PropertyRef Name="TRKID" />
-          </Key>
-          <Property Name="SINO_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TRKID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SINO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SIDATE" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="SIUSER" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SIAGE" Type="Byte" />
-          <Property Name="SICANCEL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="SIREASON" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="SIDTECANCEL" Type="DateTime" Precision="3" />
-          <Property Name="CANUSER" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
-          <Property Name="AMOUNT" Type="Decimal" Precision="8" Scale="2" />
-          <Property Name="DOCPRINT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="DUMPED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="COI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="COC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="UPLOADED_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="UPLOADED_DATE" Type="DateTime" Precision="3" />
-        </EntityType>
         <EntityType Name="T_TRACKING">
           <Key>
             <PropertyRef Name="TRACKING_ID" />
           </Key>
           <Property Name="TRACKING_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TRKID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TRKID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="PAPIN" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TRKDTEADMT" Type="DateTime" Precision="3" />
           <Property Name="PCID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
@@ -537,229 +365,252 @@ warning 6002: The table/view 'RCTPL.dbo.TBLSEARCH' does not have a primary key d
           <Property Name="REGION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="MAILING_ADDRESS" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
           <Property Name="CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BRANCH_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COMP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="TBL_PAYMENTS">
+        <EntityType Name="M_COMPANY">
           <Key>
-            <PropertyRef Name="PAYMENT_ID" />
+            <PropertyRef Name="COMP_ID" />
           </Key>
-          <Property Name="PAYMENT_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="C_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="PLATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="CHASIS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ENGINE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="VEHICLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="TOTAL_AMOUNT" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="COMP_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="STADDR" Type="String" MaxLength="85" FixedLength="false" Unicode="false" />
+          <Property Name="TELNO1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FAXNO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="ZIP" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CONTACT_no" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="LOGO" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="VAT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="TBLSEARCH">
-          <Key>
-            <PropertyRef Name="SEARCH_ID" />
-          </Key>
-          <Property Name="SEARCH_ID" Type="Int64" Nullable="false" />
-          <Property Name="PLATE_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="MODEL" Type="Int32" />
-          <Property Name="MAKE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="MVFILE_NO" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
-          <Property Name="ENGINE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="CHASIS_NO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="COLOR" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-          <Property Name="TYPE_SERVICE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="SERIES" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="STATUS" Type="Int32" />
-          <Property Name="PAPIN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityContainer Name="RCTPLEntities3" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="M_PAIP" EntityType="Self.M_PAIP" />
-          <EntitySet Name="T_BILLCHRGD" EntityType="Self.T_BILLCHRGD" />
-          <EntitySet Name="T_BILLCHRGH" EntityType="Self.T_BILLCHRGH" />
-          <EntitySet Name="T_COLLECTION" EntityType="Self.T_COLLECTION" />
-          <EntitySet Name="T_SINO" EntityType="Self.T_SINO" />
+        <EntityContainer Name="RCTPLEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="T_TRACKING" EntityType="Self.T_TRACKING" />
           <EntitySet Name="TBL_SYSTEMUSERS" EntityType="Self.TBL_SYSTEMUSERS" />
           <EntitySet Name="TBL_WEBUSERS" EntityType="Self.TBL_WEBUSERS" />
-          <EntitySet Name="TBL_PAYMENTS" EntityType="Self.TBL_PAYMENTS" />
-          <EntitySet Name="TBLSEARCHes" EntityType="Self.TBLSEARCH" />
+          <EntitySet Name="M_COMPANY" EntityType="Self.M_COMPANY" />
+          <EntitySet Name="TBL_VEHICLES" EntityType="RCTPLModel.TBL_VEHICLES" />
+          <EntitySet Name="M_PAIP" EntityType="RCTPLModel.M_PAIP" />
+          <EntitySet Name="T_BILLCHRGD" EntityType="RCTPLModel.T_BILLCHRGD" />
+          <EntitySet Name="T_COLLECTION" EntityType="RCTPLModel.T_COLLECTION" />
+          <EntitySet Name="T_BILLCHRGH" EntityType="RCTPLModel.T_BILLCHRGH" />
+          <EntitySet Name="T_SINO" EntityType="RCTPLModel.T_SINO" />
         </EntityContainer>
+        <EntityType Name="TBL_VEHICLES">
+          <Key>
+            <PropertyRef Name="VEHICLE_ID" />
+          </Key>
+          <Property Name="PKCD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PACKAGE_DESC" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="YEAR_COVERAGE" Type="Int32" />
+          <Property Name="SERVICE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SERVICE_TYPE" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="SUM_INSURED" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="BASIC_PREMIUM" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DOC_STAMP" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LGT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="VAT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="COMP_FEE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CERT_FEE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TOTAL_AMOUNT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="VEHICLE_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VEHICLE_NUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VEHICLE_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BRANCH_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AUTHEN_FEE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CTPL" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="PL" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="BAYAD_CENTER" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="LGT_RATE" Type="Decimal" Precision="18" Scale="3" />
+        </EntityType>
+        <EntityType Name="M_PAIP">
+          <Key>
+            <PropertyRef Name="PAIP_ID" />
+          </Key>
+          <Property Name="PAIP_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PAPIN" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="PALNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PAADDRESS" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="MV_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="VEHICLE_CLASS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PLATE_NO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SERIAL_NO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="MOTOR_NO" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="SEATING_CAPACITY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MODEL_YR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="COVERAGE_YR" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="MAKE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="SERIES" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SERVICE_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="COLOR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UN_WEIGHT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ASSURED_TIN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="INSURED_FROM" Type="DateTime" Precision="3" />
+          <Property Name="INSURED_TO" Type="DateTime" Precision="3" />
+          <Property Name="REMARKS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TAX_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PLACE_ISSUED" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MV_FILENO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PAREGISTER" Type="DateTime" Precision="3" />
+          <Property Name="COMP_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="BLT_FILENO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="BUS_PROF" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NO_DAYS" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PRO_RATA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="FLEET" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="FUEL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BRANCH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NON_LTO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="VEHICLE_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TYPE_BODY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPLOADED_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPLOADED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="FIRST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MIDDLE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COMPANY_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="BY_COMPNAME" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="RISK_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_BILLCHRGD">
+          <Key>
+            <PropertyRef Name="BILLD_ID" />
+          </Key>
+          <Property Name="BILLD_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BCHCHRGNO" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BCDSERIES" Type="Int32" Nullable="false" />
+          <Property Name="BCDITMCD" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="BCDESC" Type="String" Nullable="false" MaxLength="125" FixedLength="false" Unicode="false" />
+          <Property Name="BCDQTY" Type="Int32" Nullable="false" />
+          <Property Name="BCDSP" Type="Decimal" Nullable="false" Precision="15" Scale="5" />
+          <Property Name="BCDPATCOVER" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="BCDPATBAL" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="BCDTPPCOVER" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="DISCCD" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="TPCD" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="BCDTPPTAG" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="COLORNUM" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="BCDSINO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="BCDTPPBAL" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="DOC_STAMP" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="E_VAT" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="LGT" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="SUM_INSIRED" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="COMP_FEE" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="CERT_FEE" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="BASIC_PREMIUM" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="DOC_OR" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="COI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="COMMISSION" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="AUTHEN_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TAX_AMT" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="WITH_COM" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="W_TAX" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="W_TAX_NET" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="NO_DAYS" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="PRO_RATA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="REG_TYPE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="TRANS_TYPE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="REGION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ENDO_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UPLOADED_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPLOADED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="LTFRB_DCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LTFRB_DDATE" Type="DateTime" Precision="3" />
+          <Property Name="VEHICLE_NUMBER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="REFUND" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="OTH_CHRGES" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="TAXES" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="CAN_POLICY" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="DATE_CANCEL" Type="DateTime" Precision="3" />
+          <Property Name="can_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PRNT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATE_PRINTED" Type="DateTime" Precision="3" />
+          <Property Name="REF_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DATEPAID" Type="DateTime" Precision="3" />
+          <Property Name="VEHICLE_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COMP_SHARE" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="TPP_SHARE" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="QR_IMAGE" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="CTPL" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="PL" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="AUTHEN_FEE" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="MUNICIPALITY" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="COC_SERIES" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BAYAD_CENTER" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="RISK_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="LGT_RATE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="INCEPTION_FROM" Type="DateTime" Precision="3" />
+          <Property Name="INCEPTION_TO" Type="DateTime" Precision="3" />
+          <Property Name="CHARGES_OR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="W_TAX_SHARE" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="T_COLLECTION">
+          <Key>
+            <PropertyRef Name="COLL_ID" />
+          </Key>
+          <Property Name="COLL_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="COLNO" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="USRID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COLORDTE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="COLAMT" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="CLIENTCD" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="COLPYMTYP" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="COLPARTICULAR" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="COLORNUM" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="COLSTATOR" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="COLREFNO" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="BANK_NAME" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CARD_HOLDER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CARD_NO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="COLREMARK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COLPAYOR" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="WITH_TAX" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="TAX_AMT" Type="Decimal" Precision="15" Scale="5" />
+          <Property Name="UPLOADED_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPLOADED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DCR_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DEPOSITED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CHECK_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CHECK_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="BRANCH_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_BILLCHRGH">
+          <Key>
+            <PropertyRef Name="BILLH_ID" />
+          </Key>
+          <Property Name="BILLH_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BCHCHRGNO" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PAPIN" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="TRKID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="BCHDTE" Type="DateTime" Precision="3" />
+          <Property Name="USRID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PKCD" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="UPLOADED_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPLOADED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="T_SINO">
+          <Key>
+            <PropertyRef Name="SINO_ID" />
+          </Key>
+          <Property Name="SINO_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TRKID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SINO" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="SIDATE" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SIUSER" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SICANCEL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="SIREASON" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="SIDTECANCEL" Type="DateTime" Precision="3" />
+          <Property Name="CANUSER" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="AMOUNT" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="UPLOADED_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPLOADED_DATE" Type="DateTime" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="RCTPLModelStoreContainer" CdmEntityContainer="RCTPLEntities3">
-          <EntitySetMapping Name="M_PAIP">
-            <EntityTypeMapping TypeName="RCTPLModel.M_PAIP">
-              <MappingFragment StoreEntitySet="M_PAIP">
-                <ScalarProperty Name="PAIP_ID" ColumnName="PAIP_ID" />
-                <ScalarProperty Name="PAPIN" ColumnName="PAPIN" />
-                <ScalarProperty Name="PALNAME" ColumnName="PALNAME" />
-                <ScalarProperty Name="PAFNAME" ColumnName="PAFNAME" />
-                <ScalarProperty Name="PAMNAME" ColumnName="PAMNAME" />
-                <ScalarProperty Name="PAADDRESS" ColumnName="PAADDRESS" />
-                <ScalarProperty Name="MV_TYPE" ColumnName="MV_TYPE" />
-                <ScalarProperty Name="VEHICLE_CALSS" ColumnName="VEHICLE_CALSS" />
-                <ScalarProperty Name="PLATE_NO" ColumnName="PLATE_NO" />
-                <ScalarProperty Name="SERIAL_NO" ColumnName="SERIAL_NO" />
-                <ScalarProperty Name="MOTOR_NO" ColumnName="MOTOR_NO" />
-                <ScalarProperty Name="SEATING_CAPACITY" ColumnName="SEATING_CAPACITY" />
-                <ScalarProperty Name="MODEL_YR" ColumnName="MODEL_YR" />
-                <ScalarProperty Name="COVERAGE_YR" ColumnName="COVERAGE_YR" />
-                <ScalarProperty Name="MAKE" ColumnName="MAKE" />
-                <ScalarProperty Name="SERIES" ColumnName="SERIES" />
-                <ScalarProperty Name="SERVICE_TYPE" ColumnName="SERVICE_TYPE" />
-                <ScalarProperty Name="COLOR" ColumnName="COLOR" />
-                <ScalarProperty Name="UN_WEIGHT" ColumnName="UN_WEIGHT" />
-                <ScalarProperty Name="LTFRB_NO" ColumnName="LTFRB_NO" />
-                <ScalarProperty Name="FRNCHISE_DATE" ColumnName="FRNCHISE_DATE" />
-                <ScalarProperty Name="ROUTE_FROM" ColumnName="ROUTE_FROM" />
-                <ScalarProperty Name="ROUTE_TO" ColumnName="ROUTE_TO" />
-                <ScalarProperty Name="VIA" ColumnName="VIA" />
-                <ScalarProperty Name="ASSURED_TIN" ColumnName="ASSURED_TIN" />
-                <ScalarProperty Name="INSURED_FROM" ColumnName="INSURED_FROM" />
-                <ScalarProperty Name="INSURED_TO" ColumnName="INSURED_TO" />
-                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
-                <ScalarProperty Name="TAX_TYPE" ColumnName="TAX_TYPE" />
-                <ScalarProperty Name="CITY_CODE" ColumnName="CITY_CODE" />
-                <ScalarProperty Name="PLACE_ISSUED" ColumnName="PLACE_ISSUED" />
-                <ScalarProperty Name="MV_FILENO" ColumnName="MV_FILENO" />
-                <ScalarProperty Name="TAX_PREMIUM" ColumnName="TAX_PREMIUM" />
-                <ScalarProperty Name="paregister" ColumnName="paregister" />
-                <ScalarProperty Name="pabhospcd" ColumnName="pabhospcd" />
-                <ScalarProperty Name="CTPL_CODE" ColumnName="CTPL_CODE" />
-                <ScalarProperty Name="BLT_FILENO" ColumnName="BLT_FILENO" />
-                <ScalarProperty Name="BYCOMP" ColumnName="BYCOMP" />
-                <ScalarProperty Name="PUB_VEHICLE" ColumnName="PUB_VEHICLE" />
-                <ScalarProperty Name="BUS_PROF" ColumnName="BUS_PROF" />
-                <ScalarProperty Name="INSURED_FROM_PPAI" ColumnName="INSURED_FROM_PPAI" />
-                <ScalarProperty Name="INSURED_TO_PPAI" ColumnName="INSURED_TO_PPAI" />
-                <ScalarProperty Name="NO_DAYS" ColumnName="NO_DAYS" />
-                <ScalarProperty Name="PRO_RATA" ColumnName="PRO_RATA" />
-                <ScalarProperty Name="UPLOADED_CODE" ColumnName="UPLOADED_CODE" />
-                <ScalarProperty Name="UPLOADED_DATE" ColumnName="UPLOADED_DATE" />
-                <ScalarProperty Name="LTFRB_DCODE" ColumnName="LTFRB_DCODE" />
-                <ScalarProperty Name="LTFRB_DDATE" ColumnName="LTFRB_DDATE" />
-                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="T_BILLCHRGD">
-            <EntityTypeMapping TypeName="RCTPLModel.T_BILLCHRGD">
-              <MappingFragment StoreEntitySet="T_BILLCHRGD">
-                <ScalarProperty Name="BILLD_ID" ColumnName="BILLD_ID" />
-                <ScalarProperty Name="BCHCHRGNO" ColumnName="BCHCHRGNO" />
-                <ScalarProperty Name="BCDSERIES" ColumnName="BCDSERIES" />
-                <ScalarProperty Name="BCDITMCD" ColumnName="BCDITMCD" />
-                <ScalarProperty Name="BCDESC" ColumnName="BCDESC" />
-                <ScalarProperty Name="BCDQTY" ColumnName="BCDQTY" />
-                <ScalarProperty Name="BCDSP" ColumnName="BCDSP" />
-                <ScalarProperty Name="BCDPATCOVER" ColumnName="BCDPATCOVER" />
-                <ScalarProperty Name="BCDPATBAL" ColumnName="BCDPATBAL" />
-                <ScalarProperty Name="BCDTPPCOVER" ColumnName="BCDTPPCOVER" />
-                <ScalarProperty Name="DISCCD" ColumnName="DISCCD" />
-                <ScalarProperty Name="TPCD" ColumnName="TPCD" />
-                <ScalarProperty Name="BCDTPPTAG" ColumnName="BCDTPPTAG" />
-                <ScalarProperty Name="COLORNUM" ColumnName="COLORNUM" />
-                <ScalarProperty Name="BCDSINO" ColumnName="BCDSINO" />
-                <ScalarProperty Name="BCDTPPBAL" ColumnName="BCDTPPBAL" />
-                <ScalarProperty Name="TAX_AMT" ColumnName="TAX_AMT" />
-                <ScalarProperty Name="PRNT" ColumnName="PRNT" />
-                <ScalarProperty Name="DOC_STAMP" ColumnName="DOC_STAMP" />
-                <ScalarProperty Name="PREM_TAX" ColumnName="PREM_TAX" />
-                <ScalarProperty Name="E_VAT" ColumnName="E_VAT" />
-                <ScalarProperty Name="LGT" ColumnName="LGT" />
-                <ScalarProperty Name="SUM_INSIRED" ColumnName="SUM_INSIRED" />
-                <ScalarProperty Name="COMP_FEE" ColumnName="COMP_FEE" />
-                <ScalarProperty Name="CERT_FEE" ColumnName="CERT_FEE" />
-                <ScalarProperty Name="BASIC_PREMIUM" ColumnName="BASIC_PREMIUM" />
-                <ScalarProperty Name="DOC_OR" ColumnName="DOC_OR" />
-                <ScalarProperty Name="COI" ColumnName="COI" />
-                <ScalarProperty Name="COC" ColumnName="COC" />
-                <ScalarProperty Name="COMMISSION" ColumnName="COMMISSION" />
-                <ScalarProperty Name="AUTHEN_CODE" ColumnName="AUTHEN_CODE" />
-                <ScalarProperty Name="WITH_COM" ColumnName="WITH_COM" />
-                <ScalarProperty Name="W_TAX" ColumnName="W_TAX" />
-                <ScalarProperty Name="W_TAX_NET" ColumnName="W_TAX_NET" />
-                <ScalarProperty Name="NO_DAYS" ColumnName="NO_DAYS" />
-                <ScalarProperty Name="PRO_RATA" ColumnName="PRO_RATA" />
-                <ScalarProperty Name="REG_TYPE" ColumnName="REG_TYPE" />
-                <ScalarProperty Name="TRANS_TYPE" ColumnName="TRANS_TYPE" />
-                <ScalarProperty Name="REGION" ColumnName="REGION" />
-                <ScalarProperty Name="ENDO_NO" ColumnName="ENDO_NO" />
-                <ScalarProperty Name="UPLOADED_CODE" ColumnName="UPLOADED_CODE" />
-                <ScalarProperty Name="UPLOADED_DATE" ColumnName="UPLOADED_DATE" />
-                <ScalarProperty Name="LTFRB_DCODE" ColumnName="LTFRB_DCODE" />
-                <ScalarProperty Name="LTFRB_DDATE" ColumnName="LTFRB_DDATE" />
-                <ScalarProperty Name="VEHICLE_NUMBER" ColumnName="VEHICLE_NUMBER" />
-                <ScalarProperty Name="CAN_POLICY" ColumnName="CAN_POLICY" />
-                <ScalarProperty Name="REFUND" ColumnName="REFUND" />
-                <ScalarProperty Name="OTH_CHRGES" ColumnName="OTH_CHRGES" />
-                <ScalarProperty Name="TAXES" ColumnName="TAXES" />
-                <ScalarProperty Name="DATE_CANCEL" ColumnName="DATE_CANCEL" />
-                <ScalarProperty Name="can_user" ColumnName="can_user" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="T_BILLCHRGH">
-            <EntityTypeMapping TypeName="RCTPLModel.T_BILLCHRGH">
-              <MappingFragment StoreEntitySet="T_BILLCHRGH">
-                <ScalarProperty Name="BILLH_ID" ColumnName="BILLH_ID" />
-                <ScalarProperty Name="BCHCHRGNO" ColumnName="BCHCHRGNO" />
-                <ScalarProperty Name="PAPIN" ColumnName="PAPIN" />
-                <ScalarProperty Name="TRKID" ColumnName="TRKID" />
-                <ScalarProperty Name="BCHDTE" ColumnName="BCHDTE" />
-                <ScalarProperty Name="USRID" ColumnName="USRID" />
-                <ScalarProperty Name="PKCD" ColumnName="PKCD" />
-                <ScalarProperty Name="UPLOADED_CODE" ColumnName="UPLOADED_CODE" />
-                <ScalarProperty Name="UPLOADED_DATE" ColumnName="UPLOADED_DATE" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="T_COLLECTION">
-            <EntityTypeMapping TypeName="RCTPLModel.T_COLLECTION">
-              <MappingFragment StoreEntitySet="T_COLLECTION">
-                <ScalarProperty Name="COLL_ID" ColumnName="COLL_ID" />
-                <ScalarProperty Name="COLNO" ColumnName="COLNO" />
-                <ScalarProperty Name="USRID" ColumnName="USRID" />
-                <ScalarProperty Name="COLORDTE" ColumnName="COLORDTE" />
-                <ScalarProperty Name="COLAMT" ColumnName="COLAMT" />
-                <ScalarProperty Name="CLIENTCD" ColumnName="CLIENTCD" />
-                <ScalarProperty Name="COLPYMTYP" ColumnName="COLPYMTYP" />
-                <ScalarProperty Name="COLPARTICULAR" ColumnName="COLPARTICULAR" />
-                <ScalarProperty Name="COLORNUM" ColumnName="COLORNUM" />
-                <ScalarProperty Name="COLSTATOR" ColumnName="COLSTATOR" />
-                <ScalarProperty Name="COLREFNO" ColumnName="COLREFNO" />
-                <ScalarProperty Name="COLCRDCHKNO" ColumnName="COLCRDCHKNO" />
-                <ScalarProperty Name="COLREMARK" ColumnName="COLREMARK" />
-                <ScalarProperty Name="COLPAYOR" ColumnName="COLPAYOR" />
-                <ScalarProperty Name="WITH_TAX" ColumnName="WITH_TAX" />
-                <ScalarProperty Name="TAX_AMT" ColumnName="TAX_AMT" />
-                <ScalarProperty Name="UPLOADED_CODE" ColumnName="UPLOADED_CODE" />
-                <ScalarProperty Name="UPLOADED_DATE" ColumnName="UPLOADED_DATE" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="T_SINO">
-            <EntityTypeMapping TypeName="RCTPLModel.T_SINO">
-              <MappingFragment StoreEntitySet="T_SINO">
-                <ScalarProperty Name="SINO_ID" ColumnName="SINO_ID" />
-                <ScalarProperty Name="TRKID" ColumnName="TRKID" />
-                <ScalarProperty Name="SINO" ColumnName="SINO" />
-                <ScalarProperty Name="SIDATE" ColumnName="SIDATE" />
-                <ScalarProperty Name="SIUSER" ColumnName="SIUSER" />
-                <ScalarProperty Name="SIAGE" ColumnName="SIAGE" />
-                <ScalarProperty Name="SICANCEL" ColumnName="SICANCEL" />
-                <ScalarProperty Name="SIREASON" ColumnName="SIREASON" />
-                <ScalarProperty Name="SIDTECANCEL" ColumnName="SIDTECANCEL" />
-                <ScalarProperty Name="CANUSER" ColumnName="CANUSER" />
-                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
-                <ScalarProperty Name="DOCPRINT" ColumnName="DOCPRINT" />
-                <ScalarProperty Name="DUMPED" ColumnName="DUMPED" />
-                <ScalarProperty Name="COI" ColumnName="COI" />
-                <ScalarProperty Name="COC" ColumnName="COC" />
-                <ScalarProperty Name="UPLOADED_CODE" ColumnName="UPLOADED_CODE" />
-                <ScalarProperty Name="UPLOADED_DATE" ColumnName="UPLOADED_DATE" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
+        <EntityContainerMapping StorageEntityContainer="RCTPLModelStoreContainer" CdmEntityContainer="RCTPLEntities">
           <EntitySetMapping Name="T_TRACKING">
             <EntityTypeMapping TypeName="RCTPLModel.T_TRACKING">
               <MappingFragment StoreEntitySet="T_TRACKING">
@@ -800,6 +651,8 @@ warning 6002: The table/view 'RCTPL.dbo.TBLSEARCH' does not have a primary key d
           <EntitySetMapping Name="TBL_WEBUSERS">
             <EntityTypeMapping TypeName="RCTPLModel.TBL_WEBUSERS">
               <MappingFragment StoreEntitySet="TBL_WEBUSERS">
+                <ScalarProperty Name="COMP" ColumnName="COMP" />
+                <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
                 <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
                 <ScalarProperty Name="USER_CODE" ColumnName="USER_CODE" />
                 <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
@@ -822,35 +675,235 @@ warning 6002: The table/view 'RCTPL.dbo.TBLSEARCH' does not have a primary key d
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TBL_PAYMENTS">
-            <EntityTypeMapping TypeName="RCTPLModel.TBL_PAYMENTS">
-              <MappingFragment StoreEntitySet="TBL_PAYMENTS">
-                <ScalarProperty Name="PAYMENT_ID" ColumnName="PAYMENT_ID" />
-                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
-                <ScalarProperty Name="C_NAME" ColumnName="C_NAME" />
-                <ScalarProperty Name="PLATE" ColumnName="PLATE" />
-                <ScalarProperty Name="CHASIS" ColumnName="CHASIS" />
-                <ScalarProperty Name="ENGINE" ColumnName="ENGINE" />
-                <ScalarProperty Name="VEHICLE" ColumnName="VEHICLE" />
-                <ScalarProperty Name="TOTAL_AMOUNT" ColumnName="TOTAL_AMOUNT" />
+          <EntitySetMapping Name="M_COMPANY">
+            <EntityTypeMapping TypeName="RCTPLModel.M_COMPANY">
+              <MappingFragment StoreEntitySet="M_COMPANY">
+                <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="STADDR" ColumnName="STADDR" />
+                <ScalarProperty Name="TELNO1" ColumnName="TELNO1" />
+                <ScalarProperty Name="FAXNO" ColumnName="FAXNO" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="CONTACT_no" ColumnName="CONTACT_no" />
+                <ScalarProperty Name="LOGO" ColumnName="LOGO" />
+                <ScalarProperty Name="VAT" ColumnName="VAT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TBLSEARCHes">
-            <EntityTypeMapping TypeName="RCTPLModel.TBLSEARCH">
-              <MappingFragment StoreEntitySet="TBLSEARCH">
-                <ScalarProperty Name="SEARCH_ID" ColumnName="SEARCH_ID" />
-                <ScalarProperty Name="PLATE_NO" ColumnName="PLATE_NO" />
-                <ScalarProperty Name="MODEL" ColumnName="MODEL" />
-                <ScalarProperty Name="MAKE" ColumnName="MAKE" />
-                <ScalarProperty Name="MVFILE_NO" ColumnName="MVFILE_NO" />
-                <ScalarProperty Name="ENGINE" ColumnName="ENGINE" />
-                <ScalarProperty Name="CHASIS_NO" ColumnName="CHASIS_NO" />
+          <EntitySetMapping Name="TBL_VEHICLES">
+            <EntityTypeMapping TypeName="RCTPLModel.TBL_VEHICLES">
+              <MappingFragment StoreEntitySet="TBL_VEHICLES">
+                <ScalarProperty Name="LGT_RATE" ColumnName="LGT_RATE" />
+                <ScalarProperty Name="BAYAD_CENTER" ColumnName="BAYAD_CENTER" />
+                <ScalarProperty Name="PL" ColumnName="PL" />
+                <ScalarProperty Name="CTPL" ColumnName="CTPL" />
+                <ScalarProperty Name="AUTHEN_FEE" ColumnName="AUTHEN_FEE" />
+                <ScalarProperty Name="BRANCH_CODE" ColumnName="BRANCH_CODE" />
+                <ScalarProperty Name="VEHICLE_ID" ColumnName="VEHICLE_ID" />
+                <ScalarProperty Name="VEHICLE_NUMBER" ColumnName="VEHICLE_NUMBER" />
+                <ScalarProperty Name="VEHICLE_CODE" ColumnName="VEHICLE_CODE" />
+                <ScalarProperty Name="TOTAL_AMOUNT" ColumnName="TOTAL_AMOUNT" />
+                <ScalarProperty Name="CERT_FEE" ColumnName="CERT_FEE" />
+                <ScalarProperty Name="COMP_FEE" ColumnName="COMP_FEE" />
+                <ScalarProperty Name="VAT" ColumnName="VAT" />
+                <ScalarProperty Name="LGT" ColumnName="LGT" />
+                <ScalarProperty Name="DOC_STAMP" ColumnName="DOC_STAMP" />
+                <ScalarProperty Name="BASIC_PREMIUM" ColumnName="BASIC_PREMIUM" />
+                <ScalarProperty Name="SUM_INSURED" ColumnName="SUM_INSURED" />
+                <ScalarProperty Name="SERVICE_TYPE" ColumnName="SERVICE_TYPE" />
+                <ScalarProperty Name="SERVICE_CODE" ColumnName="SERVICE_CODE" />
+                <ScalarProperty Name="YEAR_COVERAGE" ColumnName="YEAR_COVERAGE" />
+                <ScalarProperty Name="PACKAGE_DESC" ColumnName="PACKAGE_DESC" />
+                <ScalarProperty Name="PKCD" ColumnName="PKCD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_PAIP">
+            <EntityTypeMapping TypeName="RCTPLModel.M_PAIP">
+              <MappingFragment StoreEntitySet="M_PAIP">
+                <ScalarProperty Name="RISK_CODE" ColumnName="RISK_CODE" />
+                <ScalarProperty Name="BY_COMPNAME" ColumnName="BY_COMPNAME" />
+                <ScalarProperty Name="COMPANY_NAME" ColumnName="COMPANY_NAME" />
+                <ScalarProperty Name="MIDDLE_NAME" ColumnName="MIDDLE_NAME" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="UPLOADED_DATE" ColumnName="UPLOADED_DATE" />
+                <ScalarProperty Name="UPLOADED_CODE" ColumnName="UPLOADED_CODE" />
+                <ScalarProperty Name="TYPE_BODY" ColumnName="TYPE_BODY" />
+                <ScalarProperty Name="VEHICLE_TYPE" ColumnName="VEHICLE_TYPE" />
+                <ScalarProperty Name="NON_LTO" ColumnName="NON_LTO" />
+                <ScalarProperty Name="BRANCH" ColumnName="BRANCH" />
+                <ScalarProperty Name="FUEL" ColumnName="FUEL" />
+                <ScalarProperty Name="FLEET" ColumnName="FLEET" />
+                <ScalarProperty Name="PRO_RATA" ColumnName="PRO_RATA" />
+                <ScalarProperty Name="NO_DAYS" ColumnName="NO_DAYS" />
+                <ScalarProperty Name="BUS_PROF" ColumnName="BUS_PROF" />
+                <ScalarProperty Name="BLT_FILENO" ColumnName="BLT_FILENO" />
+                <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+                <ScalarProperty Name="PAREGISTER" ColumnName="PAREGISTER" />
+                <ScalarProperty Name="MV_FILENO" ColumnName="MV_FILENO" />
+                <ScalarProperty Name="PLACE_ISSUED" ColumnName="PLACE_ISSUED" />
+                <ScalarProperty Name="TAX_TYPE" ColumnName="TAX_TYPE" />
+                <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+                <ScalarProperty Name="INSURED_TO" ColumnName="INSURED_TO" />
+                <ScalarProperty Name="INSURED_FROM" ColumnName="INSURED_FROM" />
+                <ScalarProperty Name="ASSURED_TIN" ColumnName="ASSURED_TIN" />
+                <ScalarProperty Name="UN_WEIGHT" ColumnName="UN_WEIGHT" />
                 <ScalarProperty Name="COLOR" ColumnName="COLOR" />
-                <ScalarProperty Name="TYPE_SERVICE" ColumnName="TYPE_SERVICE" />
+                <ScalarProperty Name="SERVICE_TYPE" ColumnName="SERVICE_TYPE" />
                 <ScalarProperty Name="SERIES" ColumnName="SERIES" />
-                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="MAKE" ColumnName="MAKE" />
+                <ScalarProperty Name="COVERAGE_YR" ColumnName="COVERAGE_YR" />
+                <ScalarProperty Name="MODEL_YR" ColumnName="MODEL_YR" />
+                <ScalarProperty Name="SEATING_CAPACITY" ColumnName="SEATING_CAPACITY" />
+                <ScalarProperty Name="MOTOR_NO" ColumnName="MOTOR_NO" />
+                <ScalarProperty Name="SERIAL_NO" ColumnName="SERIAL_NO" />
+                <ScalarProperty Name="PLATE_NO" ColumnName="PLATE_NO" />
+                <ScalarProperty Name="VEHICLE_CLASS" ColumnName="VEHICLE_CLASS" />
+                <ScalarProperty Name="MV_TYPE" ColumnName="MV_TYPE" />
+                <ScalarProperty Name="PAADDRESS" ColumnName="PAADDRESS" />
+                <ScalarProperty Name="PALNAME" ColumnName="PALNAME" />
                 <ScalarProperty Name="PAPIN" ColumnName="PAPIN" />
+                <ScalarProperty Name="PAIP_ID" ColumnName="PAIP_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_BILLCHRGD">
+            <EntityTypeMapping TypeName="RCTPLModel.T_BILLCHRGD">
+              <MappingFragment StoreEntitySet="T_BILLCHRGD">
+                <ScalarProperty Name="W_TAX_SHARE" ColumnName="W_TAX_SHARE" />
+                <ScalarProperty Name="CHARGES_OR" ColumnName="CHARGES_OR" />
+                <ScalarProperty Name="INCEPTION_TO" ColumnName="INCEPTION_TO" />
+                <ScalarProperty Name="INCEPTION_FROM" ColumnName="INCEPTION_FROM" />
+                <ScalarProperty Name="LGT_RATE" ColumnName="LGT_RATE" />
+                <ScalarProperty Name="RISK_CODE" ColumnName="RISK_CODE" />
+                <ScalarProperty Name="BAYAD_CENTER" ColumnName="BAYAD_CENTER" />
+                <ScalarProperty Name="COC_SERIES" ColumnName="COC_SERIES" />
+                <ScalarProperty Name="MUNICIPALITY" ColumnName="MUNICIPALITY" />
+                <ScalarProperty Name="AUTHEN_FEE" ColumnName="AUTHEN_FEE" />
+                <ScalarProperty Name="PL" ColumnName="PL" />
+                <ScalarProperty Name="CTPL" ColumnName="CTPL" />
+                <ScalarProperty Name="QR_IMAGE" ColumnName="QR_IMAGE" />
+                <ScalarProperty Name="TPP_SHARE" ColumnName="TPP_SHARE" />
+                <ScalarProperty Name="COMP_SHARE" ColumnName="COMP_SHARE" />
+                <ScalarProperty Name="VEHICLE_CODE" ColumnName="VEHICLE_CODE" />
+                <ScalarProperty Name="DATEPAID" ColumnName="DATEPAID" />
+                <ScalarProperty Name="REF_NUM" ColumnName="REF_NUM" />
+                <ScalarProperty Name="DATE_PRINTED" ColumnName="DATE_PRINTED" />
+                <ScalarProperty Name="PRNT" ColumnName="PRNT" />
+                <ScalarProperty Name="can_user" ColumnName="can_user" />
+                <ScalarProperty Name="DATE_CANCEL" ColumnName="DATE_CANCEL" />
+                <ScalarProperty Name="CAN_POLICY" ColumnName="CAN_POLICY" />
+                <ScalarProperty Name="TAXES" ColumnName="TAXES" />
+                <ScalarProperty Name="OTH_CHRGES" ColumnName="OTH_CHRGES" />
+                <ScalarProperty Name="REFUND" ColumnName="REFUND" />
+                <ScalarProperty Name="VEHICLE_NUMBER" ColumnName="VEHICLE_NUMBER" />
+                <ScalarProperty Name="LTFRB_DDATE" ColumnName="LTFRB_DDATE" />
+                <ScalarProperty Name="LTFRB_DCODE" ColumnName="LTFRB_DCODE" />
+                <ScalarProperty Name="UPLOADED_DATE" ColumnName="UPLOADED_DATE" />
+                <ScalarProperty Name="UPLOADED_CODE" ColumnName="UPLOADED_CODE" />
+                <ScalarProperty Name="ENDO_NO" ColumnName="ENDO_NO" />
+                <ScalarProperty Name="REGION" ColumnName="REGION" />
+                <ScalarProperty Name="TRANS_TYPE" ColumnName="TRANS_TYPE" />
+                <ScalarProperty Name="REG_TYPE" ColumnName="REG_TYPE" />
+                <ScalarProperty Name="PRO_RATA" ColumnName="PRO_RATA" />
+                <ScalarProperty Name="NO_DAYS" ColumnName="NO_DAYS" />
+                <ScalarProperty Name="W_TAX_NET" ColumnName="W_TAX_NET" />
+                <ScalarProperty Name="W_TAX" ColumnName="W_TAX" />
+                <ScalarProperty Name="WITH_COM" ColumnName="WITH_COM" />
+                <ScalarProperty Name="TAX_AMT" ColumnName="TAX_AMT" />
+                <ScalarProperty Name="AUTHEN_CODE" ColumnName="AUTHEN_CODE" />
+                <ScalarProperty Name="COMMISSION" ColumnName="COMMISSION" />
+                <ScalarProperty Name="COI" ColumnName="COI" />
+                <ScalarProperty Name="DOC_OR" ColumnName="DOC_OR" />
+                <ScalarProperty Name="BASIC_PREMIUM" ColumnName="BASIC_PREMIUM" />
+                <ScalarProperty Name="CERT_FEE" ColumnName="CERT_FEE" />
+                <ScalarProperty Name="COMP_FEE" ColumnName="COMP_FEE" />
+                <ScalarProperty Name="SUM_INSIRED" ColumnName="SUM_INSIRED" />
+                <ScalarProperty Name="LGT" ColumnName="LGT" />
+                <ScalarProperty Name="E_VAT" ColumnName="E_VAT" />
+                <ScalarProperty Name="DOC_STAMP" ColumnName="DOC_STAMP" />
+                <ScalarProperty Name="BCDTPPBAL" ColumnName="BCDTPPBAL" />
+                <ScalarProperty Name="BCDSINO" ColumnName="BCDSINO" />
+                <ScalarProperty Name="COLORNUM" ColumnName="COLORNUM" />
+                <ScalarProperty Name="BCDTPPTAG" ColumnName="BCDTPPTAG" />
+                <ScalarProperty Name="TPCD" ColumnName="TPCD" />
+                <ScalarProperty Name="DISCCD" ColumnName="DISCCD" />
+                <ScalarProperty Name="BCDTPPCOVER" ColumnName="BCDTPPCOVER" />
+                <ScalarProperty Name="BCDPATBAL" ColumnName="BCDPATBAL" />
+                <ScalarProperty Name="BCDPATCOVER" ColumnName="BCDPATCOVER" />
+                <ScalarProperty Name="BCDSP" ColumnName="BCDSP" />
+                <ScalarProperty Name="BCDQTY" ColumnName="BCDQTY" />
+                <ScalarProperty Name="BCDESC" ColumnName="BCDESC" />
+                <ScalarProperty Name="BCDITMCD" ColumnName="BCDITMCD" />
+                <ScalarProperty Name="BCDSERIES" ColumnName="BCDSERIES" />
+                <ScalarProperty Name="BCHCHRGNO" ColumnName="BCHCHRGNO" />
+                <ScalarProperty Name="BILLD_ID" ColumnName="BILLD_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_COLLECTION">
+            <EntityTypeMapping TypeName="RCTPLModel.T_COLLECTION">
+              <MappingFragment StoreEntitySet="T_COLLECTION">
+                <ScalarProperty Name="BRANCH_NAME" ColumnName="BRANCH_NAME" />
+                <ScalarProperty Name="CHECK_NO" ColumnName="CHECK_NO" />
+                <ScalarProperty Name="CHECK_DATE" ColumnName="CHECK_DATE" />
+                <ScalarProperty Name="DEPOSITED" ColumnName="DEPOSITED" />
+                <ScalarProperty Name="DCR_NO" ColumnName="DCR_NO" />
+                <ScalarProperty Name="UPLOADED_DATE" ColumnName="UPLOADED_DATE" />
+                <ScalarProperty Name="UPLOADED_CODE" ColumnName="UPLOADED_CODE" />
+                <ScalarProperty Name="TAX_AMT" ColumnName="TAX_AMT" />
+                <ScalarProperty Name="WITH_TAX" ColumnName="WITH_TAX" />
+                <ScalarProperty Name="COLPAYOR" ColumnName="COLPAYOR" />
+                <ScalarProperty Name="COLREMARK" ColumnName="COLREMARK" />
+                <ScalarProperty Name="CARD_NO" ColumnName="CARD_NO" />
+                <ScalarProperty Name="CARD_HOLDER" ColumnName="CARD_HOLDER" />
+                <ScalarProperty Name="BANK_NAME" ColumnName="BANK_NAME" />
+                <ScalarProperty Name="COLREFNO" ColumnName="COLREFNO" />
+                <ScalarProperty Name="COLSTATOR" ColumnName="COLSTATOR" />
+                <ScalarProperty Name="COLORNUM" ColumnName="COLORNUM" />
+                <ScalarProperty Name="COLPARTICULAR" ColumnName="COLPARTICULAR" />
+                <ScalarProperty Name="COLPYMTYP" ColumnName="COLPYMTYP" />
+                <ScalarProperty Name="CLIENTCD" ColumnName="CLIENTCD" />
+                <ScalarProperty Name="COLAMT" ColumnName="COLAMT" />
+                <ScalarProperty Name="COLORDTE" ColumnName="COLORDTE" />
+                <ScalarProperty Name="USRID" ColumnName="USRID" />
+                <ScalarProperty Name="COLNO" ColumnName="COLNO" />
+                <ScalarProperty Name="COLL_ID" ColumnName="COLL_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_BILLCHRGH">
+            <EntityTypeMapping TypeName="RCTPLModel.T_BILLCHRGH">
+              <MappingFragment StoreEntitySet="T_BILLCHRGH">
+                <ScalarProperty Name="UPLOADED_DATE" ColumnName="UPLOADED_DATE" />
+                <ScalarProperty Name="UPLOADED_CODE" ColumnName="UPLOADED_CODE" />
+                <ScalarProperty Name="PKCD" ColumnName="PKCD" />
+                <ScalarProperty Name="USRID" ColumnName="USRID" />
+                <ScalarProperty Name="BCHDTE" ColumnName="BCHDTE" />
+                <ScalarProperty Name="TRKID" ColumnName="TRKID" />
+                <ScalarProperty Name="PAPIN" ColumnName="PAPIN" />
+                <ScalarProperty Name="BCHCHRGNO" ColumnName="BCHCHRGNO" />
+                <ScalarProperty Name="BILLH_ID" ColumnName="BILLH_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_SINO">
+            <EntityTypeMapping TypeName="RCTPLModel.T_SINO">
+              <MappingFragment StoreEntitySet="T_SINO">
+                <ScalarProperty Name="UPLOADED_DATE" ColumnName="UPLOADED_DATE" />
+                <ScalarProperty Name="UPLOADED_CODE" ColumnName="UPLOADED_CODE" />
+                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+                <ScalarProperty Name="CANUSER" ColumnName="CANUSER" />
+                <ScalarProperty Name="SIDTECANCEL" ColumnName="SIDTECANCEL" />
+                <ScalarProperty Name="SIREASON" ColumnName="SIREASON" />
+                <ScalarProperty Name="SICANCEL" ColumnName="SICANCEL" />
+                <ScalarProperty Name="SIUSER" ColumnName="SIUSER" />
+                <ScalarProperty Name="SIDATE" ColumnName="SIDATE" />
+                <ScalarProperty Name="SINO" ColumnName="SINO" />
+                <ScalarProperty Name="TRKID" ColumnName="TRKID" />
+                <ScalarProperty Name="SINO_ID" ColumnName="SINO_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

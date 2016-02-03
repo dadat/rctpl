@@ -1,4 +1,6 @@
-﻿<!-- Change Password Modal-->
+﻿@*@model RCTPL_WebProjects.Models.changePasswdViewModel*@
+@*@model RCTPL_WebProjects.Models.SharedModel*@
+<!-- Change Password Modal-->
 
     <div class="modal fade" id="CPwordModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" style="width:360px">
@@ -14,24 +16,35 @@
                         <b>Change Password</b>
                     </div><!-- /.login-logo -->
                     <div class="login-box-body">
-                        <p class="login-box-msg">Edit your Password here.</p>
-                        
+                        @*<p class="login-box-msg">Edit your Password here.</p>
+                        <hr/>*@
+
+
                         <form action="/WEBUSERS/ChangePasswd" method="post">
 
                             @Html.AntiForgeryToken()
+                            @Html.ValidationSummary("", new { @class = "text-danger" })
+
+
+
 
                             <input type="hidden" value="@Session["UName"].ToString()" name="_uname" id="_uname" />
+                         @*   @Html.HiddenFor(m =>  m._uname, new { @value = Session["UName"].ToString() })*@
+                            
                             <div class="form-group has-feedback">
-                                <input type="password" class="form-control" placeholder="Password" id="_currPass" name="_currPass">
+                                <input type="password" class="form-control" placeholder="Password" id="OldPassword" name="OldPassword">
+                             @*   @Html.PasswordFor(m => m.OldPassword, new { @class = "form-control", placeholder = "Password" })*@
                                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                             </div>
                             <div class="form-group has-feedback">
-                                <input type="password" class="form-control" placeholder="New Password" id="newPass" name="newPass">
+                                <input type="password" class="form-control" placeholder="New Password" id="NewPassword" name="NewPassword">
+                               @* @Html.PasswordFor(m => m.NewPassword, new { @class = "form-control", placeholder = "New Password" })*@
                                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                             </div>
                             <div>
                                 <div class="form-group has-feedback">
-                                    <input type="password" class="form-control" placeholder="Confirm New Password" id="password" name="CNewpassword">
+                                    <input type="password" class="form-control" placeholder="Confirm New Password" id="ConfirmPassword" name="ConfirmPassword">
+                                  @*  @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Confirm New Password" })*@
                                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                                 </div>
 

@@ -3,37 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using RCTPL_WebProjects.Models;
-using System.Web.Http;
-using System.Net;
 
 namespace RCTPL_WebProjects.Controllers
 {
-    public class AdminController : AdminBaseController
+    public class AdminController : Controller
     {
-
-        private RCTPLEntities db = new RCTPLEntities();
-
         // GET: Admin
         public ActionResult Index()
         {
             return View();
         }
-
-        public IEnumerable<TBL_WEBUSERS> GetAllUsers()
-        {
-            return db.TBL_WEBUSERS;
-        }
-
-        //public IHttpActionResult GetUser(string username)
-        //{
-        //    var product = db.TBL_WEBUSERS.FirstOrDefault((p) => p.USERNAME == username);
-        //    if (product == null)
-        //    {
-        //        return null;
-        //    }
-        //    return product.ToString();
-        //}
 
         // 
         // GET: /HelloWorld/Welcome/ 

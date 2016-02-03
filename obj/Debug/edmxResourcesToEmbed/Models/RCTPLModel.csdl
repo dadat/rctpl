@@ -1,130 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="RCTPLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="T_BILLCHRGD">
-    <Key>
-      <PropertyRef Name="BILLD_ID" />
-    </Key>
-    <Property Name="BILLD_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="BCHCHRGNO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="BCDSERIES" Type="Int32" Nullable="false" />
-    <Property Name="BCDITMCD" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="BCDESC" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="BCDQTY" Type="Int32" Nullable="false" />
-    <Property Name="BCDSP" Type="Decimal" Precision="15" Scale="5" Nullable="false" />
-    <Property Name="BCDPATCOVER" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="BCDPATBAL" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="BCDTPPCOVER" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="DISCCD" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-    <Property Name="TPCD" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
-    <Property Name="BCDTPPTAG" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-    <Property Name="COLORNUM" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <Property Name="BCDSINO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-    <Property Name="BCDTPPBAL" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="TAX_AMT" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="PRNT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-    <Property Name="DOC_STAMP" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="PREM_TAX" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="E_VAT" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="LGT" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="SUM_INSIRED" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="COMP_FEE" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="CERT_FEE" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="BASIC_PREMIUM" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="DOC_OR" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <Property Name="COI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="COC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="COMMISSION" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="AUTHEN_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="WITH_COM" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-    <Property Name="W_TAX" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="W_TAX_NET" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="NO_DAYS" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="PRO_RATA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-    <Property Name="REG_TYPE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-    <Property Name="TRANS_TYPE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-    <Property Name="REGION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="ENDO_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="UPLOADED_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="UPLOADED_DATE" Type="DateTime" Precision="3" />
-    <Property Name="LTFRB_DCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="LTFRB_DDATE" Type="DateTime" Precision="3" />
-    <Property Name="VEHICLE_NUMBER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="CAN_POLICY" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-    <Property Name="REFUND" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="OTH_CHRGES" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="TAXES" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="DATE_CANCEL" Type="DateTime" Precision="3" />
-    <Property Name="can_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="REF_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <EntityType Name="T_BILLCHRGH">
-    <Key>
-      <PropertyRef Name="BCHCHRGNO" />
-    </Key>
-    <Property Name="BILLH_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="BCHCHRGNO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="PAPIN" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-    <Property Name="TRKID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
-    <Property Name="BCHDTE" Type="DateTime" Precision="3" />
-    <Property Name="USRID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
-    <Property Name="PKCD" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
-    <Property Name="UPLOADED_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="UPLOADED_DATE" Type="DateTime" Precision="3" />
-  </EntityType>
-  <EntityType Name="T_COLLECTION">
-    <Key>
-      <PropertyRef Name="COLNO" />
-    </Key>
-    <Property Name="COLL_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="COLNO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="USRID" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="COLORDTE" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="COLAMT" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="CLIENTCD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="COLPYMTYP" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="COLPARTICULAR" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="COLORNUM" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="COLSTATOR" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="COLREFNO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="COLCRDCHKNO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="COLREMARK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="COLPAYOR" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="WITH_TAX" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-    <Property Name="TAX_AMT" Type="Decimal" Precision="15" Scale="5" />
-    <Property Name="UPLOADED_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="UPLOADED_DATE" Type="DateTime" Precision="3" />
-    <Property Name="BANK_NAME" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="CARD_HOLDER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="CARD_NO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <EntityType Name="T_SINO">
-    <Key>
-      <PropertyRef Name="TRKID" />
-    </Key>
-    <Property Name="SINO_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TRKID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="SINO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="SIDATE" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="SIUSER" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="SIAGE" Type="Byte" />
-    <Property Name="SICANCEL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-    <Property Name="SIREASON" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
-    <Property Name="SIDTECANCEL" Type="DateTime" Precision="3" />
-    <Property Name="CANUSER" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
-    <Property Name="AMOUNT" Type="Decimal" Precision="8" Scale="2" />
-    <Property Name="DOCPRINT" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-    <Property Name="DUMPED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-    <Property Name="COI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="COC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="UPLOADED_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="UPLOADED_DATE" Type="DateTime" Precision="3" />
-  </EntityType>
   <EntityType Name="T_TRACKING">
     <Key>
       <PropertyRef Name="TRACKING_ID" />
     </Key>
     <Property Name="TRACKING_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TRKID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TRKID" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="PAPIN" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TRKDTEADMT" Type="DateTime" Precision="3" />
     <Property Name="PCID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
@@ -177,24 +58,71 @@
     <Property Name="REGION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="MAILING_ADDRESS" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
     <Property Name="CITY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BRANCH_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COMP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityContainer Name="RCTPLEntities3" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="T_BILLCHRGD" EntityType="Self.T_BILLCHRGD" />
-    <EntitySet Name="T_BILLCHRGH" EntityType="Self.T_BILLCHRGH" />
-    <EntitySet Name="T_COLLECTION" EntityType="Self.T_COLLECTION" />
-    <EntitySet Name="T_SINO" EntityType="Self.T_SINO" />
+  <EntityType Name="M_COMPANY">
+    <Key>
+      <PropertyRef Name="COMP_ID" />
+    </Key>
+    <Property Name="COMP_ID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STADDR" Type="String" MaxLength="85" FixedLength="false" Unicode="false" />
+    <Property Name="TELNO1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FAXNO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="ZIP" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="ACTIVE" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CONTACT_no" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="LOGO" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="VAT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="RCTPLEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="T_TRACKING" EntityType="Self.T_TRACKING" />
     <EntitySet Name="TBL_SYSTEMUSERS" EntityType="Self.TBL_SYSTEMUSERS" />
     <EntitySet Name="TBL_WEBUSERS" EntityType="Self.TBL_WEBUSERS" />
+    <EntitySet Name="M_COMPANY" EntityType="Self.M_COMPANY" />
+    <EntitySet Name="TBL_VEHICLES" EntityType="RCTPLModel.TBL_VEHICLES" />
     <EntitySet Name="M_PAIP" EntityType="RCTPLModel.M_PAIP" />
+    <EntitySet Name="T_BILLCHRGD" EntityType="RCTPLModel.T_BILLCHRGD" />
+    <EntitySet Name="T_COLLECTION" EntityType="RCTPLModel.T_COLLECTION" />
+    <EntitySet Name="T_BILLCHRGH" EntityType="RCTPLModel.T_BILLCHRGH" />
+    <EntitySet Name="T_SINO" EntityType="RCTPLModel.T_SINO" />
   </EntityContainer>
+  <EntityType Name="TBL_VEHICLES">
+    <Key>
+      <PropertyRef Name="VEHICLE_ID" />
+    </Key>
+    <Property Name="PKCD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PACKAGE_DESC" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="YEAR_COVERAGE" Type="Int32" />
+    <Property Name="SERVICE_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SERVICE_TYPE" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="SUM_INSURED" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="BASIC_PREMIUM" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DOC_STAMP" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LGT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VAT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="COMP_FEE" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CERT_FEE" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TOTAL_AMOUNT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="VEHICLE_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VEHICLE_NUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VEHICLE_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BRANCH_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="AUTHEN_FEE" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CTPL" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="PL" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="BAYAD_CENTER" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="LGT_RATE" Type="Decimal" Precision="18" Scale="3" />
+  </EntityType>
   <EntityType Name="M_PAIP">
     <Key>
-      <PropertyRef Name="PAPIN" />
+      <PropertyRef Name="PAIP_ID" />
     </Key>
     <Property Name="PAIP_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PAPIN" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
-    <Property Name="PALNAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="PALNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="PAADDRESS" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
     <Property Name="MV_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="VEHICLE_CLASS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
@@ -222,6 +150,151 @@
     <Property Name="BUS_PROF" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="NO_DAYS" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="PRO_RATA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FLEET" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="FUEL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BRANCH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NON_LTO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VEHICLE_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TYPE_BODY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPLOADED_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPLOADED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MIDDLE_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COMPANY_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="BY_COMPNAME" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RISK_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="T_BILLCHRGD">
+    <Key>
+      <PropertyRef Name="BILLD_ID" />
+    </Key>
+    <Property Name="BILLD_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BCHCHRGNO" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="BCDSERIES" Type="Int32" Nullable="false" />
+    <Property Name="BCDITMCD" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="BCDESC" Type="String" Nullable="false" MaxLength="125" FixedLength="false" Unicode="false" />
+    <Property Name="BCDQTY" Type="Int32" Nullable="false" />
+    <Property Name="BCDSP" Type="Decimal" Nullable="false" Precision="15" Scale="5" />
+    <Property Name="BCDPATCOVER" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="BCDPATBAL" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="BCDTPPCOVER" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="DISCCD" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="TPCD" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="BCDTPPTAG" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="COLORNUM" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="BCDSINO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="BCDTPPBAL" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="DOC_STAMP" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="E_VAT" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="LGT" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="SUM_INSIRED" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="COMP_FEE" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="CERT_FEE" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="BASIC_PREMIUM" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="DOC_OR" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="COI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="COMMISSION" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="AUTHEN_CODE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TAX_AMT" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="WITH_COM" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="W_TAX" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="W_TAX_NET" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="NO_DAYS" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="PRO_RATA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="REG_TYPE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="TRANS_TYPE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="REGION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ENDO_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="UPLOADED_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPLOADED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="LTFRB_DCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LTFRB_DDATE" Type="DateTime" Precision="3" />
+    <Property Name="VEHICLE_NUMBER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="REFUND" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="OTH_CHRGES" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="TAXES" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="CAN_POLICY" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DATE_CANCEL" Type="DateTime" Precision="3" />
+    <Property Name="can_user" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PRNT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DATE_PRINTED" Type="DateTime" Precision="3" />
+    <Property Name="REF_NUM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DATEPAID" Type="DateTime" Precision="3" />
+    <Property Name="VEHICLE_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COMP_SHARE" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="TPP_SHARE" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="QR_IMAGE" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="CTPL" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="PL" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="AUTHEN_FEE" Type="Decimal" Precision="15" Scale="2" />
+    <Property Name="MUNICIPALITY" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="COC_SERIES" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="BAYAD_CENTER" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="RISK_CODE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="LGT_RATE" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="INCEPTION_FROM" Type="DateTime" Precision="3" />
+    <Property Name="INCEPTION_TO" Type="DateTime" Precision="3" />
+    <Property Name="CHARGES_OR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="W_TAX_SHARE" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="T_COLLECTION">
+    <Key>
+      <PropertyRef Name="COLL_ID" />
+    </Key>
+    <Property Name="COLL_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COLNO" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="USRID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COLORDTE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="COLAMT" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="CLIENTCD" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="COLPYMTYP" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="COLPARTICULAR" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="COLORNUM" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="COLSTATOR" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="COLREFNO" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="BANK_NAME" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CARD_HOLDER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CARD_NO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="COLREMARK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="COLPAYOR" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="WITH_TAX" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TAX_AMT" Type="Decimal" Precision="15" Scale="5" />
+    <Property Name="UPLOADED_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPLOADED_DATE" Type="DateTime" Precision="3" />
+    <Property Name="DCR_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DEPOSITED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CHECK_DATE" Type="DateTime" Precision="3" />
+    <Property Name="CHECK_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="BRANCH_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="T_BILLCHRGH">
+    <Key>
+      <PropertyRef Name="BILLH_ID" />
+    </Key>
+    <Property Name="BILLH_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BCHCHRGNO" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PAPIN" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TRKID" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="BCHDTE" Type="DateTime" Precision="3" />
+    <Property Name="USRID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PKCD" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="UPLOADED_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UPLOADED_DATE" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="T_SINO">
+    <Key>
+      <PropertyRef Name="SINO_ID" />
+    </Key>
+    <Property Name="SINO_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TRKID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SINO" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="SIDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SIUSER" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SICANCEL" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SIREASON" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="SIDTECANCEL" Type="DateTime" Precision="3" />
+    <Property Name="CANUSER" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="AMOUNT" Type="Decimal" Precision="8" Scale="2" />
     <Property Name="UPLOADED_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="UPLOADED_DATE" Type="DateTime" Precision="3" />
   </EntityType>

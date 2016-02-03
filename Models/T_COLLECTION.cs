@@ -34,5 +34,10 @@ namespace RCTPL_WebProjects.Models
         public Nullable<decimal> TAX_AMT { get; set; }
         public string UPLOADED_CODE { get; set; }
         public Nullable<System.DateTime> UPLOADED_DATE { get; set; }
+        public string DCR_NO { get; set; }
+        public string DEPOSITED { get; set; }
+        public Nullable<System.DateTime> CHECK_DATE { get; set; }
+        public string CHECK_NO { get; set; }
+        public string BRANCH_NAME { get; set; }
     }
 }

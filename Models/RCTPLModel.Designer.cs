@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\David\Documents\Visual Studio 2013\Projects\RCTPL_PROJECT\RCTPL_WebProjects\RCTPL_WebProjects\Models\RCTPLModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\David\Source\Workspaces\RCTPL\RCTPL_WebProjects2\Models\RCTPLModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

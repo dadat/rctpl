@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VehicleQSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="OwnerDetail">
+    <Key>
+      <PropertyRef Name="ioCode" />
+    </Key>
+    <Property Name="ioCode" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CUSTOMER_ID" Type="char" MaxLength="15" Nullable="false" />
+    <Property Name="OWNER_NAME" Type="varchar" MaxLength="120" />
+    <Property Name="ADDRESS" Type="varchar" MaxLength="231" />
+  </EntityType>
+  <EntityType Name="VehicleDetail">
+    <Key>
+      <PropertyRef Name="icCode" />
+    </Key>
+    <Property Name="icCode" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CUSTOMER_ID" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="model" Type="int" />
+    <Property Name="make" Type="varchar" MaxLength="100" />
+    <Property Name="plateno" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="fileno" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="engineno" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="chassisno" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="color" Type="varchar" MaxLength="50" />
+    <Property Name="denom" Type="varchar" MaxLength="6" />
+    <Property Name="pd" Type="int" />
+    <Property Name="cylinder" Type="int" />
+    <Property Name="fuel" Type="varchar" MaxLength="6" />
+    <Property Name="series" Type="varchar" MaxLength="50" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="grosswt" Type="int" />
+    <Property Name="netwt" Type="int" />
+    <Property Name="shipwt" Type="int" />
+    <Property Name="capwt" Type="int" />
+    <Property Name="vclass" Type="varchar" MaxLength="50" />
+    <Property Name="trdate" Type="datetime" Nullable="false" />
+    <Property Name="lto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="2" />
+  </EntityType>
+  <EntityContainer Name="VehicleQSModelStoreContainer">
+    <EntitySet Name="OwnerDetail" EntityType="Self.OwnerDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VehicleDetail" EntityType="Self.VehicleDetail" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

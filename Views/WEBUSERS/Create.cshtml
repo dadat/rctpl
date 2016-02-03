@@ -1,23 +1,59 @@
-﻿@{
+﻿@model RCTPL_WebProjects.Models.RegViewModel
+
+@{
    Layout = "~/Views/Shared/_landingLayout.cshtml"; ;
 }
-
-<!DOCTYPE html>
 
 
     @using (Html.BeginForm())
     {
-        <section class="content">
+      
+        if(@Model.isError == false)
+        {
+            <section class="content">
+                <div class="callout callout-info">
+                    <h3>Sign Up Complete</h3>
+                    <p>A message has been sent to your email. Kindly check you email after a few minutes. Thank you.</p>
+                </div>
+            </section>
+        }
+        else
+        {
+            <section class="content">
+                <div class="callout callout-danger">
+                    <h3><b>Warning!</b></h3>
+                    <p>@Model.errMessage</p>
+                </div>
+            </section>
+        }
+
+
+        @*@if (@Model.isError == false)
+        {
+
             <div class="callout callout-info">
-                <h3>Check Registered Email</h3>
-                <p>A message has been sent to your email. Kindly check you email after a few minutes.</p>
+                <h2>@Model.title</h2>
+                <p><h3>@Model.message</h3></p>
             </div>
-        </section>
-        
-        
-           
-           
-            }
+
+        }
+        else
+        {
+
+            <div class="callout callout-danger">
+                <h2>@Model.title</h2>
+                <p><h3>@Model.message</h3></p>
+            </div>
+
+        }*@
+
+
+    }
+<script>
+   
+</script>
+  
+
 
 
 

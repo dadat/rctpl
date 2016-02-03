@@ -1,238 +1,161 @@
-﻿<!DOCTYPE html>
+﻿
+
+<!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>RDMS Main Page</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.5 -->
-    @*<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">*@
-    <link rel="stylesheet" href="~/ContentRD/bootstrap/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="~/ContentRD/fromWeb/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="~/ContentRD/fromWeb/ionicons.min.css">
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Theme style -->
-    @*<link rel="stylesheet" href="dist/css/AdminLTE.min.css">*@
-    <link rel="stylesheet" href="~/ContentRD/dist/css/AdminLTE.min.css">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="~/ContentRD/dist/css/skins/_all-skins.min.css">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="~/ContentRD/plugins/iCheck/flat/blue.css">
-    <!-- Morris chart -->
-    <link rel="stylesheet" href="~/ContentRD/plugins/morris/morris.css">
-    <!-- jvectormap -->
-    <link rel="stylesheet" href="~/ContentRD/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-    <!-- Date Picker -->
-    <link rel="stylesheet" href="~/ContentRD/plugins/datepicker/datepicker3.css">
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="~/ContentRD/plugins/daterangepicker/daterangepicker-bs3.css">
-    <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="~/ContentRD/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <!-- REVOLUTION SLIDER -->
-    <!-- REVOLUTION SLIDER -->
-    <link href="~/assets/css/revolution-slider.css" rel="stylesheet" type="text/css" />
+    <title>ABIC</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="~/ContentRD/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="~/ContentRD/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="~/ContentRD/dist/css/timeline.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="~/ContentRD/dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="~/ContentRD/bower_components/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="~/ContentRD/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!--[if lt IE 9]><![endif]-->
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    
+
 </head>
-<body class="hold-transition skin-green layout-top-nav">
 
-    <div class="wrapper">
-
-        <header class="main-header">
-            <nav class="navbar navbar-static-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <a href="http://www.malayan.com" class="navbar-brand"><b>Malayan</b> Insurance</a>
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                    </div>
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse pull-right" id="navbar-collapse">
-                        <ul class="nav navbar-nav">
-
-                            <li><a data-toggle="modal" data-target="#LoginModal">Login</a></li>
-                            <li><a data-toggle="modal" data-target="#RegisterModal">Register</a></li>
-
-                        </ul>
-
-                    </div><!-- /.navbar-collapse -->
-
-                </div><!-- /.container-fluid -->
-            </nav>
-        </header>
-        <!-- Full Width Column -->
-        <div class="content-wrapper">
-            <div class="container">
+<body>
 
 
-                <!-- Main content -->
-                <section class="content">
+
+    @*@if (Session["LoggedUserId"] != null)
+        {*@
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-brand navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*<a class="navbar-brand" href="/WEBUSERS/StartPage">Allied Bankers Insurance Corporation</a>*@
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                
+                
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        @*<li>
+                            <a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>*@
+                        <li>
+                            <a href="/WEBUSERS/StartPage"><i class="fa fa-home fa-fw"></i>Main</a>
+                        </li>
+                        <li>
+                            <a href="/WEBUSERS/Create"><i class="fa fa-user fa-fw"></i>Register</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="/WEBUSERS/Index"><i class="fa fa-sign-in fa-fw"></i>Login</a>
+                        </li>
+                    </ul>
+                   
+                </li>
+            
+            </ul>
+           
+        </nav>
 
 
-                    <!-- Register Modal    -->
-                    <div class="modal fade" id="RegisterModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" style="width:360px">
-                            <div class="modal-content">
-                                <!--Modal Content here-->
-                                <div class="register-box">
-                                    <div class="register-logo bg-green-active">
-                                        <b>RCTPL  Registraion</b>
-                                    </div>
+    </div>
+  <div class="row" style="padding-top:65px">
+      @RenderBody()
+  </div>
 
-                                    <div class="register-box-body">
-                                        <p class="login-box-msg">Register a new membership</p>
-                                        <form action="/WEBUSERS/Create" method="post">
-                                            @Html.AntiForgeryToken()
-                                            <div class="form-group has-feedback">
-                                                <input type="text" class="form-control" placeholder="Last Name" name="lname">
-                                                <span class="glyphicon glyphicon-user form-control-feedback"></span>                                                
-                                            </div>
-                                            <div class="form-group has-feedback">
-                                                <input type="text" class="form-control" placeholder="First Name" name="fname">
-                                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                                            </div>
-                                            <div class="form-group has-feedback">
-                                                <input type="text" class="form-control" placeholder="Middle Name" name="mname">
-                                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                                            </div>
-                                            <div class="form-group has-feedback">
-                                                <input type="text" class="form-control" placeholder="House No./Street" name="nostreet">
-                                                <span class="form-control-feedback"></span>
-                                            </div>
-                                            <div class="form-group has-feedback">
-                                                <input type="text" class="form-control" placeholder="City" name="city">
-                                                <span class="form-control-feedback"></span>
-                                            </div>
-                                            <div class="form-group has-feedback">
-                                                <input type="text" class="form-control" placeholder="Region" name="region">
-                                                <span class="form-control-feedback"></span>
-                                            </div>
-                                            <div class="form-group has-feedback">
-                                                <input type="text" class="form-control" placeholder="Contact No." name="region">
-                                                <span class="glyphicon glyphicon-phone form-control-feedback"></span>
-                                            </div>
-                                            <div class="form-group has-feedback">
-                                                <input type="text" class="form-control" placeholder="Username" name="uname">
-                                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                                            </div>
-                                           
-                                            <div class="form-group has-feedback">
-                                                <input type="email" class="form-control" placeholder="Email" name="email">
-                                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                                            </div>                                           
-                                            <div class="row">
-                                                <!--<div class="col-xs-8">
-                                                    <div class="checkbox icheck">
-                                                        <label>
-                                                            <input type="checkbox"> I agree to the <a href="#">terms</a>
-                                                        </label>
-                                                    </div>
-                                                </div> /.col -->
-                                                <div class="col-xs-4">
-                                                    <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
-                                                </div><!-- /.col -->
-                                            </div>
-                                        </form>
+    
 
-                                        @*<div class="social-auth-links text-center">
-                                            <p>- OR -</p>
-                                            <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using Facebook</a>
-                                            <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign up using Google+</a>
-                                        </div>*@
+    <!-- jQuery -->
+    <script src="~/ContentRD/bower_components/jquery/dist/jquery.min.js"></script>
 
-                                    </div><!-- /.form-box -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="~/ContentRD/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-                    @RenderBody()
-                    @Html.Partial("LoginPartial")
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="~/ContentRD/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
+    <!-- Morris Charts JavaScript -->
+    <script src="~/ContentRD/bower_components/raphael/raphael-min.js"></script>
+    <script src="~/ContentRD/bower_components/morrisjs/morris.min.js"></script>
+    <script src="~/ContentRD/js/morris-data.js"></script>
 
-                </section><!-- /.content -->
-            </div><!-- /.container -->
-        </div><!-- /.content-wrapper -->
-        <footer class="main-footer">
-            <div class="container">
-                <div class="pull-right hidden-xs">
-                    <b>Version</b> beta
-                </div>
-                <strong>Copyright &copy; 2014-2015 <a href="http://rdmsinc.com">Uber Apps Inc.</a>.</strong> All rights reserved.
-            </div><!-- /.container -->
-        </footer>
-    </div><!-- ./wrapper -->
-    <!-- jQuery 2.1.4 -->
-    <script src="~/ContentRD/plugins/jQuery/jQuery-2.1.4.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="~/ContentRD/fromWeb/jquery-ui.min.js"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <!-- Custom Theme JavaScript -->
+    <script src="~/ContentRD/dist/js/sb-admin-2.js"></script>
+
     <script>
-        $.widget.bridge('uibutton', $.ui.button);
+        $(function () {
+            $("#employeeLink").on("click", function (e) {
+                e.preventDefault(); // cancel the link itself
+                $.post(this.href, function (data) {
+                    $("#someContainer").html(data);
+                });
+            });
+
+            $("#CPwordModal").on("click", function (e) {
+                var password = $("#newPass").val();
+                $("#CNewpassword").html(password == $(this).val()
+                    ? "Passwor Match."
+                    : "Password do not Match!"
+
+                    );
+            });
+        });
     </script>
-    <!-- Bootstrap 3.3.5 -->
-    <script src="~/ContentRD/bootstrap/js/bootstrap.min.js"></script>
-    <!-- Morris.js charts -->
-    <script src="~/ContentRD/fromWeb/raphael-min.js"></script>
-    <script src="~/ContentRD/plugins/morris/morris.min.js"></script>
-    <!-- Sparkline -->
-    <script src="~/ContentRD/plugins/sparkline/jquery.sparkline.min.js"></script>
-    <!-- jvectormap -->
-    <script src="~/ContentRD/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-    <script src="~/ContentRD/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <!-- jQuery Knob Chart -->
-    <script src="~/ContentRD/plugins/knob/jquery.knob.js"></script>
-    <!-- daterangepicker -->
-
-    <script src="~/ContentRD/fromWeb/moment.min.js"></script>
-    <script src="~/ContentRD/plugins/daterangepicker/daterangepicker.js"></script>
-    <!-- datepicker -->
-    <script src="~/ContentRD/plugins/datepicker/bootstrap-datepicker.js"></script>
-    <!-- Bootstrap WYSIHTML5 -->
-    <script src="~/ContentRD/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-    <!-- Slimscroll -->
-    <script src="~/ContentRD/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-    <!-- FastClick -->
-    <script src="~/ContentRD/plugins/fastclick/fastclick.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="~/ContentRD/dist/js/app.min.js"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="~/ContentRD/dist/js/pages/dashboard.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="~/ContentRD/dist/js/demo.js"></script>
 
 
-    <!-- JAVASCRIPT FILES -->
-    <script type="text/javascript" src="~/assets/plugins/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="~/assets/plugins/jquery.isotope.js"></script>
-    <script type="text/javascript" src="~/assets/plugins/masonry.js"></script>
+    <style>
+        #bg {
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+        }
 
-    <script type="text/javascript" src="~/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="~/assets/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
-    <script type="text/javascript" src="~/assets/plugins/owl-carousel/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="~/assets/plugins/knob/js/jquery.knob.js"></script>
-    <script type="text/javascript" src="~/assets/plugins/flexslider/jquery.flexslider-min.js"></script>
-
-    <!-- REVOLUTION SLIDER -->
-    <script type="text/javascript" src="~/assets/plugins/revolution-slider/js/jquery.themepunch.plugins.min.js"></script>
-    <script type="text/javascript" src="~/assets/plugins/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
-    <script type="text/javascript" src="~/assets/js/revolution_slider.js"></script>
-
-    <script type="text/javascript" src="~/assets/js/scripts.js"></script>
-    <script type="text/javascript" src="~/assets/plugins/styleswitcher/styleswitcher.js">        /** REMOVE ON PRODUCTION **/</script>
+            #bg img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                min-width: 50%;
+                min-height: 50%;
+            }
+    </style>
 
 </body>
 </html>

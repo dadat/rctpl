@@ -63,6 +63,24 @@ namespace RCTPL_WebProjects.Models
         public Nullable<System.DateTime> DATE_CANCEL { get; set; }
         public string can_user { get; set; }
         public string PRNT { get; set; }
+        public Nullable<System.DateTime> DATE_PRINTED { get; set; }
         public string REF_NUM { get; set; }
+        public Nullable<System.DateTime> DATEPAID { get; set; }
+        public string VEHICLE_CODE { get; set; }
+        public Nullable<decimal> COMP_SHARE { get; set; }
+        public Nullable<decimal> TPP_SHARE { get; set; }
+        public byte[] QR_IMAGE { get; set; }
+        public Nullable<decimal> CTPL { get; set; }
+        public Nullable<decimal> PL { get; set; }
+        public Nullable<decimal> AUTHEN_FEE { get; set; }
+        public string MUNICIPALITY { get; set; }
+        public string COC_SERIES { get; set; }
+        public Nullable<decimal> BAYAD_CENTER { get; set; }
+        public string RISK_CODE { get; set; }
+        public Nullable<decimal> LGT_RATE { get; set; }
+        public Nullable<System.DateTime> INCEPTION_FROM { get; set; }
+        public Nullable<System.DateTime> INCEPTION_TO { get; set; }
+        public string CHARGES_OR { get; set; }
+        public Nullable<decimal> W_TAX_SHARE { get; set; }
     }
 }

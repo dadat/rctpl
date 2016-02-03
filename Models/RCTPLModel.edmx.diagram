@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3b8d1b1e201c4fd498908756f4306a4f" Name="Diagram1">
-        <EntityTypeShape EntityType="RCTPLModel.M_PAIP" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RCTPLModel.T_BILLCHRGD" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RCTPLModel.T_BILLCHRGH" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RCTPLModel.T_COLLECTION" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RCTPLModel.T_SINO" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RCTPLModel.T_TRACKING" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+      <Diagram DiagramId="0d34403ce80545a0ad72b4013937457a" Name="Diagram1" ZoomLevel="46">
+        <EntityTypeShape EntityType="RCTPLModel.T_TRACKING" Width="1.5" PointX="6.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="RCTPLModel.TBL_SYSTEMUSERS" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="RCTPLModel.TBL_WEBUSERS" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RCTPLModel.TBL_PAYMENTS" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RCTPLModel.TBLSEARCH" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RCTPLModel.M_COMPANY" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RCTPLModel.TBL_VEHICLES" Width="1.5" PointX="5.375" PointY="10.75" />
+        <EntityTypeShape EntityType="RCTPLModel.M_PAIP" Width="1.5" PointX="11.375" PointY="4.75" />
+        <EntityTypeShape EntityType="RCTPLModel.T_BILLCHRGD" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="RCTPLModel.T_COLLECTION" Width="1.5" PointX="3.375" PointY="4.75" />
+        <EntityTypeShape EntityType="RCTPLModel.T_BILLCHRGH" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="RCTPLModel.T_SINO" Width="1.5" PointX="5.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

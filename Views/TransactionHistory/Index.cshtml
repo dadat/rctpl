@@ -6,103 +6,39 @@
 <link href="//cdn.muicss.com/mui-0.2.1/css/mui.min.css" rel="stylesheet" type="text/css" />
 <script src="//cdn.muicss.com/mui-0.2.1/js/mui.min.js"></script>
 
-<div class="box">
-    <div class="box-header">
-        <h3 class="box-title">Transaction History</h3>
-    </div><!-- /.box-header -->
-    <div class="box-body">
-        <table id="example1" class="table table-bordered table-striped">
-            <thead style="background:#19a565">
-                <tr>
-                    <th>Transaction Reference</th>
-                    <th>Plate</th>
-                    <th>Name</th>
-                    <th>Date</th>
-                    <th>Vehicle Make</th>
-                    <th>Total Amount</th>
-                    <th>Paid/Not Paid</th>
-                    <th>Date Paid</th>
-                    <th></th>
-                </tr>
-            </thead>
+<h2>Transaction History</h2>
 
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>@Html.DisplayFor(modelItem => item.REF_NUM)</td>
-                        <td>@Html.DisplayFor(modelItem => item.PLATE_NO)</td>
-                        <td>@Html.DisplayFor(modelItem => item.FULLNAME)</td>
-                        <td>@Html.DisplayFor(modelItem => item.BCHDTE)</td>
-                        <td>@Html.DisplayFor(modelItem => item.MAKE)</td>
-                        <td>@Html.DisplayFor(modelItem => item.BCDPATCOVER)</td>
-                        <td>@Html.DisplayFor(modelItem => item.COLORNUM)</td>
-                        <td>@Html.DisplayFor(modelItem => item.DATEPAID)</td>
-                        <td>
+<div>
+    <table class="mui-table mui-table--bordered table-hover">
+        <tr>
+            <td>Transaction Reference</td>
+            <td>Plate</td>
+            <td>Name</td>
+            <td>Date</td>
+            <td>Vehicle Make</td>
+            <td>Total Amount</td>
+            <td>Paid/Not Paid</td>
+            <td>Date Paid</td>
+            <td></td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.REF_NUM)</td>
+                <td>@Html.DisplayFor(modelItem => item.PLATE_NO)</td>
+                <td>@Html.DisplayFor(modelItem => item.FULLNAME)</td>
+                <td>@Html.DisplayFor(modelItem => item.BCHDTE)</td>
+                <td>@Html.DisplayFor(modelItem => item.MAKE)</td>
+                <td>@Html.DisplayFor(modelItem => item.BCDPATCOVER)</td>
+                <td>@Html.DisplayFor(modelItem => item.COLORNUM)</td>
+                <td>@Html.DisplayFor(modelItem => item.DATEPAID)</td>
+                <td>
+                    @Html.ActionLink("Pay", "PayNow", new { REF_NUM = item.REF_NUM }, new { @class = "mui-btn mui-btn--raised mui-btn--danger" })
+                    @Html.ActionLink("Print", "PrintCOC", "COC", new { REF_NUM = item.REF_NUM }, new { @class = "mui-btn mui-btn--raised mui-btn--primary", @target = "_blank" })
+                </td>
+            </tr>
 
-                            @Html.ActionLink("Print", "Payments", "COC", new { REF_NUM = item.REF_NUM }, new { @class = "mui-btn mui-btn--raised mui-btn--primary" })
+        }
 
-                            @{
-                    if (String.IsNullOrEmpty(item.COLORNUM))
-                    {
-                        @Html.ActionLink("Pay", "PayNow", new { REF_NUM = item.REF_NUM }, new { @class = "mui-btn mui-btn--raised mui-btn--danger" })
-                    }
-                    else
-                    {
-                        //@Html.ActionLink("Paid", "PayNow", new { REF_NUM = item.REF_NUM }, new { @class = "mui-btn mui-btn--raised mui-btn--danger", onclick = "javascript:return false;" })*@
-                    }
-                            }
-
-                            
-                        </td>
-                    </tr>
-
-                }
-            </tbody>
-
-
-            <tfoot>
-                <tr>
-                    <th>Transaction Reference</th>
-                    <th>Plate</th>
-                    <th>Name</th>
-                    <th>Date</th>
-                    <th>Vehicle Make</th>
-                    <th>Total Amount</th>
-                    <th>Paid/Not Paid</th>
-                    <th>Date Paid</th>
-                    <th></th>
-                </tr>
-            </tfoot>
-        </table>
-    </div>
+    </table>
 </div>
-<!-- jQuery 2.1.4 -->
-<script src="../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
-<!-- Bootstrap 3.3.5 -->
-<script src="../../bootstrap/js/bootstrap.min.js"></script>
-<!-- DataTables -->
-<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
-<!-- SlimScroll -->
-<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="../../plugins/fastclick/fastclick.min.js"></script>
-<!-- AdminLTE App -->
-<script src="../../dist/js/app.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
-<script>
-    $(function () {
-        $("#example1").DataTable();
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false
-        });
-    });
-</script>
-

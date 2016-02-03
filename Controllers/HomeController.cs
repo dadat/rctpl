@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace RCTPL_WebProjects.Controllers
 {
-    public class HomeController : BaseController
+    public class HomeController : Controller
     {
         public ActionResult Index()
-        {
+        {            
             return View();
         }
 
@@ -22,6 +22,11 @@ namespace RCTPL_WebProjects.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
+            return View();
+        }
+
+        public ActionResult Pogi()
+        {
             return View();
         }
 

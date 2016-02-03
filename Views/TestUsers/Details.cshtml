@@ -1,0 +1,146 @@
+﻿@model RCTPL_WebProjects.Models.TBL_WEBUSERS
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>TBL_WEBUSERS</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.USER_CODE)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.USER_CODE)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.USERNAME)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.USERNAME)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PASSWORD)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PASSWORD)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.E_PASSWORD)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.E_PASSWORD)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SHA_PASSWORD)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SHA_PASSWORD)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.EMAIL)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.EMAIL)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.NAME)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.NAME)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CONTACT_NUMBER)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CONTACT_NUMBER)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MAILING_ADDRESS)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MAILING_ADDRESS)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DATE_REGISTERED)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DATE_REGISTERED)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.VERIFICATION_CODE)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.VERIFICATION_CODE)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.VERIFICATION_STATUS)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.VERIFICATION_STATUS)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DATE_VERIFIED)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DATE_VERIFIED)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ACTIVE)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ACTIVE)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.REGION)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.REGION)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.USER_ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

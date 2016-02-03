@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VehicleQSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="OwnerDetail">
+    <Key>
+      <PropertyRef Name="ioCode" />
+    </Key>
+    <Property Name="ioCode" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CUSTOMER_ID" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OWNER_NAME" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="ADDRESS" Type="String" MaxLength="231" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VehicleDetail">
+    <Key>
+      <PropertyRef Name="icCode" />
+    </Key>
+    <Property Name="icCode" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CUSTOMER_ID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="model" Type="Int32" />
+    <Property Name="make" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="plateno" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fileno" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="engineno" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="chassisno" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="denom" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="pd" Type="Int32" />
+    <Property Name="cylinder" Type="Int32" />
+    <Property Name="fuel" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="series" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="grosswt" Type="Int32" />
+    <Property Name="netwt" Type="Int32" />
+    <Property Name="shipwt" Type="Int32" />
+    <Property Name="capwt" Type="Int32" />
+    <Property Name="vclass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="trdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="lto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="VehicleQSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="OwnerDetails" EntityType="Self.OwnerDetail" />
+    <EntitySet Name="VehicleDetails" EntityType="Self.VehicleDetail" />
+  </EntityContainer>
+</Schema>

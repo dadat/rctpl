@@ -24,7 +24,6 @@ namespace RCTPL_WebProjects.Models
         public Nullable<System.DateTime> SIDTECANCEL { get; set; }
         public string CANUSER { get; set; }
         public Nullable<decimal> AMOUNT { get; set; }
-        public string COI { get; set; }
         public string UPLOADED_CODE { get; set; }
         public Nullable<System.DateTime> UPLOADED_DATE { get; set; }
     }

@@ -1,0 +1,62 @@
+﻿@model RCTPL_WebProjects.Models.ForgotPasswdViewModel
+
+@{
+    ViewBag.Title = "ForgotPasswd";
+    Layout = "~/Views/Shared/_landingLayout.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <center><h2 style="background-color:red"><font color="white">@ViewBag.ErrMsg</font></h2></center>
+                <div class="login-box">
+                   
+                    @*<div class="login-page bg-green-active" style="height:45px">
+                        <center><p><h3><b>Password Recovery</b></h3></p></center>
+                    </div>*@
+                    <div class="box-header bg-green-active">
+                        <center><b class="box-title">Password Recovery</b></center>
+                    </div><!-- /.box-header -->
+
+                    <div class="login-box-body">                        
+
+                        <p class="login-box-msg">Input Username and Email.</p>
+                        <form action="/WEBUSERS/ForgotPasswd" method="post">
+                            <div class="form-group has-feedback">
+                                @*<input type="text" class="form-control" placeholder="Username" id="_uname" name="_uname">*@
+                                @Html.TextBoxFor(m => m.Username, new { @class="form-control", placecholder="Username"})
+                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                            </div>
+                            <div class="form-group has-feedback">
+                                @*<input type="text" class="form-control" placeholder="Email" id="_email" name="_email">*@
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placecholder = "Email" })
+                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-xs-6">
+                                
+                                   
+                                </div>
+
+
+                                <div class="col-xs-6">
+                                    <button type="submit" class="btn btn-primary btn-block btn-flat">Send Email Link</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div><!-- /.login-box-body -->
+                </div>
+
+}
+
+
+
+
+
+
