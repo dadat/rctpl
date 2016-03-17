@@ -47,8 +47,19 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>resources\clsYtiruceS.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.Services.WebApi, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Mindscape.LightSpeed, Version=5.0.2587.0, Culture=neutral, PublicKeyToken=360c8f37b466ebb2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Source\Workspaces\RDMS_Team_Website\BuildProcessTemplates\RDMS_Team\RDMS_Team\bin\Mindscape.LightSpeed.dll</HintPath>
+    </Reference>
+    <Reference Include="Mindscape.LightSpeed.Web, Version=5.0.2587.0, Culture=neutral, PublicKeyToken=360c8f37b466ebb2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Source\Workspaces\RDMS_Team_Website\BuildProcessTemplates\RDMS_Team\RDMS_Team\bin\Mindscape.LightSpeed.Web.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -76,6 +87,7 @@
       <HintPath>packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -96,10 +108,6 @@
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.2\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
@@ -192,17 +200,112 @@
     <Compile Include="Controllers\AdminFiles\UserControlController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Yhogz\ReportController.cs" />
+    <Compile Include="Models\LTO.cs" />
+    <Compile Include="Controllers\Printing\PrintPolicyController.cs" />
+    <Compile Include="CrystalReport\RptLTO.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport\RptLTO1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptLTO.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport\RptNonLTO.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controllers\Richmer\DashboardController.cs" />
     <Compile Include="Controllers\Richmer\MyAdminLoginController.cs" />
-    <Compile Include="Controllers\Yhogz\WEBUSERSController.cs" />
+    <Compile Include="Controllers\Yhogz\WEBUSERSController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CrystalReport\RptNonLTO1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptNonLTO.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport\rptOR.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport\rptStatsIncome.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptStatsIncome.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport\rptUserStats.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptUserStats.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BranchesModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\M_BRANCH.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_COMPANY.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_DEPT.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_EMPLOYEE.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_MV_TYPE.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_PACKAGE.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\M_PAIP.cs">
       <DependentUpon>RCTPLModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\M_PAT_CLASS.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_PREMIUM_TYPE.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_REGION.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_REGISTRATION_KEY.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_RISK_CODE.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_SATELLITE.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_SERVICE.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_SHARING.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_TPP.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_TRANSACTION.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_TYPE_BODY.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_USER.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PrintClass.cs" />
+    <Compile Include="Models\ProfileModels.cs" />
     <Compile Include="Models\RCTPLModels.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -218,10 +321,34 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RCTPLModels.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\R_EMPOSITION.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\R_OR.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\R_PACK_PRICE.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\R_SGSI.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\R_TAXRATE.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\R_TERMS.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\R_TPPTYPE.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\TBL_SYSTEMUSERS.cs">
       <DependentUpon>RCTPLModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TBL_VEHICLES.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TBL_VEHICLES_LTO.cs">
       <DependentUpon>RCTPLModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TBL_WEBUSERS.cs">
@@ -237,13 +364,18 @@
     <Compile Include="Models\T_COLLECTION.cs">
       <DependentUpon>RCTPLModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\T_ENDORSEMENT.cs">
+      <DependentUpon>RCTPLModels.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\T_SINO.cs">
       <DependentUpon>RCTPLModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\T_TRACKING.cs">
       <DependentUpon>RCTPLModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\WebUserViewModel.cs" />
+    <Compile Include="Models\WebUserViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -1100,6 +1232,9 @@
     <Content Include="resources\car-06.jpg" />
     <Content Include="resources\car-8.jpg" />
     <Content Include="resources\clsYtiruceS.dll" />
+    <Content Include="resources\malayan_1.jpg" />
+    <Content Include="resources\malayan_2.jpg" />
+    <Content Include="resources\malayan_3.jpg" />
     <Content Include="resources\superBugatti.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1241,14 +1376,18 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -1304,6 +1443,7 @@
     <Content Include="Views\MyProfile\Details.cshtml" />
     <Content Include="Views\MyProfile\Edit.cshtml" />
     <Content Include="Views\MyProfile\Index.cshtml" />
+    <Content Include="Views\TransactionHistory\SearchPlate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1317,9 +1457,32 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CrystalReport\RptLTO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptLTO1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport\RptNonLTO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptNonLTO1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport\rptOR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptOR1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport\rptStatsIncome.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptStatsIncome.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport\rptUserStats.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptUserStats.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

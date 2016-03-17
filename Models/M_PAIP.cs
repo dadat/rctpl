@@ -16,7 +16,11 @@ namespace RCTPL_WebProjects.Models
     {
         public long PAIP_ID { get; set; }
         public string PAPIN { get; set; }
+        public string FIRST_NAME { get; set; }
+        public string MIDDLE_NAME { get; set; }
         public string PALNAME { get; set; }
+        public string COMPANY_NAME { get; set; }
+        public string BY_COMPNAME { get; set; }
         public string PAADDRESS { get; set; }
         public string MV_TYPE { get; set; }
         public string VEHICLE_CLASS { get; set; }
@@ -52,10 +56,7 @@ namespace RCTPL_WebProjects.Models
         public string TYPE_BODY { get; set; }
         public string UPLOADED_CODE { get; set; }
         public Nullable<System.DateTime> UPLOADED_DATE { get; set; }
-        public string FIRST_NAME { get; set; }
-        public string MIDDLE_NAME { get; set; }
-        public string COMPANY_NAME { get; set; }
-        public string BY_COMPNAME { get; set; }
         public string RISK_CODE { get; set; }
+        public string CONDUCTION_STICKER { get; set; }
     }
 }

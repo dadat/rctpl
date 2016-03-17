@@ -1,12 +1,106 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="RCTPLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="M_BRANCH">
+    <Key>
+      <PropertyRef Name="PAPIN_CODE" />
+    </Key>
+    <Property Name="BRANCH_CODE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="BRANCH_NAME" Type="varchar" MaxLength="150" />
+    <Property Name="BRANCH_ADDRESS" Type="varchar" MaxLength="150" />
+    <Property Name="OFFICER_INCHARGE" Type="varchar" MaxLength="50" />
+    <Property Name="CONTACT_NO" Type="varchar" MaxLength="10" />
+    <Property Name="PAPIN_CODE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="LGT_RATE" Type="decimal" Precision="18" Scale="3" />
+    <Property Name="MUNICIPALITY" Type="varchar" MaxLength="10" />
+    <Property Name="ACTIVE" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="M_COMPANY">
+    <Key>
+      <PropertyRef Name="COMP_ID" />
+    </Key>
+    <Property Name="COMP_ID" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="50" />
+    <Property Name="STADDR" Type="varchar" MaxLength="85" />
+    <Property Name="TELNO1" Type="varchar" MaxLength="20" />
+    <Property Name="FAXNO" Type="varchar" MaxLength="20" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="35" />
+    <Property Name="ZIP" Type="varchar" MaxLength="4" />
+    <Property Name="ACTIVE" Type="char" MaxLength="1" />
+    <Property Name="CONTACT_no" Type="varchar" MaxLength="35" />
+    <Property Name="LOGO" Type="image" />
+    <Property Name="VAT" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RCTPL.dbo.M_DEPT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="M_DEPT">
+    <Key>
+      <PropertyRef Name="DPID" />
+      <PropertyRef Name="DPDESC" />
+    </Key>
+    <Property Name="DPID" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="DPDESC" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="DPACTIVE" Type="char" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RCTPL.dbo.M_EMPLOYEE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="M_EMPLOYEE">
+    <Key>
+      <PropertyRef Name="EMID" />
+      <PropertyRef Name="DPID" />
+      <PropertyRef Name="HOSPCD" />
+      <PropertyRef Name="EMLNAME" />
+      <PropertyRef Name="EMFNAME" />
+    </Key>
+    <Property Name="EMID" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="DPID" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="HOSPCD" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="EMLNAME" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="EMFNAME" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="EMMNAME" Type="varchar" MaxLength="20" />
+    <Property Name="EMSEX" Type="char" MaxLength="1" />
+    <Property Name="USRID" Type="varchar" MaxLength="8" />
+    <Property Name="EMDTHIRED" Type="datetime" />
+    <Property Name="EMDTRESIGNED" Type="datetime" />
+    <Property Name="EMADDR" Type="varchar" MaxLength="85" />
+    <Property Name="EMTELNO1" Type="varchar" MaxLength="20" />
+    <Property Name="EMSSSNO" Type="varchar" MaxLength="15" />
+    <Property Name="EMTINNO" Type="varchar" MaxLength="15" />
+    <Property Name="POSCDE" Type="varchar" MaxLength="6" />
+    <Property Name="LEVCDE" Type="char" MaxLength="1" />
+    <Property Name="E_SIGN" Type="image" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RCTPL.dbo.M_MV_TYPE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="M_MV_TYPE">
+    <Key>
+      <PropertyRef Name="CODE" />
+    </Key>
+    <Property Name="CODE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="MV_NAME" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RCTPL.dbo.M_PACKAGE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="M_PACKAGE">
+    <Key>
+      <PropertyRef Name="PKCD" />
+      <PropertyRef Name="PKDESC" />
+    </Key>
+    <Property Name="PKCD" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="PKDESC" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="ADDCONS" Type="char" MaxLength="1" />
+    <Property Name="TYPE" Type="varchar" MaxLength="6" />
+  </EntityType>
   <EntityType Name="M_PAIP">
     <Key>
-      <PropertyRef Name="PAPIN" />
+      <PropertyRef Name="PAIP_ID" />
     </Key>
     <Property Name="PAIP_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PAPIN" Type="varchar" MaxLength="15" Nullable="false" />
-    <Property Name="PALNAME" Type="varchar" MaxLength="150" />
+    <Property Name="FIRST_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="MIDDLE_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="PALNAME" Type="varchar" MaxLength="50" />
+    <Property Name="COMPANY_NAME" Type="varchar" MaxLength="150" />
+    <Property Name="BY_COMPNAME" Type="char" MaxLength="1" />
     <Property Name="PAADDRESS" Type="varchar" MaxLength="150" />
     <Property Name="MV_TYPE" Type="varchar" MaxLength="20" />
     <Property Name="VEHICLE_CLASS" Type="varchar" MaxLength="20" />
@@ -34,18 +128,288 @@
     <Property Name="BUS_PROF" Type="varchar" MaxLength="20" />
     <Property Name="NO_DAYS" Type="decimal" Precision="18" Scale="0" />
     <Property Name="PRO_RATA" Type="char" MaxLength="1" />
+    <Property Name="FLEET" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="FUEL" Type="varchar" MaxLength="30" />
+    <Property Name="BRANCH" Type="varchar" MaxLength="10" />
+    <Property Name="NON_LTO" Type="char" MaxLength="1" />
+    <Property Name="VEHICLE_TYPE" Type="varchar" MaxLength="20" />
+    <Property Name="TYPE_BODY" Type="varchar" MaxLength="50" />
     <Property Name="UPLOADED_CODE" Type="varchar" MaxLength="50" />
     <Property Name="UPLOADED_DATE" Type="datetime" />
+    <Property Name="RISK_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="CONDUCTION_STICKER" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RCTPL.dbo.M_PAT_CLASS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="M_PAT_CLASS">
+    <Key>
+      <PropertyRef Name="PCID" />
+      <PropertyRef Name="PCDESC" />
+    </Key>
+    <Property Name="PCID" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="PCDESC" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="PCTPTAG" Type="char" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'RCTPL.dbo.M_PRECENTAGE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="M_PRECENTAGE">
+          <Property Name="PRATEID" Type="varchar" MaxLength="6" />
+          <Property Name="LGT" Type="decimal" Precision="15" Scale="5" />
+          <Property Name="PREM_TAX" Type="decimal" Precision="15" Scale="5" />
+          <Property Name="E_VAT" Type="decimal" Precision="15" Scale="5" />
+          <Property Name="DOC_STAMP" Type="decimal" Precision="15" Scale="5" />
+          <Property Name="TRANS_TYPE" Type="varchar" MaxLength="10" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RCTPL.dbo.M_PREMIUM_TYPE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="M_PREMIUM_TYPE">
+    <Key>
+      <PropertyRef Name="CODE" />
+    </Key>
+    <Property Name="CODE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="VEHICLE_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="DESCRIPTION" Type="varchar" MaxLength="50" />
+    <Property Name="COVERAGE_YR" Type="char" MaxLength="1" />
+    <Property Name="TYPE" Type="varchar" MaxLength="10" />
+    <Property Name="SERVICES" Type="varchar" MaxLength="10" />
+    <Property Name="INSURANCE_TYPE" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RCTPL.dbo.M_REGION' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="M_REGION">
+    <Key>
+      <PropertyRef Name="CODE" />
+    </Key>
+    <Property Name="CODE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="REGION_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="COC" Type="varchar" MaxLength="10" />
+    <Property Name="COI" Type="varchar" MaxLength="10" />
+    <Property Name="ACTIVE" Type="char" MaxLength="1" />
+    <Property Name="CODE_SERIES" Type="varchar" MaxLength="10" />
+    <Property Name="SATELLITE" Type="varchar" MaxLength="10" />
+    <Property Name="PAPIN_CODE" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="M_REGISTRATION_KEY">
+    <Key>
+      <PropertyRef Name="REGISTRATION_KEY" />
+    </Key>
+    <Property Name="REGISTRATION_KEY" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SERIAL_KEY" Type="varchar" MaxLength="50" />
+    <Property Name="ACTIVE" Type="char" MaxLength="1" />
+    <Property Name="DATE_REGISTERED" Type="datetime" />
+    <Property Name="REGIONCODE" Type="varchar" MaxLength="10" />
+    <Property Name="PAPIN_CODE" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="M_RISK_CODE">
+    <Key>
+      <PropertyRef Name="RISK_CODE" />
+    </Key>
+    <Property Name="RISK_CODE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="RISK_TYPE" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RCTPL.dbo.M_SATELLITE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="M_SATELLITE">
+    <Key>
+      <PropertyRef Name="SATELITE_CODE" />
+    </Key>
+    <Property Name="SATELITE_CODE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RCTPL.dbo.M_SERVICE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="M_SERVICE">
+    <Key>
+      <PropertyRef Name="SVCD" />
+      <PropertyRef Name="SVDESC" />
+    </Key>
+    <Property Name="SVCD" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="SVDESC" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="SVACTIVE" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="M_SHARING">
+    <Key>
+      <PropertyRef Name="COMPANY_CODE" />
+    </Key>
+    <Property Name="COMPANY_CODE" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="SHARING" Type="decimal" Precision="15" Scale="5" />
+    <Property Name="W_TAX" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="M_TPP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TPCD" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="TPNAME" Type="varchar" MaxLength="150" />
+    <Property Name="TPTYPE" Type="varchar" MaxLength="4" />
+    <Property Name="ADDRESS" Type="varchar" MaxLength="150" />
+    <Property Name="TELNO" Type="varchar" MaxLength="50" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="50" />
+    <Property Name="BDAY" Type="datetime" />
+    <Property Name="TIN" Type="varchar" MaxLength="15" />
+    <Property Name="SPOUSE" Type="varchar" MaxLength="50" />
+    <Property Name="ADDRESS_SP" Type="varchar" MaxLength="50" />
+    <Property Name="TELNO_SP" Type="varchar" MaxLength="15" />
+    <Property Name="EMAIL_SP" Type="varchar" MaxLength="20" />
+    <Property Name="LN_AGENT" Type="char" MaxLength="1" />
+    <Property Name="INS_COMP" Type="varchar" MaxLength="50" />
+    <Property Name="TERMS" Type="varchar" MaxLength="50" />
+    <Property Name="CREDIT_LIMIT" Type="decimal" Precision="15" Scale="5" />
+    <Property Name="MOBILE_NO" Type="varchar" MaxLength="50" />
+    <Property Name="COMMISSION" Type="decimal" Precision="15" Scale="5" />
+    <Property Name="TAX" Type="decimal" Precision="15" Scale="5" />
+    <Property Name="LIC_NO" Type="varchar" MaxLength="20" />
+    <Property Name="UPLOADED_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="UPLOADED_DATE" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RCTPL.dbo.M_TRANSACTION' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="M_TRANSACTION">
+    <Key>
+      <PropertyRef Name="TRANS_CODE" />
+    </Key>
+    <Property Name="TRANS_CODE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TRANSACTION_NAME" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="M_TYPE_BODY">
+    <Key>
+      <PropertyRef Name="BODY_CODE" />
+    </Key>
+    <Property Name="BODY_CODE" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="BODY_DESC" Type="varchar" MaxLength="50" />
+    <Property Name="RISK_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="VEHICLE_CLASS" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RCTPL.dbo.M_USER' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="M_USER">
+    <Key>
+      <PropertyRef Name="USRID" />
+    </Key>
+    <Property Name="USRID" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="ROLCDE" Type="varchar" MaxLength="8" />
+    <Property Name="USRAPPPASS" Type="varchar" MaxLength="15" />
+    <Property Name="USRDBPASS" Type="varchar" MaxLength="15" />
+    <Property Name="USRDBID" Type="varchar" MaxLength="30" />
+    <Property Name="USRTYPE" Type="char" MaxLength="1" />
+    <Property Name="USRVIP" Type="char" MaxLength="1" />
+    <Property Name="USRLOCK" Type="char" MaxLength="1" />
+    <Property Name="SUPERUSER" Type="char" MaxLength="1" />
+    <Property Name="USRHEAD" Type="char" MaxLength="1" />
+    <Property Name="USRALL" Type="char" MaxLength="1" />
+    <Property Name="USRTAG" Type="char" MaxLength="1" />
+    <Property Name="EXPIRATION_DATE" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'RCTPL.dbo.M_VEHICLE_CLASS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="M_VEHICLE_CLASS">
+          <Property Name="code" Type="varchar" MaxLength="10" />
+          <Property Name="vehicle_name" Type="varchar" MaxLength="125" />
+          <Property Name="vactive" Type="char" MaxLength="1" />
+          <Property Name="SEATING_CAPACITY" Type="char" MaxLength="10" />
+          <Property Name="TOS" Type="varchar" MaxLength="20" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'RCTPL.dbo.M_VEHICLE_TYPE' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="M_VEHICLE_TYPE">
+          <Property Name="CODE" Type="varchar" MaxLength="10" />
+          <Property Name="DESCRIPTION" Type="varchar" MaxLength="150" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RCTPL.dbo.R_EMPOSITION' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="R_EMPOSITION">
+    <Key>
+      <PropertyRef Name="POSCDE" />
+    </Key>
+    <Property Name="POSCDE" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="POSDESC" Type="varchar" MaxLength="35" />
+  </EntityType>
+  <EntityType Name="R_OR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ORCUR" Type="decimal" Precision="7" Scale="0" Nullable="false" />
+    <Property Name="HOSPCD" Type="varchar" MaxLength="12" />
+    <Property Name="ORSTART" Type="varchar" MaxLength="15" />
+    <Property Name="OREND" Type="varchar" MaxLength="15" />
+    <Property Name="ORSDTE" Type="datetime" />
+    <Property Name="INIT" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RCTPL.dbo.R_PACK_PRICE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="R_PACK_PRICE">
+    <Key>
+      <PropertyRef Name="PKCD" />
+    </Key>
+    <Property Name="PKCD" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="SVCD" Type="varchar" MaxLength="6" />
+    <Property Name="SUM_INSIRED" Type="numeric" Precision="15" Scale="5" />
+    <Property Name="BASIC_PREMIUM" Type="numeric" Precision="15" Scale="5" />
+    <Property Name="DOC_STAMP" Type="numeric" Precision="15" Scale="5" />
+    <Property Name="PREM_TAX" Type="numeric" Precision="15" Scale="5" />
+    <Property Name="LGT" Type="numeric" Precision="15" Scale="5" />
+    <Property Name="VAT" Type="numeric" Precision="15" Scale="5" />
+    <Property Name="COMP_FEE" Type="numeric" Precision="15" Scale="5" />
+    <Property Name="CERT_FEE" Type="numeric" Precision="15" Scale="5" />
+    <Property Name="TOTAL" Type="numeric" Precision="15" Scale="5" />
+    <Property Name="COMMISSION" Type="numeric" Precision="15" Scale="5" />
+    <Property Name="TYPE" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="R_SGSI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SGNAME" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="SGYR" Type="decimal" Precision="4" Scale="0" />
+    <Property Name="SGMO" Type="decimal" Precision="7" Scale="0" />
+    <Property Name="SGSERIES" Type="decimal" Precision="7" Scale="0" />
+    <Property Name="REGION" Type="varchar" MaxLength="10" />
+    <Property Name="START_SERIES" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="END_SERIES" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="PREFIX" Type="char" MaxLength="1" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RCTPL.dbo.R_TAXRATE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="R_TAXRATE">
+    <Key>
+      <PropertyRef Name="TAXCODE" />
+      <PropertyRef Name="TAXRATE" />
+    </Key>
+    <Property Name="TAXCODE" Type="tinyint" Nullable="false" />
+    <Property Name="TAXRATE" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="TAXDESC" Type="varchar" MaxLength="60" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RCTPL.dbo.R_TERMS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="R_TERMS">
+    <Key>
+      <PropertyRef Name="TRMCDE" />
+      <PropertyRef Name="TRMDESC" />
+    </Key>
+    <Property Name="TRMCDE" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="TRMDESC" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RCTPL.dbo.R_TPPTYPE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="R_TPPTYPE">
+    <Key>
+      <PropertyRef Name="TPTYPE" />
+    </Key>
+    <Property Name="TPTYPE" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="TPDESC" Type="varchar" MaxLength="35" />
   </EntityType>
   <EntityType Name="T_BILLCHRGD">
     <Key>
       <PropertyRef Name="BILLD_ID" />
     </Key>
     <Property Name="BILLD_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="BCHCHRGNO" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="BCHCHRGNO" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="BCDSERIES" Type="int" Nullable="false" />
     <Property Name="BCDITMCD" Type="varchar" MaxLength="12" Nullable="false" />
-    <Property Name="BCDESC" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="BCDESC" Type="varchar" MaxLength="125" Nullable="false" />
     <Property Name="BCDQTY" Type="int" Nullable="false" />
     <Property Name="BCDSP" Type="decimal" Precision="15" Scale="5" Nullable="false" />
     <Property Name="BCDPATCOVER" Type="decimal" Precision="15" Scale="5" />
@@ -89,30 +453,48 @@
     <Property Name="CAN_POLICY" Type="char" MaxLength="1" />
     <Property Name="DATE_CANCEL" Type="datetime" />
     <Property Name="can_user" Type="varchar" MaxLength="50" />
-    <Property Name="PRNT" Type="char" MaxLength="1" />
+    <Property Name="PRNT" Type="varchar" MaxLength="50" />
+    <Property Name="DATE_PRINTED" Type="datetime" />
     <Property Name="REF_NUM" Type="varchar" MaxLength="50" />
+    <Property Name="DATEPAID" Type="datetime" />
+    <Property Name="VEHICLE_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="COMP_SHARE" Type="decimal" Precision="15" Scale="5" />
+    <Property Name="TPP_SHARE" Type="decimal" Precision="15" Scale="5" />
+    <Property Name="QR_IMAGE" Type="image" />
+    <Property Name="CTPL" Type="decimal" Precision="15" Scale="5" />
+    <Property Name="PL" Type="decimal" Precision="15" Scale="5" />
+    <Property Name="AUTHEN_FEE" Type="decimal" Precision="15" Scale="2" />
+    <Property Name="MUNICIPALITY" Type="varchar" MaxLength="10" />
+    <Property Name="COC_SERIES" Type="varchar" MaxLength="10" />
+    <Property Name="BAYAD_CENTER" Type="decimal" Precision="15" Scale="5" />
+    <Property Name="RISK_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="LGT_RATE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="INCEPTION_FROM" Type="datetime" />
+    <Property Name="INCEPTION_TO" Type="datetime" />
+    <Property Name="CHARGES_OR" Type="varchar" MaxLength="20" />
+    <Property Name="W_TAX_SHARE" Type="decimal" Precision="18" Scale="2" />
   </EntityType>
   <EntityType Name="T_BILLCHRGH">
     <Key>
-      <PropertyRef Name="BCHCHRGNO" />
+      <PropertyRef Name="BILLH_ID" />
     </Key>
     <Property Name="BILLH_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="BCHCHRGNO" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="BCHCHRGNO" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="PAPIN" Type="varchar" MaxLength="15" />
     <Property Name="TRKID" Type="varchar" MaxLength="12" />
     <Property Name="BCHDTE" Type="datetime" />
-    <Property Name="USRID" Type="varchar" MaxLength="8" />
+    <Property Name="USRID" Type="varchar" MaxLength="50" />
     <Property Name="PKCD" Type="varchar" MaxLength="6" />
     <Property Name="UPLOADED_CODE" Type="varchar" MaxLength="50" />
     <Property Name="UPLOADED_DATE" Type="datetime" />
   </EntityType>
   <EntityType Name="T_COLLECTION">
     <Key>
-      <PropertyRef Name="COLNO" />
+      <PropertyRef Name="COLL_ID" />
     </Key>
     <Property Name="COLL_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="COLNO" Type="varchar" MaxLength="12" Nullable="false" />
-    <Property Name="USRID" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="USRID" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="COLORDTE" Type="datetime" Nullable="false" />
     <Property Name="COLAMT" Type="decimal" Precision="15" Scale="5" />
     <Property Name="CLIENTCD" Type="varchar" MaxLength="20" Nullable="false" />
@@ -130,22 +512,85 @@
     <Property Name="TAX_AMT" Type="decimal" Precision="15" Scale="5" />
     <Property Name="UPLOADED_CODE" Type="varchar" MaxLength="50" />
     <Property Name="UPLOADED_DATE" Type="datetime" />
+    <Property Name="DCR_NO" Type="varchar" MaxLength="20" />
+    <Property Name="DEPOSITED" Type="char" MaxLength="1" />
+    <Property Name="CHECK_DATE" Type="datetime" />
+    <Property Name="CHECK_NO" Type="varchar" MaxLength="20" />
+    <Property Name="BRANCH_NAME" Type="varchar" MaxLength="50" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'RCTPL.dbo.T_DEPOSITED_SUMMARY' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="T_DEPOSITED_SUMMARY">
+          <Property Name="DCR_NO" Type="varchar" MaxLength="20" />
+          <Property Name="BANK_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="BRANCH" Type="varchar" MaxLength="50" />
+          <Property Name="ACCOUNT_NO" Type="varchar" MaxLength="15" />
+          <Property Name="PAYMENT_FORM" Type="varchar" MaxLength="10" />
+          <Property Name="DEPOSITED_DATE" Type="datetime" />
+          <Property Name="AMOUNT_DEPOSITED" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="REF_NO" Type="varchar" MaxLength="50" />
+          <Property Name="REMARKS" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <EntityType Name="T_ENDORSEMENT">
+    <Key>
+      <PropertyRef Name="ENDO_ID" />
+    </Key>
+    <Property Name="ENDO_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PAPIN" Type="varchar" MaxLength="50" />
+    <Property Name="ENDO_NO" Type="varchar" MaxLength="10" />
+    <Property Name="DATE_ENDO" Type="datetime" />
+    <Property Name="PLATE_NO" Type="varchar" MaxLength="10" />
+    <Property Name="LAST_NAME" Type="varchar" MaxLength="150" />
+    <Property Name="FIRST_NAME" Type="varchar" MaxLength="150" />
+    <Property Name="MIDDLE_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="ADDRESS" Type="varchar" MaxLength="80" />
+    <Property Name="CITY" Type="varchar" MaxLength="30" />
+    <Property Name="CHASSIS" Type="varchar" MaxLength="30" />
+    <Property Name="MOTOR" Type="varchar" MaxLength="30" />
+    <Property Name="COLOR" Type="varchar" MaxLength="30" />
+    <Property Name="LTFRB" Type="varchar" MaxLength="10" />
+    <Property Name="ROUTE_FROM" Type="varchar" MaxLength="30" />
+    <Property Name="ROUTE_TO" Type="varchar" MaxLength="30" />
+    <Property Name="BY_COMP" Type="char" MaxLength="1" />
+    <Property Name="MV_FILENO" Type="varchar" MaxLength="30" />
+    <Property Name="MODEL" Type="varchar" MaxLength="20" />
+    <Property Name="INSURED_START" Type="datetime" />
+    <Property Name="INSURED_END" Type="datetime" />
+    <Property Name="SERVICE" Type="varchar" MaxLength="30" />
+    <Property Name="BODY" Type="varchar" MaxLength="30" />
+    <Property Name="MAKE" Type="varchar" MaxLength="30" />
+    <Property Name="POLICY_NO" Type="varchar" MaxLength="20" />
+    <Property Name="COMMENTS" Type="varchar" MaxLength="50" />
+    <Property Name="POL_TYPE" Type="varchar" MaxLength="10" />
+    <Property Name="UPLOADED_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="UPLOADED_DATE" Type="datetime" />
+    <Property Name="POLICY_COI" Type="varchar" MaxLength="50" />
+    <Property Name="DATE_FROM_PPAI" Type="datetime" />
+    <Property Name="DATE_TO_PPAI" Type="datetime" />
+    <Property Name="NAME_H" Type="varchar" MaxLength="125" />
+    <Property Name="ADDRESS_H" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'RCTPL.dbo.T_PLATE_SERIES' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="T_PLATE_SERIES">
+          <Property Name="PLATE_ENDING" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="PPAI" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="CTPL" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>-->
   <EntityType Name="T_SINO">
     <Key>
-      <PropertyRef Name="TRKID" />
+      <PropertyRef Name="SINO_ID" />
     </Key>
     <Property Name="SINO_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TRKID" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="TRKID" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="SINO" Type="varchar" MaxLength="12" Nullable="false" />
     <Property Name="SIDATE" Type="datetime" Nullable="false" />
-    <Property Name="SIUSER" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="SIUSER" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="SICANCEL" Type="char" MaxLength="1" />
     <Property Name="SIREASON" Type="varchar" MaxLength="40" />
     <Property Name="SIDTECANCEL" Type="datetime" />
     <Property Name="CANUSER" Type="varchar" MaxLength="8" />
     <Property Name="AMOUNT" Type="decimal" Precision="8" Scale="2" />
-    <Property Name="COI" Type="varchar" MaxLength="20" />
     <Property Name="UPLOADED_CODE" Type="varchar" MaxLength="50" />
     <Property Name="UPLOADED_DATE" Type="datetime" />
   </EntityType>
@@ -154,7 +599,7 @@
       <PropertyRef Name="TRACKING_ID" />
     </Key>
     <Property Name="TRACKING_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TRKID" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="TRKID" Type="varchar" MaxLength="30" Nullable="false" />
     <Property Name="PAPIN" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="TRKDTEADMT" Type="datetime" />
     <Property Name="PCID" Type="varchar" MaxLength="10" />
@@ -190,8 +635,9 @@
     </Key>
     <Property Name="PKCD" Type="varchar" MaxLength="50" />
     <Property Name="PACKAGE_DESC" Type="varchar" MaxLength="150" />
+    <Property Name="YEAR_COVERAGE" Type="int" />
     <Property Name="SERVICE_CODE" Type="varchar" MaxLength="20" />
-    <Property Name="SERVICE_TYPE" Type="varchar" MaxLength="50" />
+    <Property Name="SERVICE_TYPE" Type="varchar" MaxLength="150" />
     <Property Name="SUM_INSURED" Type="decimal" Precision="18" Scale="2" />
     <Property Name="BASIC_PREMIUM" Type="decimal" Precision="18" Scale="2" />
     <Property Name="DOC_STAMP" Type="decimal" Precision="18" Scale="2" />
@@ -203,6 +649,41 @@
     <Property Name="VEHICLE_CODE" Type="varchar" MaxLength="50" />
     <Property Name="VEHICLE_NUMBER" Type="varchar" MaxLength="50" />
     <Property Name="VEHICLE_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BRANCH_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="AUTHEN_FEE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CTPL" Type="decimal" Precision="15" Scale="5" />
+    <Property Name="PL" Type="decimal" Precision="15" Scale="5" />
+    <Property Name="BAYAD_CENTER" Type="decimal" Precision="15" Scale="5" />
+    <Property Name="LGT_RATE" Type="decimal" Precision="18" Scale="3" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'RCTPL.dbo.TBL_VEHICLES_LTO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TBL_VEHICLES_LTO">
+    <Key>
+      <PropertyRef Name="VEHICLE_ID" />
+    </Key>
+    <Property Name="PKCD" Type="varchar" MaxLength="50" />
+    <Property Name="PACKAGE_DESC" Type="varchar" MaxLength="150" />
+    <Property Name="YEAR_COVERAGE" Type="int" />
+    <Property Name="SERVICE_CODE" Type="varchar" MaxLength="20" />
+    <Property Name="SERVICE_TYPE" Type="varchar" MaxLength="150" />
+    <Property Name="SUM_INSURED" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="BASIC_PREMIUM" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DOC_STAMP" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="LGT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VAT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="COMP_FEE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CERT_FEE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="AUTHEN_FEE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TOTAL_AMOUNT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="VEHICLE_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="VEHICLE_NUMBER" Type="varchar" MaxLength="50" />
+    <Property Name="VEHICLE_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BRANCH_CODE" Type="varchar" MaxLength="10" />
+    <Property Name="CTPL" Type="decimal" Precision="15" Scale="5" />
+    <Property Name="PL" Type="decimal" Precision="15" Scale="5" />
+    <Property Name="BAYAD_CENTER" Type="decimal" Precision="15" Scale="5" />
+    <Property Name="LGT_RATE" Type="decimal" Precision="18" Scale="3" />
   </EntityType>
   <EntityType Name="TBL_WEBUSERS">
     <Key>
@@ -216,7 +697,7 @@
     <Property Name="SHA_PASSWORD" Type="varchar" MaxLength="50" />
     <Property Name="EMAIL" Type="varchar" MaxLength="50" />
     <Property Name="MIDDLENAME" Type="varchar" MaxLength="100" />
-    <Property Name="FIRSTNAME" Type="nchar" MaxLength="100" />
+    <Property Name="FIRSTNAME" Type="varchar" MaxLength="100" />
     <Property Name="LASTNAME" Type="varchar" MaxLength="100" />
     <Property Name="CONTACT_NUMBER" Type="varchar" MaxLength="50" />
     <Property Name="DATE_REGISTERED" Type="datetime" />
@@ -227,16 +708,205 @@
     <Property Name="REGION" Type="varchar" MaxLength="50" />
     <Property Name="MAILING_ADDRESS" Type="varchar" MaxLength="400" />
     <Property Name="CITY" Type="varchar" MaxLength="100" />
+    <Property Name="BRANCH_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="COMP" Type="varchar" MaxLength="50" />
+    <Property Name="USER_TYPE" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityContainer Name="RCTPLModelStoreContainer">
+    <EntitySet Name="M_BRANCH" EntityType="Self.M_BRANCH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_COMPANY" EntityType="Self.M_COMPANY" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="M_PAIP" EntityType="Self.M_PAIP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_REGISTRATION_KEY" EntityType="Self.M_REGISTRATION_KEY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_RISK_CODE" EntityType="Self.M_RISK_CODE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_SHARING" EntityType="Self.M_SHARING" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_TPP" EntityType="Self.M_TPP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_TYPE_BODY" EntityType="Self.M_TYPE_BODY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="R_OR" EntityType="Self.R_OR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="R_SGSI" EntityType="Self.R_SGSI" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="T_BILLCHRGD" EntityType="Self.T_BILLCHRGD" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="T_BILLCHRGH" EntityType="Self.T_BILLCHRGH" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="T_COLLECTION" EntityType="Self.T_COLLECTION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="T_ENDORSEMENT" EntityType="Self.T_ENDORSEMENT" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="T_SINO" EntityType="Self.T_SINO" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="T_TRACKING" EntityType="Self.T_TRACKING" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_SYSTEMUSERS" EntityType="Self.TBL_SYSTEMUSERS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_VEHICLES" EntityType="Self.TBL_VEHICLES" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_WEBUSERS" EntityType="Self.TBL_WEBUSERS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="M_DEPT" EntityType="Self.M_DEPT" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [M_DEPT].[DPID] AS [DPID], 
+    [M_DEPT].[DPDESC] AS [DPDESC], 
+    [M_DEPT].[DPACTIVE] AS [DPACTIVE]
+    FROM [dbo].[M_DEPT] AS [M_DEPT]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="M_EMPLOYEE" EntityType="Self.M_EMPLOYEE" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [M_EMPLOYEE].[EMID] AS [EMID], 
+    [M_EMPLOYEE].[DPID] AS [DPID], 
+    [M_EMPLOYEE].[HOSPCD] AS [HOSPCD], 
+    [M_EMPLOYEE].[EMLNAME] AS [EMLNAME], 
+    [M_EMPLOYEE].[EMFNAME] AS [EMFNAME], 
+    [M_EMPLOYEE].[EMMNAME] AS [EMMNAME], 
+    [M_EMPLOYEE].[EMSEX] AS [EMSEX], 
+    [M_EMPLOYEE].[USRID] AS [USRID], 
+    [M_EMPLOYEE].[EMDTHIRED] AS [EMDTHIRED], 
+    [M_EMPLOYEE].[EMDTRESIGNED] AS [EMDTRESIGNED], 
+    [M_EMPLOYEE].[EMADDR] AS [EMADDR], 
+    [M_EMPLOYEE].[EMTELNO1] AS [EMTELNO1], 
+    [M_EMPLOYEE].[EMSSSNO] AS [EMSSSNO], 
+    [M_EMPLOYEE].[EMTINNO] AS [EMTINNO], 
+    [M_EMPLOYEE].[POSCDE] AS [POSCDE], 
+    [M_EMPLOYEE].[LEVCDE] AS [LEVCDE], 
+    [M_EMPLOYEE].[E_SIGN] AS [E_SIGN]
+    FROM [dbo].[M_EMPLOYEE] AS [M_EMPLOYEE]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="M_MV_TYPE" EntityType="Self.M_MV_TYPE" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [M_MV_TYPE].[CODE] AS [CODE], 
+    [M_MV_TYPE].[MV_NAME] AS [MV_NAME]
+    FROM [dbo].[M_MV_TYPE] AS [M_MV_TYPE]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="M_PACKAGE" EntityType="Self.M_PACKAGE" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [M_PACKAGE].[PKCD] AS [PKCD], 
+    [M_PACKAGE].[PKDESC] AS [PKDESC], 
+    [M_PACKAGE].[ADDCONS] AS [ADDCONS], 
+    [M_PACKAGE].[TYPE] AS [TYPE]
+    FROM [dbo].[M_PACKAGE] AS [M_PACKAGE]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="M_PAT_CLASS" EntityType="Self.M_PAT_CLASS" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [M_PAT_CLASS].[PCID] AS [PCID], 
+    [M_PAT_CLASS].[PCDESC] AS [PCDESC], 
+    [M_PAT_CLASS].[PCTPTAG] AS [PCTPTAG]
+    FROM [dbo].[M_PAT_CLASS] AS [M_PAT_CLASS]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="M_PREMIUM_TYPE" EntityType="Self.M_PREMIUM_TYPE" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [M_PREMIUM_TYPE].[CODE] AS [CODE], 
+    [M_PREMIUM_TYPE].[VEHICLE_CODE] AS [VEHICLE_CODE], 
+    [M_PREMIUM_TYPE].[DESCRIPTION] AS [DESCRIPTION], 
+    [M_PREMIUM_TYPE].[COVERAGE_YR] AS [COVERAGE_YR], 
+    [M_PREMIUM_TYPE].[TYPE] AS [TYPE], 
+    [M_PREMIUM_TYPE].[SERVICES] AS [SERVICES], 
+    [M_PREMIUM_TYPE].[INSURANCE_TYPE] AS [INSURANCE_TYPE]
+    FROM [dbo].[M_PREMIUM_TYPE] AS [M_PREMIUM_TYPE]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="M_REGION" EntityType="Self.M_REGION" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [M_REGION].[CODE] AS [CODE], 
+    [M_REGION].[REGION_NAME] AS [REGION_NAME], 
+    [M_REGION].[COC] AS [COC], 
+    [M_REGION].[COI] AS [COI], 
+    [M_REGION].[ACTIVE] AS [ACTIVE], 
+    [M_REGION].[CODE_SERIES] AS [CODE_SERIES], 
+    [M_REGION].[SATELLITE] AS [SATELLITE], 
+    [M_REGION].[PAPIN_CODE] AS [PAPIN_CODE]
+    FROM [dbo].[M_REGION] AS [M_REGION]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="M_SATELLITE" EntityType="Self.M_SATELLITE" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [M_SATELLITE].[SATELITE_CODE] AS [SATELITE_CODE], 
+    [M_SATELLITE].[DESCRIPTION] AS [DESCRIPTION]
+    FROM [dbo].[M_SATELLITE] AS [M_SATELLITE]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="M_SERVICE" EntityType="Self.M_SERVICE" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [M_SERVICE].[SVCD] AS [SVCD], 
+    [M_SERVICE].[SVDESC] AS [SVDESC], 
+    [M_SERVICE].[SVACTIVE] AS [SVACTIVE]
+    FROM [dbo].[M_SERVICE] AS [M_SERVICE]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="M_TRANSACTION" EntityType="Self.M_TRANSACTION" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [M_TRANSACTION].[TRANS_CODE] AS [TRANS_CODE], 
+    [M_TRANSACTION].[TRANSACTION_NAME] AS [TRANSACTION_NAME]
+    FROM [dbo].[M_TRANSACTION] AS [M_TRANSACTION]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="M_USER" EntityType="Self.M_USER" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [M_USER].[USRID] AS [USRID], 
+    [M_USER].[ROLCDE] AS [ROLCDE], 
+    [M_USER].[USRAPPPASS] AS [USRAPPPASS], 
+    [M_USER].[USRDBPASS] AS [USRDBPASS], 
+    [M_USER].[USRDBID] AS [USRDBID], 
+    [M_USER].[USRTYPE] AS [USRTYPE], 
+    [M_USER].[USRVIP] AS [USRVIP], 
+    [M_USER].[USRLOCK] AS [USRLOCK], 
+    [M_USER].[SUPERUSER] AS [SUPERUSER], 
+    [M_USER].[USRHEAD] AS [USRHEAD], 
+    [M_USER].[USRALL] AS [USRALL], 
+    [M_USER].[USRTAG] AS [USRTAG], 
+    [M_USER].[EXPIRATION_DATE] AS [EXPIRATION_DATE]
+    FROM [dbo].[M_USER] AS [M_USER]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="R_EMPOSITION" EntityType="Self.R_EMPOSITION" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [R_EMPOSITION].[POSCDE] AS [POSCDE], 
+    [R_EMPOSITION].[POSDESC] AS [POSDESC]
+    FROM [dbo].[R_EMPOSITION] AS [R_EMPOSITION]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="R_PACK_PRICE" EntityType="Self.R_PACK_PRICE" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [R_PACK_PRICE].[PKCD] AS [PKCD], 
+    [R_PACK_PRICE].[SVCD] AS [SVCD], 
+    [R_PACK_PRICE].[SUM_INSIRED] AS [SUM_INSIRED], 
+    [R_PACK_PRICE].[BASIC_PREMIUM] AS [BASIC_PREMIUM], 
+    [R_PACK_PRICE].[DOC_STAMP] AS [DOC_STAMP], 
+    [R_PACK_PRICE].[PREM_TAX] AS [PREM_TAX], 
+    [R_PACK_PRICE].[LGT] AS [LGT], 
+    [R_PACK_PRICE].[VAT] AS [VAT], 
+    [R_PACK_PRICE].[COMP_FEE] AS [COMP_FEE], 
+    [R_PACK_PRICE].[CERT_FEE] AS [CERT_FEE], 
+    [R_PACK_PRICE].[TOTAL] AS [TOTAL], 
+    [R_PACK_PRICE].[COMMISSION] AS [COMMISSION], 
+    [R_PACK_PRICE].[TYPE] AS [TYPE]
+    FROM [dbo].[R_PACK_PRICE] AS [R_PACK_PRICE]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="R_TAXRATE" EntityType="Self.R_TAXRATE" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [R_TAXRATE].[TAXCODE] AS [TAXCODE], 
+    [R_TAXRATE].[TAXRATE] AS [TAXRATE], 
+    [R_TAXRATE].[TAXDESC] AS [TAXDESC]
+    FROM [dbo].[R_TAXRATE] AS [R_TAXRATE]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="R_TERMS" EntityType="Self.R_TERMS" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [R_TERMS].[TRMCDE] AS [TRMCDE], 
+    [R_TERMS].[TRMDESC] AS [TRMDESC]
+    FROM [dbo].[R_TERMS] AS [R_TERMS]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="R_TPPTYPE" EntityType="Self.R_TPPTYPE" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [R_TPPTYPE].[TPTYPE] AS [TPTYPE], 
+    [R_TPPTYPE].[TPDESC] AS [TPDESC]
+    FROM [dbo].[R_TPPTYPE] AS [R_TPPTYPE]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TBL_VEHICLES_LTO" EntityType="Self.TBL_VEHICLES_LTO" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TBL_VEHICLES_LTO].[PKCD] AS [PKCD], 
+    [TBL_VEHICLES_LTO].[PACKAGE_DESC] AS [PACKAGE_DESC], 
+    [TBL_VEHICLES_LTO].[YEAR_COVERAGE] AS [YEAR_COVERAGE], 
+    [TBL_VEHICLES_LTO].[SERVICE_CODE] AS [SERVICE_CODE], 
+    [TBL_VEHICLES_LTO].[SERVICE_TYPE] AS [SERVICE_TYPE], 
+    [TBL_VEHICLES_LTO].[SUM_INSURED] AS [SUM_INSURED], 
+    [TBL_VEHICLES_LTO].[BASIC_PREMIUM] AS [BASIC_PREMIUM], 
+    [TBL_VEHICLES_LTO].[DOC_STAMP] AS [DOC_STAMP], 
+    [TBL_VEHICLES_LTO].[LGT] AS [LGT], 
+    [TBL_VEHICLES_LTO].[VAT] AS [VAT], 
+    [TBL_VEHICLES_LTO].[COMP_FEE] AS [COMP_FEE], 
+    [TBL_VEHICLES_LTO].[CERT_FEE] AS [CERT_FEE], 
+    [TBL_VEHICLES_LTO].[AUTHEN_FEE] AS [AUTHEN_FEE], 
+    [TBL_VEHICLES_LTO].[TOTAL_AMOUNT] AS [TOTAL_AMOUNT], 
+    [TBL_VEHICLES_LTO].[VEHICLE_CODE] AS [VEHICLE_CODE], 
+    [TBL_VEHICLES_LTO].[VEHICLE_NUMBER] AS [VEHICLE_NUMBER], 
+    [TBL_VEHICLES_LTO].[VEHICLE_ID] AS [VEHICLE_ID], 
+    [TBL_VEHICLES_LTO].[BRANCH_CODE] AS [BRANCH_CODE], 
+    [TBL_VEHICLES_LTO].[CTPL] AS [CTPL], 
+    [TBL_VEHICLES_LTO].[PL] AS [PL], 
+    [TBL_VEHICLES_LTO].[BAYAD_CENTER] AS [BAYAD_CENTER], 
+    [TBL_VEHICLES_LTO].[LGT_RATE] AS [LGT_RATE]
+    FROM [dbo].[TBL_VEHICLES_LTO] AS [TBL_VEHICLES_LTO]</DefiningQuery>
+    </EntitySet>
   </EntityContainer>
 </Schema>

@@ -226,6 +226,12 @@
       <DependentUpon>RptLTO.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controllers\Printing\RptNonLTO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptNonLTO.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controllers\Richmer\COCController.cs" />
     <Compile Include="Controllers\Richmer\COCPaymentsController.cs" />
     <Compile Include="Controllers\Richmer\DashboardController.cs" />
@@ -1292,6 +1298,10 @@
     <EmbeddedResource Include="Controllers\Printing\RptLTO.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptLTO.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controllers\Printing\RptNonLTO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptNonLTO.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

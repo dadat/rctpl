@@ -25,14 +25,41 @@ namespace RCTPL_WebProjects.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<M_BRANCH> M_BRANCH { get; set; }
+        public virtual DbSet<M_COMPANY> M_COMPANY { get; set; }
         public virtual DbSet<M_PAIP> M_PAIP { get; set; }
+        public virtual DbSet<M_REGISTRATION_KEY> M_REGISTRATION_KEY { get; set; }
+        public virtual DbSet<M_RISK_CODE> M_RISK_CODE { get; set; }
+        public virtual DbSet<M_SHARING> M_SHARING { get; set; }
+        public virtual DbSet<M_TPP> M_TPP { get; set; }
+        public virtual DbSet<M_TYPE_BODY> M_TYPE_BODY { get; set; }
+        public virtual DbSet<R_OR> R_OR { get; set; }
+        public virtual DbSet<R_SGSI> R_SGSI { get; set; }
         public virtual DbSet<T_BILLCHRGD> T_BILLCHRGD { get; set; }
         public virtual DbSet<T_BILLCHRGH> T_BILLCHRGH { get; set; }
         public virtual DbSet<T_COLLECTION> T_COLLECTION { get; set; }
+        public virtual DbSet<T_ENDORSEMENT> T_ENDORSEMENT { get; set; }
         public virtual DbSet<T_SINO> T_SINO { get; set; }
         public virtual DbSet<T_TRACKING> T_TRACKING { get; set; }
         public virtual DbSet<TBL_SYSTEMUSERS> TBL_SYSTEMUSERS { get; set; }
         public virtual DbSet<TBL_VEHICLES> TBL_VEHICLES { get; set; }
         public virtual DbSet<TBL_WEBUSERS> TBL_WEBUSERS { get; set; }
+        public virtual DbSet<M_DEPT> M_DEPT { get; set; }
+        public virtual DbSet<M_EMPLOYEE> M_EMPLOYEE { get; set; }
+        public virtual DbSet<M_MV_TYPE> M_MV_TYPE { get; set; }
+        public virtual DbSet<M_PACKAGE> M_PACKAGE { get; set; }
+        public virtual DbSet<M_PAT_CLASS> M_PAT_CLASS { get; set; }
+        public virtual DbSet<M_PREMIUM_TYPE> M_PREMIUM_TYPE { get; set; }
+        public virtual DbSet<M_REGION> M_REGION { get; set; }
+        public virtual DbSet<M_SATELLITE> M_SATELLITE { get; set; }
+        public virtual DbSet<M_SERVICE> M_SERVICE { get; set; }
+        public virtual DbSet<M_TRANSACTION> M_TRANSACTION { get; set; }
+        public virtual DbSet<M_USER> M_USER { get; set; }
+        public virtual DbSet<R_EMPOSITION> R_EMPOSITION { get; set; }
+        public virtual DbSet<R_PACK_PRICE> R_PACK_PRICE { get; set; }
+        public virtual DbSet<R_TAXRATE> R_TAXRATE { get; set; }
+        public virtual DbSet<R_TERMS> R_TERMS { get; set; }
+        public virtual DbSet<R_TPPTYPE> R_TPPTYPE { get; set; }
+        public virtual DbSet<TBL_VEHICLES_LTO> TBL_VEHICLES_LTO { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace RCTPL_WebProjects.Controllers.AdminFiles
             //date paid placeholder
             var today = DateTime.Today;
             TransactionHistoryModels tHistModel = new TransactionHistoryModels();
-
+            
             List<TransactionHistoryModels> listTransHist = (from tweb in db.TBL_WEBUSERS
                                        join tchargeh in db.T_BILLCHRGH on tweb.USERNAME equals tchargeh.USRID
                                        join tcharged in db.T_BILLCHRGD on tchargeh.BCHCHRGNO equals tcharged.BCHCHRGNO
@@ -34,7 +34,8 @@ namespace RCTPL_WebProjects.Controllers.AdminFiles
                                            MAKE = tmpaip.MAKE,
                                            BCDPATCOVER = tcharged.BCDPATCOVER,
                                            COLORNUM = tcharged.COLORNUM,
-                                           DATEPAID = today
+                                           DATEPAID = today,
+                                           BATCH_CODE = tcharged.BATCH_CODE
                                            //needs tcharged.datepaid
                                        }
                                        ).ToList();

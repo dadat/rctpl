@@ -1,196 +1,183 @@
-﻿
-
-
-@model RCTPL_WebProjects.Models.StrViewModel
+﻿@model RCTPL_WebProjects.Models.RegViewModel
 
 @{
     Layout = "~/Views/Shared/_landingLayout.cshtml";
-  
 }
 
 
-@if (string.IsNullOrEmpty(ViewBag.errMessage))
-{    
-    
-
-           <div class="box-body btn-block">
-               <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                   <ol class="carousel-indicators">
-                       <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                       <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-                       <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-                       <li data-target="#carousel-example-generic" data-slide-to="3" class=""></li>
-                   </ol>
-                   <div class="carousel-inner">
-                       <div class="item active">
-                           @*<img src="~/resources/car-03.jpg" alt="Raffle" style="width:100%">*@
-                           <div class="item CarouselContainer">
-                               <img class="CarouselContainer" src="http://www.malayan.com/themes/img/front/web/corporate/carousel/85th_Anniversary_Logo_for_WEBSITE1.jpg" alt="" style="width:100%" />
-
-                           </div>
-                           @*<div class="carousel-caption">
-                            First Slide
-                        </div>*@
-                       </div>
-                       <div class="item">
-                           @*<img src="~/resources/car-06.jpg" alt="Richmer" style="width:100%">*@
-                           @*<img src="http://www.malayan.com/themes/img/front/web/corporate/carousel/85th_Anniversary_Logo_for_WEBSITE1.jpg" alt="" style="width:100%" />*@
-                           <img src="~/resources/malayan_1.jpg" />
-                           @*<div class="carousel-caption">
-                            Second Slide
-                        </div>*@
-                       </div>
-                       <div class="item">
-                           @*<img src="~/resources/car-8.jpg" alt="Datdat" style="width:100%">*@
-                         @*  <img src="http://www.malayan.com/themes/img/front/web/corporate/carousel/85th_Anniversary_Logo_for_WEBSITE1.jpg" alt="" style="width:100%" />*@
-                           <img src="~/resources/malayan_2.jpg" />
-                           @*<div class="carousel-caption">
-                            Third Slide
-                        </div>*@
-                       </div>
-                       <div class="item">
-                           @*<img src="~/resources/superBugatti.jpg" alt="Yhogz" style="width:100%">*@
-                        @*   <img src="http://www.malayan.com/themes/img/front/web/corporate/carousel/85th_Anniversary_Logo_for_WEBSITE1.jpg" alt="" style="width:100%" />*@
-
-                           <img src="~/resources/malayan_3.jpg" />  @*<div class="carousel-caption">
-                            Third Slide
-                        </div>*@
-                       </div>
-                   </div>
-                   <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                       <span class="fa fa-angle-left"></span>
-                   </a>
-                   <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                       <span class="fa fa-angle-right"></span>
-                   </a>
-               </div>
-           </div>
-
-
-
-    <div class="box-body btn-block">
-        <div class="row">
-           
-            <div class="col-lg-4 col-xs-8">
-                <!-- small box -->
-                <div class="small-box bg-yellow">
-                    <div class="inner">
-                        <h3>44</h3>
-                        <p>User Registrations</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-person-add"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">
-                        More info <i class="fa fa-arrow-circle-right"></i>
-                    </a>
-                </div>
-            </div><!-- ./col -->
-
-            <div class="col-lg-4 col-xs-8">
-                <!-- small box -->
-                <div class="small-box bg-red">
-                    <div class="inner">
-                        <h3>65</h3>
-                        <p>Unique Visitors</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-pie-graph"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">
-                        More info <i class="fa fa-arrow-circle-right"></i>
-                    </a>
-                </div>
-            </div><!-- ./col -->
-
-            <div class="col-lg-4 col-xs-8">
-                <!-- small box -->
-                <div class="small-box bg-aqua">
-                    <div class="inner">
-                        <h3>75</h3>
-                        <p>Visitors</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-pie-graph"></i>
-                    </div>
-                    <a href="#" class="small-box-footer">
-                        More info <i class="fa fa-arrow-circle-right"></i>
-                    </a>
-                </div>
-            </div><!-- ./col -->
-        </div>
-        
-        </div>
-      
-
-        <div class="box-body btn-block">
-            <div id="carousel-example-generic1" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic1" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic1" data-slide-to="1" class=""></li>
-                    <li data-target="#carousel-example-generic1" data-slide-to="2" class=""></li>
-                    <li data-target="#carousel-example-generic1" data-slide-to="3" class=""></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <div class="callout callout-info" style="height:130px">
-                            <h4>Company Background</h4>
-                            <p>
-                                Malayan Insurance Co., Inc. is the leading non-life insurance company in the Philippines. Founded in 1930, Malayan offers its client and the public guaranteed peace of mind through service excellence, quality insurance protection, and the prompt processing and settlement of just and valid claims.
-                            </p>
-                        </div>
-
-                    </div>
-                    <div class="item">
-                        <div class="callout callout-warning" style="height:130px">
-                            <p>
-                                Ranked number 1 in non-life insurance in terms of Gross Premiums Written since 1970 by the Insurance Commission
-                            </p>
-                        </div>
-
-                    </div>
-                    <div class="item">
-                        <div class="callout callout-success" style="height:130px">
-                            <p>
-                                Awarded as Best in Corporate Governance and Corporate Social Responsibility by the Philippine Insurers and Reinsurers Association for 2 consecutive years (2011, 2012) and Best in Sustainability (2013)
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="callout callout-danger" style="height:130px">
-                            <p>
-                                Received favorable ratings from A.M. Best for 8 consecutive years
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <a class="left carousel-control" href="#carousel-example-generic1" data-slide="prev">
-                    <span class="fa fa-angle-left"></span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic1" data-slide="next">
-                    <span class="fa fa-angle-right"></span>
-                </a>
-            </div>
-        </div>
-
-
-        }
-        else
-        {
+@*@if(@Model.isError == 1)
+    {
         <section class="content">
-            <div class="callout callout-danger">
-                <h3><b>Error!</b></h3>
-                <p>Invalid Credentials.</p>
+            <div class="callout callout-info">
+                <h3>Sign Up Complete</h3>
+                <p>A message has been sent to your email. Kindly check you email after a few minutes. Thank you.</p>
+            </div>
+        </section>
+    }
+    else if (Model.isError == 2)
+    {
+        <section class="content">
+            <div class="callout callout-warning">
+                <h3>Oops Somethings wrong!</h3>
+                <p>@Model.errMessage</p>
             </div>
         </section>
 
-        }
+    }*@
 
-        <style>
-            #CarouselContainer {
-                width: auto;
-                height: 300px;
-                max-height: 300px;
-            }
-        </style>
+<div class="box-body btn-block">
+    @*<div class="register-logo bg-green-active">
+            <b>RCTPL  Registration</b>
+        </div>*@
+    @*<div class="box-header bg-green-active">*@
+
+    @*<div class="box-header">*@
+
+    @if (@Model.isError == 1)
+    {
+
+        <div class="callout callout-info">
+            <p>A message has been sent to your email. Kindly check you email after a few minutes. Thank you.</p>
+        </div>
+
+    }
+    else if (Model.isError == 2)
+    {
+        <div class="callout callout-danger">
+            
+            <p><h4>@Model.errMessage</h4></p>
+        </div>
+    }
+
+
+
+
+
+    <center><h1><b class="box-title">RCTPL  Registration</b></h1></center>
+    @*</div>*@
+
+    <div class="register-box-body">
+
+
+
+        @*<p class="login-box-msg">Free Registration</p>*@
+
+       
+
+        <form action="/WEBUSERS/Create" method="post" id="loglog" name="loglog">
+            @Html.AntiForgeryToken()
+
+            <div class="form-group has-feedback">
+                @*<input type="text" class="form-control" placeholder="Last Name" name="lname">
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>*@
+
+                @Html.TextBoxFor(m => m.lastname, new { @class = "form-control", placeholder = "Last Name", onkeyup = "InputToUpper(this);", maxlength = 100, autocomplete = "off" })
+                @Html.ValidationMessageFor(m => m.lastname, null, new { @class = "text-danger" })
+            </div>
+            <div class="form-group has-feedback">
+                @Html.TextBoxFor(m => m.firstname, new { @class = "form-control", placeholder = "First Name", onkeyup = "InputToUpper(this);", maxlength = 100, autocomplete = "off" })
+                @Html.ValidationMessageFor(m => m.firstname, null, new { @class = "text-danger" })
+            </div>
+            <div class="form-group has-feedback">
+                @Html.TextBoxFor(m => m.middlename, new { @class = "form-control", placeholder = "Middle Name", onkeyup = "InputToUpper(this);", maxlength = 100, autocomplete = "off" })
+                @Html.ValidationMessageFor(m => m.middlename, null, new { @class = "text-danger" })
+            </div>
+            <div class="form-group has-feedback">
+                @Html.TextBoxFor(m => m.address, new { @class = "form-control", placeholder = "House No./Street", onkeyup = "InputToUpper(this);", maxlength = 400, autocomplete = "off" })
+                @Html.ValidationMessageFor(m => m.address, null, new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group has-feedback">
+                @Html.TextBoxFor(m => m.city, new { @class = "form-control", placeholder = "City", onkeyup = "InputToUpper(this);", maxlength = 60, autocomplete = "off" })
+                @Html.ValidationMessageFor(m => m.city, null, new { @class = "text-danger" })
+            </div>
+            <div class="form-group has-feedback">
+                @*@Html.TextBoxFor(m => m.region, new { @class = "form-control", placeholder = "Region", onkeyup = "InputToUpper(this);", maxlength = 20, autocomplete = "off" })*@
+               
+                    @Html.DropDownListFor(m => m.region, new SelectList(Model._listRegion, "Key", "Value", Model._listRegion), new { @class = "form-control" })
+
+                
+                  @Html.ValidationMessageFor(m => m.region, null, new { @class = "text-danger" })
+            </div>
+            <div class="form-group has-feedback">
+                @Html.TextBoxFor(m => m.contactno, new { @class = "form-control", placeholder = "Contact No", onkeyup = "InputToUpper(this);", maxlength = 50, autocomplete = "off" })
+                @Html.ValidationMessageFor(m => m.contactno, null, new { @class = "text-danger" })
+            </div>
+            <div class="form-group has-feedback">
+                @*@Html.TextBoxFor(m => m.bCode, new { @class = "form-control", placeholder = "OR Branch Code", onkeyup = "InputToUpper(this);", maxlength = 20, autocomplete = "off" })*@
+               
+                    @Html.DropDownListFor(m => m.bCode, new SelectList(Model._list, "Key", "Value", Model._list), new { @class = "form-control" })
+
+              
+                @Html.ValidationMessageFor(m => m.bCode, null, new { @class = "text-danger" })
+            </div>
+            <div class="form-group has-feedback">
+                @Html.TextBoxFor(m => m.username, new { @class = "form-control", placeholder = "Username", maxlength = 50, autocomplete = "off" })
+                @Html.ValidationMessageFor(m => m.username, null, new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group has-feedback">
+                @Html.TextBoxFor(m => m.email, new { @class = "form-control", placeholder = "Email", maxlength = 50, autocomplete = "off" })
+                @Html.ValidationMessageFor(m => m.email, null, new { @class = "text-danger" })
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <!--<div class="col-xs-8">
+                    <div class="checkbox icheck">
+                        <label>
+                            <input type="checkbox"> I agree to the <a href="#">terms</a>
+                        </label>
+                    </div>
+                </div> /.col -->
+                <div class="col-xs-12">
+                    <button type="submit" class="btn bg-aqua-gradient btn-block btn-flat">Register</button>
+                </div><!-- /.col -->
+            </div>
+        </form>
+
+        @*<div class="social-auth-links text-center">
+                <p>- OR -</p>
+                <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign up using Facebook</a>
+                <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign up using Google+</a>
+
+            </div>*@
+
+
+    </div>
+</div>
+
+
+@*@if (@Model.isError == false)
+    {
+
+        <div class="callout callout-info">
+            <h2>@Model.title</h2>
+            <p><h3>@Model.message</h3></p>
+        </div>
+
+    }
+    else
+    {
+
+        <div class="callout callout-danger">
+            <h2>@Model.title</h2>
+            <p><h3>@Model.message</h3></p>
+        </div>
+
+    }*@
+
+
+
+<script>
+    function InputToUpper(obj) {
+        if (obj.value != "") {
+            obj.value = obj.value.toUpperCase();
+        }
+    }
+</script>
+
+
+
+
+
 

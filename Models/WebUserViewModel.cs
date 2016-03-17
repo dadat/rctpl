@@ -6,9 +6,13 @@ using System.Web;
 
 namespace RCTPL_WebProjects.Models
 {
-    public class WebUserViewModel
+    public static class GlobalVar
     {
+        public static Dictionary<string, string> RegionList { get; set; }
+        public static Dictionary<string, string> BranchList { get; set; }
+        public static List<string> UserTypeList { get; set; }
     }
+
 
     public class StrViewModel
     {
@@ -20,18 +24,21 @@ namespace RCTPL_WebProjects.Models
     public class RegViewModel
     {
         [Required]
-        [Display(Name="Last Name")]
+        [Display(Name = "Last Name")]
         public string lastname { get; set; }
         [Required]
-        [Display(Name="First Name")]
+        [Display(Name = "First Name")]
         public string firstname { get; set; }
-        [Display(Name="Middle Name")]
+        [Required]
+        [Display(Name = "Middle Name")]
         public string middlename { get; set; }
         [Required]
         [Display(Name = "Address")]
         public string address { get; set; }
+        [Required]
         [Display(Name = "City")]
         public string city { get; set; }
+        [Required]
         [Display(Name = "Region")]
         public string region { get; set; }
         [Required]
@@ -44,8 +51,21 @@ namespace RCTPL_WebProjects.Models
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Email")]
         public string email { get; set; }
+       
+        [Display(Name = "Branch Code")]
+        public string bCode { get; set; }
+
+        [Display(Name = "User Type")]
+        public string userType { get; set; }
+        
+        public Dictionary<string, string> _list { get; set; }
+
+        public Dictionary<string, string> _listRegion { get; set; }
+
+        public List<string> _listUsrType { get; set; }
+
         public string errMessage { get; set; }
-        public bool isError { get; set; }
+        public int isError { get; set; }
     }
 
     public class ForgotPasswdViewModel
@@ -64,7 +84,7 @@ namespace RCTPL_WebProjects.Models
 
     public class changePasswdViewModel
     {
-               
+
         public string _uname { get; set; }
 
         [Required]
@@ -83,4 +103,75 @@ namespace RCTPL_WebProjects.Models
         [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
+
+
+
+    //===========================================DTO============================================
+
+    public class userDTO
+    {
+        public string region { get; set; }
+        public string _dateV { get; set; }
+        public string userName { get; set; }      
+    }
+
+    public class TBChDDTO
+    {
+        public string region { get; set; }
+        //public string _dateP { get; set; }
+        public string _id { get; set; }
+        public decimal _total { get; set; }
+    }
+
+    public class orDTO
+    {
+        //public string colamt { get; set; }
+        //public string basic_premium { get; set; }
+        //public string doc_stamp { get; set; }
+        //public string comp_fee { get; set; }
+        //public string cert_fee { get; set; }
+        //public string tax_amtd { get; set; }
+        //public string e_vat { get; set; }
+        //public string lgt { get; set; }
+        //public string coi { get; set; }
+        //public string colordte { get; set; }
+        //public string colpayor { get; set; }
+        //public string colno { get; set; }
+        //public string clientcd { get; set; }
+        //public string colpymtyp { get; set; }
+        //public string colornum { get; set; }
+        //public string usrid { get; set; }
+        //public string with_tax { get; set; }
+        //public string tax_amt { get; set; }
+        //public string paddress { get; set; }
+        //public string lastname { get; set; }
+        //public string firstname { get; set; }
+        //public string middlename { get; set; }
+        public string cashier { get; set; }
+        public string plateno { get; set; }
+        public string bcdesc { get; set; }
+        public string bcdsp { get; set; }
+        public string company { get; set; }
+
+        //upper left of Report
+        public string papinNo { get; set; }
+        public string clientAddress { get; set; }
+        public string clientName { get; set; }
+        public string assTin { get; set; }
+
+        //upper right of Report
+        public string orNo { get; set; }
+        public string orDate { get; set; }
+        public string paymentType { get; set; }
+
+        //lower left of Report
+        public decimal basicPremium { get; set; }
+        public decimal eVat { get; set; }
+        public decimal otherCharges { get; set; }
+
+        public decimal TotalAmount { get; set; }
+        //lower right of Report
+        public string cashierAgent { get; set; }
+    }
+    
 }

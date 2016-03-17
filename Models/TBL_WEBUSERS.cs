@@ -35,5 +35,6 @@ namespace RCTPL_WebProjects.Models
         public string CITY { get; set; }
         public string BRANCH_CODE { get; set; }
         public string COMP { get; set; }
+        public string USER_TYPE { get; set; }
     }
 }

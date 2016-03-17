@@ -1,56 +1,100 @@
 ﻿@model RCTPL_WebProjects.Models.RegViewModel
 
 @{
-   Layout = "~/Views/Shared/_landingLayout.cshtml"; ;
+   Layout = "~/Views/Shared/_landingLayout.cshtml";
 }
 
+  
+            <div class="box-body btn-block">
+                <center><h1><b class="box-title">RCTPL  Registration</b></h1></center>
+                <div class="register-box-body">
+                    @if (@Model.isError == 1)
+                    {
+                            <div class="callout callout-info">                               
+                                <p>A message has been sent to your email. Kindly check you email after a few minutes. Thank you.</p>
+                            </div>
+                        
+                        
+                    }
+                    else if (Model.isError == 2)
+                    {
+                            <div class="callout callout-danger">                               
+                                <p>@Model.errMessage</p>
+                            </div>
+                            <form action="/WEBUSERS/Create" method="post" id="loglog" name="loglog">
+                            @Html.AntiForgeryToken()
+                            <div class="form-group has-feedback">
 
-    @using (Html.BeginForm())
-    {
-      
-        if(@Model.isError == false)
-        {
-            <section class="content">
-                <div class="callout callout-info">
-                    <h3>Sign Up Complete</h3>
-                    <p>A message has been sent to your email. Kindly check you email after a few minutes. Thank you.</p>
+
+                                @Html.TextBoxFor(m => m.lastname, new { @class = "form-control", placeholder = "Last Name", onkeyup = "InputToUpper(this);", maxlength = 100, autocomplete = "off" })
+                                @Html.ValidationMessageFor(m => m.lastname, null, new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group has-feedback">
+                                @Html.TextBoxFor(m => m.firstname, new { @class = "form-control", placeholder = "First Name", onkeyup = "InputToUpper(this);", maxlength = 100, autocomplete = "off" })
+                                @Html.ValidationMessageFor(m => m.firstname, null, new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group has-feedback">
+                                @Html.TextBoxFor(m => m.middlename, new { @class = "form-control", placeholder = "Middle Name", onkeyup = "InputToUpper(this);", maxlength = 100, autocomplete = "off" })
+                                @Html.ValidationMessageFor(m => m.middlename, null, new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group has-feedback">
+                                @Html.TextBoxFor(m => m.address, new { @class = "form-control", placeholder = "House No./Street", onkeyup = "InputToUpper(this);", maxlength = 400, autocomplete = "off" })
+                                @Html.ValidationMessageFor(m => m.address, null, new { @class = "text-danger" })
+
+                            </div>
+                            <div class="form-group has-feedback">
+                                @Html.TextBoxFor(m => m.city, new { @class = "form-control", placeholder = "City", onkeyup = "InputToUpper(this);", maxlength = 60, autocomplete = "off" })
+                                @Html.ValidationMessageFor(m => m.city, null, new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group has-feedback">
+
+                                @Html.DropDownListFor(m => m.region, new SelectList(Model._listRegion, "Key", "Value", Model._listRegion), new { @class = "form-control" })
+
+
+                                @Html.ValidationMessageFor(m => m.region, null, new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group has-feedback">
+                                @Html.TextBoxFor(m => m.contactno, new { @class = "form-control", placeholder = "Contact No", onkeyup = "InputToUpper(this);", maxlength = 50, autocomplete = "off" })
+                                @Html.ValidationMessageFor(m => m.contactno, null, new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group has-feedback">
+
+                                @Html.DropDownListFor(m => m.bCode, new SelectList(Model._list, "Key", "Value", Model._list), new { @class = "form-control" })
+
+
+                                @Html.ValidationMessageFor(m => m.bCode, null, new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group has-feedback">
+                                @Html.TextBoxFor(m => m.username, new { @class = "form-control", placeholder = "Username", maxlength = 50, autocomplete = "off" })
+                                @Html.ValidationMessageFor(m => m.username, null, new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group has-feedback">
+                                @Html.TextBoxFor(m => m.email, new { @class = "form-control", placeholder = "Email", maxlength = 50, autocomplete = "off" })
+                                @Html.ValidationMessageFor(m => m.email, null, new { @class = "text-danger" })
+                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-xs-12">
+                                    <button type="submit" class="btn bg-aqua-gradient btn-block btn-flat">Register</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    }
+
+
+                   
+
                 </div>
-            </section>
-        }
-        else
-        {
-            <section class="content">
-                <div class="callout callout-danger">
-                    <h3><b>Warning!</b></h3>
-                    <p>@Model.errMessage</p>
-                </div>
-            </section>
-        }
-
-
-        @*@if (@Model.isError == false)
-        {
-
-            <div class="callout callout-info">
-                <h2>@Model.title</h2>
-                <p><h3>@Model.message</h3></p>
             </div>
-
-        }
-        else
-        {
-
-            <div class="callout callout-danger">
-                <h2>@Model.title</h2>
-                <p><h3>@Model.message</h3></p>
-            </div>
-
-        }*@
-
-
-    }
 <script>
-   
+    function InputToUpper(obj) {
+        if (obj.value != "") {
+            obj.value = obj.value.toUpperCase();
+        }
+    }
 </script>
   
 
